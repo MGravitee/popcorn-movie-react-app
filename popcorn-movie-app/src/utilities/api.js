@@ -1,16 +1,27 @@
+// API Keys
 
-const APIToken = import.meta.env.VITE_MOVIE_BEARER_TOKEN;
+import { APIKey, APIToken } from "../global/globalsVariables";
 
-const APIKey = import.meta.env.VITE_MOVIE_API_KEY;
-const endpoint = "https://www.tmdbpath.com"
+//EndPoints
+
+import {
+    nowPlaying,
+    popular,
+    topRated,
+    upComing,
+    movieUrl
+  } from "../global/globalsVariables";
+
 
 const getMoviesByCategory = async (category) => {
     try {
-        const result = fetch(`${endpoint}?api_key=${APIKey}`)
-        const json = await result.json();
+        const response = fetch(`${popularEndPoint}?api_key=${APIKey}`);
+        const data = await response.json();
+        console.log({ data });
         return json;
-
-    } catch(error) {
+    } catch (error) {
         //error stuff
     }
-}
+};
+
+export {getMoviesByCategory}

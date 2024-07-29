@@ -1,6 +1,11 @@
+import { useState, useEffect } from "react";
+
+import { getMoviesByCategory } from "../utilities/api";
+
 function About() {
   return (
-    <div>About</div>
+    <h2>About</h2>
+
   )
 }
 export default About
