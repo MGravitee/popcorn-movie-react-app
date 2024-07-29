@@ -5,6 +5,7 @@ function Header() {
     <header>
       <div>Header</div>
       <ul>
+        {/* might need to move home out in the future. home is a logo not text */}
         <li>
           <NavLink to="/">home</NavLink>
         </li>
