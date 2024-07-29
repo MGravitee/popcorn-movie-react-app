@@ -3,12 +3,13 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <header>
-      <div>Header</div>
-      <ul>
-        {/* might need to move home out in the future. home is a logo not text */}
-        <li>
-          <NavLink to="/">home</NavLink>
-        </li>
+      <NavLink to="/">
+        <img src="/popcorn-logo.svg" alt="Popcorn logo" />
+      </NavLink>
+      <NavLink to="/">
+        <h3>POPCORN</h3>
+      </NavLink>
+      <ul className="nav-ul">
         <li>
           <NavLink to="/about">about</NavLink>
         </li>

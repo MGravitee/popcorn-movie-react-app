@@ -1,1 +1,22 @@
 @import "vars";
+
+header {
+  display: flex;
+
+  border-bottom: 2px solid pink; //remove this this is just to delineate sections
+
+  h3 {
+    font-weight: 400;
+    font-size: 1.667rem;
+    margin: 0.75rem 0rem 0rem 0.5rem;
+  }
+
+  .nav-ul {
+    display: none;
+  }
+  img {
+    margin-left: 1rem;
+    margin: 0.75rem 0rem 0rem 1rem;
+    height: 1.75rem;
+  }
+}

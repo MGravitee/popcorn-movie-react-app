@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import {
   APIKey,
   nowPlayingEndPoint,
@@ -19,7 +19,7 @@ function Home() {
       setMovie(data);
     };
     moviesFromApi();
-  });
+  }, []);
   return <div>Hello Luke</div>;
 }
 export default Home;
