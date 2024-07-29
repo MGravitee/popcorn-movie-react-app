@@ -4,7 +4,13 @@ import { APIKey, APIToken } from "../global/globalsVariables";
 
 //EndPoints
 
-import { popularEndPoint, upComingEndPoint, nowPlayingEndPoint, topRatedEndPoint, multiSearchEndPoint  } from "../global/globalsVariables";
+import {
+    nowPlaying,
+    popular,
+    topRated,
+    upComing,
+    movieUrl
+  } from "../global/globalsVariables";
 
 
 const getMoviesByCategory = async (category) => {
