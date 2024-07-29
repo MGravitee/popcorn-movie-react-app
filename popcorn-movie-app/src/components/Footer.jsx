@@ -1,6 +1,8 @@
 function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <footer>
+      <p>© Popcorn 2024 For educational purposes only</p>
+    </footer>
+  );
 }
-export default Footer
+export default Footer;
