@@ -9,6 +9,8 @@ import {
   movieUrl,
 } from "../global/globalsVariables";
 
+import Favourite from "../components/favourite";
+
 function Home() {
   const [movies, setMovie] = useState([]);
   const [category, setCategory] = useState("now_playing");
@@ -30,6 +32,7 @@ function Home() {
           movies.map((movie) => {
             return (
               <li className="movie-card" key={movie.id}>
+                <Favourite isFavourite={true} />
                 <div className="movie-title">{movie.title}</div>
                 <div className="movie-date">{movie.release_date}</div>
                 <div className="movie-poster">
