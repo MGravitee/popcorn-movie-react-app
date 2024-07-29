@@ -9,7 +9,7 @@ import {
   movieUrl,
 } from "../global/globalsVariables";
 
-import Favourite from "../components/favourite";
+import Favourite from "../components/Favourite";
 
 function Home() {
   const [movies, setMovie] = useState([]);
