@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import {
   APIKey,
   nowPlaying,
@@ -6,7 +6,7 @@ import {
   topRated,
   upComing,
   baseImgEndPoint,
-  movieUrl
+  movieUrl,
 } from "../global/globalsVariables";
 
 function Home() {
@@ -24,33 +24,27 @@ function Home() {
   }, []);
   return (
     <>
-        <h2>Hello Luke</h2>
-        <ul>
-
-        {movies.length > 0 && movies.map(movie => {
+      <h2>Hello Luke</h2>
+      <ul>
+        {movies.length > 0 &&
+          movies.map((movie) => {
             return (
-              
-              <li className="movie-card" key={movie.id}><div className="movie-title">{movie.title}</div><div className="movie-date">{movie.release_date}</div>
-              <div className="movie-poster"><img src={`${baseImgEndPoint}${movie.poster_path}`} alt="movie.title" /></div>
-              <div className="movie-overview">{movie.overview}</div></li>
-              
-            )
-        })}
-        </ul>
-
-
-
-
-
+              <li className="movie-card" key={movie.id}>
+                <div className="movie-title">{movie.title}</div>
+                <div className="movie-date">{movie.release_date}</div>
+                <div className="movie-poster">
+                  <img
+                    src={`${baseImgEndPoint}${movie.poster_path}`}
+                    alt="movie.title"
+                  />
+                </div>
+                <div className="movie-overview">{movie.overview}</div>
+              </li>
+            );
+          })}
+      </ul>
     </>
-
-
-    
-
-
-
-
-  )
+  );
 }
 
 export default Home;
