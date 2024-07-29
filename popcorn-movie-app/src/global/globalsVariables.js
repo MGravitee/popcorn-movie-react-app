@@ -7,3 +7,5 @@ export const nowPlaying = "now_playing";
 export const popular = "popular";
 export const topRated = "top_rated";
 export const upComing = "upcoming";
+
+export const multiSearchEndPoint = 'https://api.themoviedb.org/3/search/multi';
