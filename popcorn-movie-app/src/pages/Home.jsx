@@ -29,9 +29,16 @@ function Home() {
         {movies.length > 0 &&
           movies.map((movie) => {
             return (
-              <li key={movie.id}>
-                {movie.title}
-                {movie.release_date}
+              <li className="movie-card" key={movie.id}>
+                <div className="movie-title">{movie.title}</div>
+                <div className="movie-date">{movie.release_date}</div>
+                <div className="movie-poster">
+                  <img
+                    src={`${baseImgEndPoint}${movie.poster_path}`}
+                    alt="movie.title"
+                  />
+                </div>
+                <div className="movie-overview">{movie.overview}</div>
               </li>
             );
           })}
