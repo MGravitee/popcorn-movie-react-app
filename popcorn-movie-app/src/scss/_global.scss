@@ -1,0 +1,9 @@
+@import "vars";
+
+#root {
+  background-color: $bodyColor;
+  color: $textColor;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
