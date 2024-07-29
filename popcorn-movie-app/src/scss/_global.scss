@@ -1,0 +1,26 @@
+@import "vars";
+
+#root {
+  background-color: $bodyColor;
+  color: $textColor;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: $bodyFont;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headingFont;
+  margin: 0;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: $textColor;
+}
