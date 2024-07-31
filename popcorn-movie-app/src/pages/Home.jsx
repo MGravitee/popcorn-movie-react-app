@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
 import {
   APIKey,
   nowPlaying,
@@ -32,7 +32,7 @@ function Home() {
           movies.map((movie) => {
             return (
               <li className="movie-card" key={movie.id}>
-                <Favourite isFavourite={true} />
+                <Favourite isFavourite={false} />
                 <div className="movie-title">{movie.title}</div>
                 <div className="movie-date">{movie.release_date}</div>
                 <div className="movie-poster">
