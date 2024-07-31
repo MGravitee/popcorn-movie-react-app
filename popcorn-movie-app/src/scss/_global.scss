@@ -24,3 +24,10 @@ a:hover {
   text-decoration: none;
   color: $textColor;
 }
+
+button {
+  border: 2px solid $buttonColor;
+  border-radius: 10px;
+  background-color: $bodyColor;
+  color: $buttonColor;
+}
