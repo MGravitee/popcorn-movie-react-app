@@ -22,7 +22,7 @@ function Details() {
       const moviesFromApi = async () => {
         const response = await fetch( `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKey}`);
         const data = await response.json();
-        // setMovie(data);
+        setMovie(data);
         console.log(data)
         
       };
@@ -39,10 +39,10 @@ function Details() {
         {movie && (
           <>
           <h1>{movie.title}</h1>
+          <img src={`${baseImgEndPoint}${movie.backdrop_path}`} alt={movie.title}/>
+          <p>{movie.release_date}</p>
           <p>{movie.vote_average} rating</p>
-        <img src={`${baseImgEndPoint}${movie.backdrop_path}`}
-                                        alt={movie.title}
-                                    />
+                                    
     
           </>
       )}
