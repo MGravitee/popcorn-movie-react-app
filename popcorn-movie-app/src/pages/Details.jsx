@@ -11,6 +11,7 @@ import {
   movieUrl,
 } from "../global/globalsVariables";
 
+import LoadingSpinner from '../components/LoadingSpinner';
 
 function Details() {
 
@@ -21,7 +22,7 @@ function Details() {
       const moviesFromApi = async () => {
         const response = await fetch( `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKey}`);
         const data = await response.json();
-        setMovie(data);
+        // setMovie(data);
         console.log(data)
         
       };
@@ -32,13 +33,20 @@ function Details() {
 
   return (
     <>
-      <h1>{movie && movie.title}</h1>
-      <p>{movie.vote_average} rating</p>
-      {/* <img src={`${baseImgEndPoint}${movie.backdrop_path}`}
+      
+      {!movie && <div className="place-center"><LoadingSpinner/></div> }
+      
+        {movie && (
+          <>
+          <h1>{movie.title}</h1>
+          <p>{movie.vote_average} rating</p>
+        <img src={`${baseImgEndPoint}${movie.backdrop_path}`}
                                         alt={movie.title}
-                                    /> */}
+                                    />
     
-    
+          </>
+      )}
+   
     </>
   )
 }
