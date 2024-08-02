@@ -11,6 +11,7 @@ import {
   movieUrl,
 } from "../global/globalsVariables";
 
+import LoadingSpinner from '../components/LoadingSpinner';
 
 function Details() {
 
@@ -32,13 +33,20 @@ function Details() {
 
   return (
     <>
-      <h1>{movie && movie.title}</h1>
-      <p>{movie.vote_average} rating</p>
-      {/* <img src={`${baseImgEndPoint}${movie.backdrop_path}`}
-                                        alt={movie.title}
-                                    /> */}
+      
+      {!movie && <div className="place-center"><LoadingSpinner/></div> }
+      
+        {movie && (
+          <>
+          <h1>{movie.title}</h1>
+          <img src={`${baseImgEndPoint}${movie.backdrop_path}`} alt={movie.title}/>
+          <p>{movie.release_date}</p>
+          <p>{movie.vote_average} rating</p>
+                                    
     
-    
+          </>
+      )}
+   
     </>
   )
 }
