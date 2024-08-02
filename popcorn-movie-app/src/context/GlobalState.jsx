@@ -1,14 +1,12 @@
 import {createContext, useReducer} from "react";
 import AppReducer from "./AppReducer";
 
-const initialState = {
-  favourite: false,
-};
+const initialState = [];
 
-const GlobalContext = createContext(initialState);
+const GlobalContext = createContext();
 
 function GlobalProvider({children}) {
-  const [state, dispatch] = useReducer(AppReducer, initialState);
+  const [favourites, dispatch] = useReducer(AppReducer, initialState);
 
   const addFavourite = (favourite) => {
     dispatch({
@@ -17,7 +15,11 @@ function GlobalProvider({children}) {
     });
   };
 
-  return <GlobalContext.Provider>{children}</GlobalContext.Provider>;
+  return (
+    <GlobalContext.Provider value={{addFavourite, favourites}}>
+      {children}
+    </GlobalContext.Provider>
+  );
 }
 
 export {GlobalContext, GlobalProvider};

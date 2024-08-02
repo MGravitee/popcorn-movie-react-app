@@ -1,7 +1,15 @@
-function Favourite({isFavourite = true}) {
+import {useContext} from "react";
+import {GlobalContext} from "../context/GlobalState";
+
+function Favourite({movieData}) {
+  const {addFavourite} = useContext(GlobalContext);
+  function handleFavourite() {
+    addFavourite(movieData);
+  }
+  const isFavourite = false;
   if (!isFavourite) {
     return (
-      <div>
+      <button onClick={handleFavourite} className="favourite-btn">
         <svg
           clip-rule="evenodd"
           fill-rule="evenodd"
@@ -14,11 +22,11 @@ function Favourite({isFavourite = true}) {
             fill-rule="nonzero"
           />
         </svg>
-      </div>
+      </button>
     );
   } else {
     return (
-      <div>
+      <button onClick={handleFavourite} className="favourite-btn">
         <svg
           clip-rule="evenodd"
           fill-rule="evenodd"
@@ -31,7 +39,7 @@ function Favourite({isFavourite = true}) {
             fill-rule="nonzero"
           />
         </svg>
-      </div>
+      </button>
     );
   }
 }
