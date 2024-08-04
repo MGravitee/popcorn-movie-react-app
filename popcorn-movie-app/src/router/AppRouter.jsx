@@ -1,5 +1,5 @@
-import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {GlobalProvider} from "../context/GlobalState";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { GlobalProvider } from "../context/GlobalState";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
