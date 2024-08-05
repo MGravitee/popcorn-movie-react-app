@@ -15,8 +15,14 @@ function GlobalProvider({children}) {
     });
   };
 
+  const removeFavourite = (favourite) => {
+    dispatch({
+      type: "REMOVE_FAVOURITE",
+      payload: favourite,
+    });
+  };
   return (
-    <GlobalContext.Provider value={{addFavourite, favourites}}>
+    <GlobalContext.Provider value={{addFavourite, removeFavourite, favourites}}>
       {children}
     </GlobalContext.Provider>
   );

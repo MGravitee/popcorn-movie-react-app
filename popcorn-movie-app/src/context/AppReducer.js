@@ -7,9 +7,11 @@ function AppReducer(state, action) {
       newFavourites.push(action.payload);
       return newFavourites;
       break;
+    case "REMOVE_FAVOURITE":
+      return state.filter((favourite) => favourite.id !== action.payload.id);
 
     default:
-      break;
+      return state;
   }
 }
 
