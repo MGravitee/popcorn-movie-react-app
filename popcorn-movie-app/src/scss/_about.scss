@@ -1,1 +1,27 @@
 @use "vars" as *;
+@use "mixins" as *;
+
+main {
+
+    display: flex;
+    flex-direction: column;
+    @include place-center-mixin;
+
+
+        .prgrph {
+            max-width: 20rem;
+        }
+
+        .popcorn-logo {
+            @include place-center-mixin;
+            width: 124px;
+            height: 184px;
+        }
+
+
+        .tmdb-logo {
+            @include place-center-mixin;
+            width: 124px;
+            height: 90px;
+         }
+}

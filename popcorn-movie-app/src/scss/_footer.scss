@@ -1,1 +1,10 @@
 @use "vars" as *;
+@use "mixins" as *;
+
+
+footer {
+
+    p {
+        @include place-center-mixin;
+    }
+}
