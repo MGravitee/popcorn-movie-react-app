@@ -1,3 +1,8 @@
+@use "vars" as *;
+@use "mixins" as *;
+
+//all of the divs and stuff needed to make the CSS animations work for the loader
+
 
 .lds-roller,
 .lds-roller div,
@@ -90,9 +95,7 @@
 }
 
 .place-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@include place-center-mixin;
 
 }
 

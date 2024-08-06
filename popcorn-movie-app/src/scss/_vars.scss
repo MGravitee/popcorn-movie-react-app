@@ -11,6 +11,11 @@
 $bodyFont: "Roboto Condensed", sans-serif;
 $headingFont: "Roboto", sans-serif;
 
+//font sizes
+$bodyFontSize: clamp(1rem, 2vw, 1.25rem);
+
+
+
 // colours
 
 $bodyColor: #222222;
