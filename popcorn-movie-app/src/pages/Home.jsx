@@ -16,16 +16,30 @@ function Home() {
   const [movies, setMovie] = useState([]);
   const [category, setCategory] = useState("now_playing");
 
-  useEffect(() => {
-    const moviesFromApi = async () => {
-      const response = await fetch(`${movieUrl}${category}?api_key=${APIKey}`);
-      const data = await response.json();
-      setMovie(data.results);
-      console.log(data.results);
-    };
+  const moviesFromApi = async () => {
+    
+    try {
+      
+    const response = await fetch(`${movieUrl}${category}?api_key=${APIKey}`);
+    if (!response.ok) {
+      throw new Error("setMovie fetch failed")
+    }
 
-    moviesFromApi();
-  }, [category]);
+    const data = await response.json();
+    setMovie(data.results);
+    console.log(data.results);
+    
+  } catch (error) {
+    console.error(error)
+}
+};
+
+
+
+    useEffect(() => {
+
+      moviesFromApi();
+      }, [category]);
 
   function handleClick(id) {
     setCategory(id);

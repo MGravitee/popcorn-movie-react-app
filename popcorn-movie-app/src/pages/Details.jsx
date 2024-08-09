@@ -49,14 +49,16 @@ function Details() {
           if (!response.ok) {
           throw new Error("setMovie fetch failed")
         }
+
       const data = await response.json();
 
       setMovie(data);
       console.log(data);
+
     } catch (error) {
       console.error(error)
     }
-    }
+    };
 
     useEffect( () => {
       
