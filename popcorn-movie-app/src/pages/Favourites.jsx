@@ -2,6 +2,15 @@ import {useContext} from "react";
 import {GlobalContext} from "../context/GlobalState";
 import {Link} from "react-router-dom";
 import Favourite from "../components/Favourite";
+import {
+  APIKey,
+  nowPlaying,
+  popular,
+  topRated,
+  upComing,
+  baseImgEndPoint,
+  movieUrl,
+} from "../global/globalsVariables";
 
 function Favourites() {
   const {favourites} = useContext(GlobalContext);

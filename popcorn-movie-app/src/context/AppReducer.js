@@ -1,6 +1,4 @@
 function AppReducer(state, action) {
-  console.log("app reducer...");
-
   switch (action.type) {
     case "ADD_FAVOURITE":
       const newFavourites = [...state];
