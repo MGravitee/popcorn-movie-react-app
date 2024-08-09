@@ -16,19 +16,53 @@ import LoadingSpinner from '../components/LoadingSpinner';
 function Details() {
 
     const [movie, setMovie] = useState(null);
+    const [video, setVideo] = useState(null);
     const { id } = useParams()
 
-    useEffect( () => {
-      const moviesFromApi = async () => {
-        const response = await fetch( `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKey}`);
-        const data = await response.json();
-        setMovie(data);
-        console.log(data)
-        
-      };
+    const getVideos = async () => {
 
+      try {
+        const response = await fetch( `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${APIKey}`);
+          if (!response.ok) {
+            throw new Error("getVideo fetch failed")
+          }
+        const vidData = await response.json();
+  
+          // find() to help search the video array for specific terms to make sure it's
+          //actually returning a trailer that can be embedded via youtube 
+          const youtubeTrailer = vidData.results.find ( video => {
+            return video.site === "YouTube" && video.type === "Trailer";
+          } )
+        setVideo(youtubeTrailer);
+        console.log(youtubeTrailer);
+        
+      } catch (error) {
+        console.error(error)
+      }
+    };
+
+    const moviesFromApi = async () => {
+
+      try {
+
+        const response = await fetch( `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKey}`);
+          if (!response.ok) {
+          throw new Error("setMovie fetch failed")
+        }
+      const data = await response.json();
+
+      setMovie(data);
+      console.log(data);
+    } catch (error) {
+      console.error(error)
+    }
+    }
+
+    useEffect( () => {
+      
       moviesFromApi();
-    }, []);
+      getVideos();
+  }, []);
 
 
   return (
@@ -38,10 +72,21 @@ function Details() {
       
         {movie && (
           <>
-          <h1>{movie.title}</h1>
-          <img src={`${baseImgEndPoint}${movie.backdrop_path}`} alt={movie.title}/>
-          <p>{movie.release_date}</p>
-          <p>{movie.vote_average} rating</p>
+            <h1>{movie.title}</h1>
+            <img src={`${baseImgEndPoint}${movie.backdrop_path}`} alt={movie.title}/>
+            <p>Release Date: {movie.release_date}</p>
+            <p>Average Rating: {movie.vote_average}</p>
+            <p>Runtime: {movie.runtime} minutes</p>
+            
+            {video ? (
+              <iframe
+                className="youtube-player"
+                src={`https://www.youtube.com/embed/${video.key}`}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            ) : null}
                                     
     
           </>
