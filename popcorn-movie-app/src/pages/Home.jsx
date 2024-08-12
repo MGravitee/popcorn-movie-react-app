@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   APIKey,
   nowPlaying,
@@ -48,7 +48,7 @@ function Home() {
 
   return (
     <>
-      <HeroBanner movieList={movies}/>
+      <HeroBanner movieList={movies} />
       <button onClick={() => handleClick("now_playing")}>Now Paying</button>
       <button onClick={() => handleClick("popular")}>Popular</button>
       <button onClick={() => handleClick("top_rated")}>Top Rated</button>
