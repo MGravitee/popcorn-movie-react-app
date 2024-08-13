@@ -1,0 +1,80 @@
+@use "vars" as *;
+
+.hero-div {
+  position: relative;
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    transition: 1s;
+  }
+  a {
+    height: fit-content;
+    left: 0px;
+    right: 0px;
+  }
+  .hidden {
+    opacity: 0;
+    position: absolute;
+    transition: 1s;
+    z-index: -1;
+  }
+  .arrow-left,
+  .arrow-right {
+    background-color: transparent;
+    color: $textColor;
+    border: none;
+    position: absolute;
+    top: 50%;
+    font-size: 5rem;
+    font-weight: 100;
+    transform: translate(0%, -50%);
+    height: 100%;
+  }
+  .arrow-left {
+    left: 0%;
+    padding-right: 4rem;
+  }
+  .arrow-right {
+    right: 0%;
+    padding-left: 4rem;
+  }
+  .slider-flex {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    bottom: 0.5rem;
+  }
+  .slider-circle {
+    height: 0.5rem;
+    width: 0.5rem;
+    background-color: $textColor;
+    border-radius: 50%;
+    margin: 0.25rem;
+  }
+  .active {
+    border: 0.125rem solid $buttonColor;
+  }
+  .slider-circle:hover {
+    border: 0.125rem solid $buttonColor;
+  }
+  .movie-title {
+    position: absolute;
+    bottom: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    left: 0.5rem;
+  }
+  .active {
+    background-color: $buttonColor;
+  }
+  @media (min-width: 768px) {
+    .movie-title {
+      font-size: 2.5rem;
+      bottom: 6rem;
+      left: 2rem;
+    }
+  }
+}

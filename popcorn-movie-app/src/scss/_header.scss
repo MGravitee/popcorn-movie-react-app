@@ -1,7 +1,7 @@
 @use "vars" as *;
 
 header {
-  max-width: 98rem;
+  max-width: 90rem;
   .header-contents {
     display: flex;
     justify-content: space-between;
@@ -48,47 +48,46 @@ header {
       }
     }
   }
-  .large-nav{
+  .large-nav {
     display: none;
   }
-  .small-nav{
+  .small-nav {
     display: block;
   }
-  li{
+  li {
     display: block;
   }
   //set to em?
   //dropdown menu might be a bit buggy with opening and closing, make sure to revisit
-  @media(min-width: 768px){
-    .large-nav{
+  @media (min-width: 768px) {
+    .large-nav {
       display: block;
       margin-top: 0.75rem;
       margin-right: 1rem;
       font-size: 1.5rem;
     }
-    .small-nav{
+    .small-nav {
       display: none;
     }
-    li{
+    li {
       display: none;
     }
   }
-  @media(min-width: 98rem){
-  width: 98rem;
-  margin: auto;
+  @media (min-width: 90rem) {
+    width: 90rem;
+    margin: auto;
 
-  h3{
-    font-size: 3rem;
+    h3 {
+      font-size: 3rem;
+    }
+    img {
+      height: 3rem;
+    }
+    .large-nav {
+      font-size: 3rem;
+    }
+    .inward-elem {
+      padding-right: 4rem;
+    }
   }
-  img {
-    height: 3rem;
-  }
-  .large-nav{
-    font-size: 3rem;
-  }
-  .inward-elem{
-    padding-right: 4rem;
-  }
-  }
-
 }

@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   APIKey,
   nowPlaying,
@@ -11,6 +11,7 @@ import {
 } from "../global/globalsVariables";
 
 import Favourite from "../components/Favourite";
+import HeroBanner from "../components/HeroBanner";
 
 function Home() {
   const [movies, setMovie] = useState([]);
@@ -47,8 +48,11 @@ function Home() {
 
   return (
     <>
-      <h2>Hello Luke</h2>
-
+<<<<<<< HEAD
+      <HeroBanner movieList={movies} />
+=======
+      <HeroBanner movieList={movies}/>
+>>>>>>> 6f231fbb0766cd28d210925bc95220fa47f7572a
       <button onClick={() => handleClick("now_playing")}>Now Paying</button>
       <button onClick={() => handleClick("popular")}>Popular</button>
       <button onClick={() => handleClick("top_rated")}>Top Rated</button>
