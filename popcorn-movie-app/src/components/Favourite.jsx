@@ -21,6 +21,7 @@ function Favourite({movieData}) {
         <svg
           clipRule="evenodd"
           fillRule="evenodd"
+          fill="#fff"
           strokeLinejoin="round"
           strokeMiterlimit="2"
           viewBox="0 0 24 24"
@@ -34,6 +35,7 @@ function Favourite({movieData}) {
         <svg
           clipRule="evenodd"
           fillRule="evenodd"
+          fill="#fff"
           strokeLinejoin="round"
           strokeMiterlimit="2"
           viewBox="0 0 24 24"
