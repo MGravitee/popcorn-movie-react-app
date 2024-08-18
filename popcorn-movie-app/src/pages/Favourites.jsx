@@ -16,23 +16,24 @@ function Favourites() {
   const {favourites} = useContext(GlobalContext);
   return (
     <div>
-      <ul>
+      <ul className="movie-cards">
         {favourites.length > 0 ? (
           favourites.map((movie) => (
             <li className="movie-card" key={movie.id}>
-              <Favourite movieData={movie} />
-              <div className="movie-title">{movie.title}</div>
-              <div className="movie-date">{movie.release_date}</div>
-              <div className="movie-poster">
-                <img
-                  src={`${baseImgEndPoint}${movie.poster_path}`}
-                  alt={movie.title}
-                />
+              <img
+                src={`${baseImgEndPoint}${movie.poster_path}`}
+                alt={movie.title}
+              />
+              <div className="hover-elem">
+                <Favourite movieData={movie} />
+                <div className="movie-title">{movie.title}</div>
+                <div className="movie-date">{movie.release_date}</div>
+                <div className="movie-poster"></div>
+                <div className="movie-overview">{movie.overview}</div>
+                <button className="info-btn">
+                  <Link to={`/detail/${movie.id}`}>More Info</Link>
+                </button>
               </div>
-              <div className="movie-overview">{movie.overview}</div>
-              <button>
-                <Link to={`/detail/${movie.id}`}>More Info</Link>
-              </button>
             </li>
           ))
         ) : (
