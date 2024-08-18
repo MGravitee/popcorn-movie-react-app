@@ -59,7 +59,7 @@ header {
   }
   //set to em?
   //dropdown menu might be a bit buggy with opening and closing, make sure to revisit
-  @media (min-width: 768px) {
+  @media (min-width: $tablet) {
     .large-nav {
       display: block;
       margin-top: 0.75rem;

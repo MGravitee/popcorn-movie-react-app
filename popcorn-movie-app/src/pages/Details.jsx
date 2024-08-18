@@ -75,12 +75,15 @@ function Details() {
         {movie && (
           <>
             <h1>{movie.title}</h1>
-            <img src={`${baseImgEndPoint}${movie.backdrop_path}`} alt={movie.title}/>
+            <img className='backdrop'  src={`${baseImgEndPoint}/original${movie.backdrop_path}`} alt={movie.title}/>
+            <img className='poster' src={`${baseImgEndPoint}${movie.poster_path}`} alt={movie.title}/>
             <p>Release Date: {movie.release_date}</p>
-            <p>Average Rating: {movie.vote_average}</p>
+            <p>Average Rating: {movie.vote_average.toFixed(1)}</p>
             <p>Runtime: {movie.runtime} minutes</p>
-            
-            {video ? (
+            <p>{movie.overview}</p>
+          </>
+      )}
+        {video ? (
               <iframe
                 className="youtube-player"
                 src={`https://www.youtube.com/embed/${video.key}`}
@@ -89,10 +92,6 @@ function Details() {
                 allowFullScreen
               ></iframe>
             ) : null}
-                                    
-    
-          </>
-      )}
    
     </>
   )
