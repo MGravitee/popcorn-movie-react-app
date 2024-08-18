@@ -1,108 +1,106 @@
 @use "vars" as *;
 
-.movie-cards{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    list-style: none;
-    padding: 1rem;
-    margin: 0 auto;
-    column-gap: 0.5rem;
+.movie-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  padding: 1rem;
+  margin: 0 auto;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+  width: 100%;
+
+  li {
+    position: relative;
+  }
+  img {
     width: 100%;
-    
-    li{
-        position: relative;
+    aspect-ratio: 6 / 9; //some movies have odd poster sizes so we force an aspect ratio
+    vertical-align: top;
+  }
 
-    }
-    img{
-        width: 100%;
-        aspect-ratio: 6 / 9; //some movies have odd poster sizes so we force an aspect ratio
-    }
+  .favourite-btn {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
 
-    .favourite-btn{
-        position: absolute;
-        top: 0rem;
-        right: 0rem;
-
-        svg{
-            color: $textColor;
-        }
+    svg {
+      color: $textColor;
     }
-    .movie-overview{
-        display: none;
-    }
-    .movie-date{
-        margin: 0.25rem;
-    }
-    .movie-title{
-        margin: 0.25rem;
-        height: 2.25rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-
-    }
-    .info-btn{
-        display: block;
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
+  }
+  .movie-overview {
+    display: none;
+  }
+  .movie-date {
+    margin: 0.25rem;
+  }
+  .movie-title {
+    margin: 0.25rem;
+    height: 2.25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .info-btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
 }
-@media (min-width: 37.5em) { //adding lots of breakpoints to increment grid size
-    .movie-cards{
-        padding: 2rem;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
+@media (min-width: 37.5em) {
+  //adding lots of breakpoints to increment grid size
+  .movie-cards {
+    padding: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 @media (min-width: 48em) {
-    .movie-cards{
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-
+  .movie-cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 @media (min-width: 60em) {
-    .movie-cards{
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-
+  .movie-cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 @media (min-width: 90em) {
-    .movie-cards{
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        
-        .hover-elem{
-            position: absolute;
-            top: 0rem;
-            bottom: 0rem;
-            left: 0rem;
-            right: 0rem;
-            background-color: rgba(0, 0, 0, 0.658); //make this a var
-            opacity: 0;
-            transition: 0.5s;
-        }
-        .hover-elem:hover{
-            opacity: 1;
-            transition: 0.5s;
-        }
-        .movie-date{
-            position: absolute;
-            top: 0rem;
-        left: 0rem;
-        }
-        .movie-title{
-            position: absolute;
-            top: 4rem;
-            left: 0rem;
-        }
-        .movie-overview{
-            display: block ;
-            position: absolute;
-            top: 6rem;
-            left: 0rem;
-        }
-        .info-btn{
-            position: absolute;
-            bottom: .5rem;
-            left: 0rem;
-        }
+  .movie-cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    .hover-elem {
+      position: absolute;
+      top: 0rem;
+      bottom: 0rem;
+      left: 0rem;
+      right: 0rem;
+      background-color: rgba(0, 0, 0, 0.658); //make this a var
+      opacity: 0;
+      transition: 0.5s;
     }
+    .hover-elem:hover {
+      opacity: 1;
+      transition: 0.5s;
+    }
+    .movie-date {
+      position: absolute;
+      top: 0rem;
+      left: 0rem;
+    }
+    .movie-title {
+      position: absolute;
+      top: 4rem;
+      left: 0rem;
+    }
+    .movie-overview {
+      display: block;
+      position: absolute;
+      top: 6rem;
+      left: 0rem;
+    }
+    .info-btn {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0rem;
+    }
+  }
 }
