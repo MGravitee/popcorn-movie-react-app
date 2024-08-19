@@ -1,5 +1,57 @@
 @use "vars" as *;
 
+.filter-btns {
+  position: relative;
+  margin: 0 auto;
+  width: 590px;
+  height: 50px;
+  font-size: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .filter-btn {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    line-height: 50px;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+    outline: none;
+    padding: 0 20px;
+    cursor: pointer;
+
+    &:nth-child(1) {
+      width: 130px;
+    }
+
+    &:nth-child(2) {
+      width: 110px;
+    }
+
+    &:nth-child(3) {
+      width: 120px;
+    }
+
+    &:nth-child(4) {
+      width: 130px;
+    }
+  }
+
+  .animation {
+    position: absolute;
+    height: 10px;
+    bottom: 0;
+    z-index: 0;
+    background: #1abc9c;
+    border-radius: 8px;
+    transition: all 0.5s ease 0s;
+  }
+}
+
 .movie-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
