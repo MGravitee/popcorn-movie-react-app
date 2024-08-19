@@ -21,7 +21,7 @@ function Favourites() {
           favourites.map((movie) => (
             <li className="movie-card" key={movie.id}>
               <img
-                src={`${baseImgEndPoint}${movie.poster_path}`}
+                src={`${baseImgEndPoint}w342/${movie.poster_path}`}
                 alt={movie.title}
               />
               <div className="hover-elem">

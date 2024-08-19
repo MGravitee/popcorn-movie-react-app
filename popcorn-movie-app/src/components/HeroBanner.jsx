@@ -65,7 +65,7 @@ function HeroBanner({ movieList }) {
         <NavLink to={`/detail/${movieList[0].id}`} className={firstImg}>
           <img
             className={firstImg}
-            src={`${baseImgEndPoint}${movieList[0].backdrop_path}`}
+            src={`${baseImgEndPoint}original/${movieList[0].backdrop_path}`}
             alt={movieList[0].original_title}
           />
         </NavLink>
@@ -74,7 +74,7 @@ function HeroBanner({ movieList }) {
         <NavLink to={`/detail/${movieList[1].id}`} className={secondImg}>
           <img
             className={secondImg}
-            src={`${baseImgEndPoint}${movieList[1].backdrop_path}`}
+            src={`${baseImgEndPoint}original/${movieList[1].backdrop_path}`}
             alt={movieList[1].original_title}
           />
         </NavLink>
@@ -83,7 +83,7 @@ function HeroBanner({ movieList }) {
         <NavLink to={`/detail/${movieList[2].id}`} className={thirdImg}>
           <img
             className={thirdImg}
-            src={`${baseImgEndPoint}${movieList[2].backdrop_path}`}
+            src={`${baseImgEndPoint}original/${movieList[2].backdrop_path}`}
             alt={movieList[2].original_title}
           />
         </NavLink>
