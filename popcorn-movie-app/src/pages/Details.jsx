@@ -75,15 +75,16 @@ function Details() {
       
         {movie && (
           <>
-
-            <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>
-            <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/>
-            <h1 className='det-title' >{movie.title}</h1>
-            <p>Release Date: {movie.release_date}</p>
-            <p>Average Rating: {movie.vote_average.toFixed(1)}</p>
-            <Favourite movieData={movie} />
-            <p>Runtime: {movie.runtime} minutes</p>
-            <p>{movie.overview}</p>
+            <section className='detail-grid'>
+              <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>
+              <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/>
+              <h1 className='det-title' >{movie.title}</h1>
+              <Favourite className='det-fave' movieData={movie} />
+              <p className='det-date' >{movie.release_date}</p>
+              <p className='det-votes' >{movie.vote_average.toFixed(1)}/10</p>
+              <p className='det-runtime' >{movie.runtime} minutes</p>
+            </section>
+            <p className='det-overview' >{movie.overview}</p>
           </>
       )}
         {video ? (

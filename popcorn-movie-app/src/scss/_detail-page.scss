@@ -1,23 +1,46 @@
 @use "vars" as *;
 @use "mixins" as *;
 
-
 .youtube-player {
     // width: 960px;
     // height: 540px;
     border: 0;
 }
 
+.detail-grid {
+    position: relative;
+}
+
 .det-poster {
     width: 140px;
     height: 210px;
     position: absolute;
-    top: 15%;
-    left: 5%;
+    top: 8vh;
+    left: 5vw;
 }
 
 .det-backdrop {
     // max-width: 120rem;
     filter: brightness(0.5);
+    object-fit: cover;
+}
+
+.det-title {
+    position: absolute;
+    font-size: clamp(1rem, 2.5vw, 3.25rem);
+    top: 8vh;
+    right: 5%;
+}
+
+.det-votes {
+    position: absolute;
+    top: 10vh;
+    right: 25%;
+}
+
+.det-date {
+    position: absolute;
+    top: 25vh;
+    right: 10%;
 }
 
