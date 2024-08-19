@@ -58,14 +58,10 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
-@media (min-width: 60em) {
+@media (min-width: $desktop) {
   .movie-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
-}
-@media (min-width: 90em) {
-  .movie-cards {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    max-width: 86rem;
 
     .hover-elem {
       position: absolute;
@@ -88,19 +84,38 @@
     }
     .movie-title {
       position: absolute;
-      top: 4rem;
+      top: 2rem;
+      font-size: 1.25rem;
+      height: 3rem;
       left: 0rem;
+      font-style: italic;
+      font-style: italic;
     }
     .movie-overview {
       display: block;
       position: absolute;
+      height: 8rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      height: 8rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
       top: 6rem;
-      left: 0rem;
+      left: 0.25rem;
     }
     .info-btn {
       position: absolute;
       bottom: 0.5rem;
       left: 0rem;
+    }
+  }
+}
+//text length change
+//maybe make this a variable
+@media (min-width: 90em) {
+  .movie-cards {
+    .movie-overview {
+      height: 13.75rem;
     }
   }
 }
