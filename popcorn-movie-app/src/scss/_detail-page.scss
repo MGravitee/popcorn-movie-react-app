@@ -1,8 +1,23 @@
 @use "vars" as *;
 @use "mixins" as *;
 
+
 .youtube-player {
-    width: 960px;
-    height: 540px;
+    // width: 960px;
+    // height: 540px;
     border: 0;
 }
+
+.det-poster {
+    width: 140px;
+    height: 210px;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+
+.det-backdrop {
+    // max-width: 120rem;
+    filter: brightness(0.5);
+}
+

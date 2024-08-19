@@ -11,6 +11,7 @@ import {
   movieUrl,
 } from "../global/globalsVariables";
 
+import Favourite from "../components/Favourite";
 import LoadingSpinner from '../components/LoadingSpinner';
 
 function Details() {
@@ -74,11 +75,13 @@ function Details() {
       
         {movie && (
           <>
-            <h1>{movie.title}</h1>
-            <img className='backdrop'  src={`${baseImgEndPoint}/original${movie.backdrop_path}`} alt={movie.title}/>
-            <img className='poster' src={`${baseImgEndPoint}${movie.poster_path}`} alt={movie.title}/>
+
+            <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>
+            <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/>
+            <h1 className='det-title' >{movie.title}</h1>
             <p>Release Date: {movie.release_date}</p>
             <p>Average Rating: {movie.vote_average.toFixed(1)}</p>
+            <Favourite movieData={movie} />
             <p>Runtime: {movie.runtime} minutes</p>
             <p>{movie.overview}</p>
           </>
