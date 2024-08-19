@@ -61,6 +61,7 @@
 @media (min-width: $desktop) {
   .movie-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    max-width: 86rem;
 
     .hover-elem {
       position: absolute;
@@ -94,7 +95,7 @@
       position: absolute;
       height: 8rem;
       text-overflow: ellipsis;
-      overflow:hidden;
+      overflow: hidden;
       top: 6rem;
       left: 0.25rem;
     }
@@ -102,6 +103,14 @@
       position: absolute;
       bottom: 0.5rem;
       left: 0rem;
+    }
+  }
+}
+//text length change
+@media (min-width: 90em) {
+  .movie-cards {
+    .movie-overview {
+      height: 13.75rem;
     }
   }
 }
