@@ -12,7 +12,7 @@ import {
 } from "../global/globalsVariables";
 
 
-import { reformatRuntime } from "../global/helperFunctions";
+import { reformatRuntime, displayGenres, displayRating } from "../global/helperFunctions";
 
 import Favourite from "../components/Favourite";
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -49,7 +49,7 @@ function Details() {
 
       try {
 
-        const response = await fetch( `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKey}`);
+        const response = await fetch( `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKey}&language=en-CA&append_to_response=release_dates`);
           if (!response.ok) {
           throw new Error("setMovie fetch failed")
         }
@@ -86,8 +86,12 @@ function Details() {
               <p className='det-date' >{movie.release_date}</p>
               <p className='det-votes' >{movie.vote_average.toFixed(1)}/10</p>
               <p className='det-runtime' >{}{reformatRuntime(movie.runtime)}</p>
+            <p className='det-rating'> {displayRating(movie)}</p>
             </section>
+            <section className='detail-below'>
+            <ul className='det-genres'>{displayGenres(movie)}</ul>
             <p className='det-summary' >{movie.overview}</p>
+            </section>
           </>
       )}
         {video ? (

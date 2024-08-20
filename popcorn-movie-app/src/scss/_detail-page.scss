@@ -54,8 +54,29 @@
     max-width: 18.125rem
 }
 
+.det-genres {
+    margin: 0;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    li {
+      display: grid;
+      place-items: center;
+      list-style-type: none;
+      border: 2px solid $buttonColor;
+      border-radius: 31.25rem;
+      padding: 0.2rem 1rem;
+      margin: 0.5rem 0.5rem;
+    }
+  }
+
+
+
 .favourite-btn {
     position: absolute;
     top: 12vh;
     right: 10%;
 }
+

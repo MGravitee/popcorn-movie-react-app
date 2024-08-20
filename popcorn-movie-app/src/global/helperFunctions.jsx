@@ -36,8 +36,33 @@ const shortenSummary = (text, maxWords) => {
   };
 
 
+// wanted a way to display the movie classification/genre which arrives 
+//as it's own array within the movie object, so it's time for my good friend
+//forEach to unpack it all, joy.
 
 
+const displayGenres = (movieData) => {
+  let genreTypes = [];
+  movieData.genres.forEach((genre, index) => {
+    genreTypes.push(<li key={index}>{genre.name}</li>);
+  });
+  return genreTypes;
+};
+
+const displayRating = (movieData) => {
+  let rating = "";
+  movieData.release_dates.results.forEach((country) => {
+      if (country.iso_3166_1 === "US") {
+
+        rating = country.release_dates[0].certification
+      } else {
+        return;
+      }
+        
+    }   
+    );
+    return rating;
+  }
 
 
 
@@ -46,7 +71,9 @@ const shortenSummary = (text, maxWords) => {
 
   export {
     shortenSummary,
-    reformatRuntime
+    reformatRuntime,
+    displayGenres,
+    displayRating
 
 
   };

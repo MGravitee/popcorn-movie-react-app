@@ -11,7 +11,7 @@ import {
 } from "../global/globalsVariables";
 import filterActive from "../utilities/filter-function";
 
-import { shortenSummary, reformatRuntime } from "../global/helperFunctions";
+import { shortenSummary } from "../global/helperFunctions";
 
 import Favourite from "../components/Favourite";
 import HeroBanner from "../components/HeroBanner";
