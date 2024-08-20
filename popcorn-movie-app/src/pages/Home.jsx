@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   APIKey,
   nowPlaying,
@@ -51,25 +51,29 @@ function Home() {
         <a
           href="#"
           className="underline-slide active"
-          onClick={() => handleClick("now_playing")}>
+          onClick={() => handleClick("now_playing")}
+        >
           Now Playing
         </a>
         <a
           href="#"
           className="underline-slide"
-          onClick={() => handleClick("popular")}>
+          onClick={() => handleClick("popular")}
+        >
           Popular
         </a>
         <a
           href="#"
           className="underline-slide"
-          onClick={() => handleClick("top_rated")}>
+          onClick={() => handleClick("top_rated")}
+        >
           Top Rated
         </a>
         <a
           href="#"
           className="underline-slide"
-          onClick={() => handleClick("upcoming")}>
+          onClick={() => handleClick("upcoming")}
+        >
           Upcoming
         </a>
       </div>
@@ -89,7 +93,9 @@ function Home() {
                   <div className="movie-poster">
                     <div className="movie-title">{movie.title}</div>
                   </div>
-                  <div className="movie-overview">{shortenSummary(movie.overview, 25)}</div>
+                  <div className="movie-overview">
+                    {shortenSummary(movie.overview, 25)}
+                  </div>
                   <button className="info-btn">
                     <Link to={`/detail/${movie.id}`}>More Info</Link>
                   </button>
