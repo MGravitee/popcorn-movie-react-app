@@ -9,6 +9,7 @@ import {
   baseImgEndPoint,
   movieUrl,
 } from "../global/globalsVariables";
+import filterActive from "../utilities/filter-function";
 
 import Favourite from "../components/Favourite";
 import HeroBanner from "../components/HeroBanner";
@@ -38,6 +39,7 @@ function Home() {
 
   function handleClick(id) {
     setCategory(id);
+    filterActive();
   }
 
   return (
@@ -46,29 +48,28 @@ function Home() {
       <div className="filter-btns">
         <a
           href="#"
-          className="filter-btn"
+          className="underline-slide active"
           onClick={() => handleClick("now_playing")}>
-          Now Paying
+          Now Playing
         </a>
         <a
           href="#"
-          className="filter-btn"
+          className="underline-slide"
           onClick={() => handleClick("popular")}>
           Popular
         </a>
         <a
           href="#"
-          className="filter-btn"
+          className="underline-slide"
           onClick={() => handleClick("top_rated")}>
           Top Rated
         </a>
         <a
           href="#"
-          className="filter-btn"
+          className="underline-slide"
           onClick={() => handleClick("upcoming")}>
           Upcoming
         </a>
-        <div class="animation start-home"></div>
       </div>
 
       <ul className="movie-cards">
@@ -77,7 +78,7 @@ function Home() {
             return (
               <li className="movie-card" key={movie.id}>
                 <img
-                  src={`${baseImgEndPoint}${movie.poster_path}`}
+                  src={`${baseImgEndPoint}w342/${movie.poster_path}`}
                   alt={movie.title}
                 />
                 <div className="hover-elem">

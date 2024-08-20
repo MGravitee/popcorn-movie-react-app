@@ -11,6 +11,7 @@ import {
   movieUrl,
 } from "../global/globalsVariables";
 
+import Favourite from "../components/Favourite";
 import LoadingSpinner from '../components/LoadingSpinner';
 
 function Details() {
@@ -74,13 +75,19 @@ function Details() {
       
         {movie && (
           <>
-            <h1>{movie.title}</h1>
-            <img src={`${baseImgEndPoint}${movie.backdrop_path}`} alt={movie.title}/>
-            <p>Release Date: {movie.release_date}</p>
-            <p>Average Rating: {movie.vote_average}</p>
-            <p>Runtime: {movie.runtime} minutes</p>
-            
-            {video ? (
+            <section className='detail-grid'>
+              <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>
+              <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/>
+              <h1 className='det-title' >{movie.title}</h1>
+              <Favourite className='det-fave' movieData={movie} />
+              <p className='det-date' >{movie.release_date}</p>
+              <p className='det-votes' >{movie.vote_average.toFixed(1)}/10</p>
+              <p className='det-runtime' >{movie.runtime} minutes</p>
+            </section>
+            <p className='det-overview' >{movie.overview}</p>
+          </>
+      )}
+        {video ? (
               <iframe
                 className="youtube-player"
                 src={`https://www.youtube.com/embed/${video.key}`}
@@ -89,10 +96,6 @@ function Details() {
                 allowFullScreen
               ></iframe>
             ) : null}
-                                    
-    
-          </>
-      )}
    
     </>
   )

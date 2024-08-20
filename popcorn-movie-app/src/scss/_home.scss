@@ -1,54 +1,37 @@
 @use "vars" as *;
 
 .filter-btns {
-  position: relative;
-  margin: 0 auto;
-  width: 590px;
-  height: 50px;
-  font-size: 0;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  position: relative;
+}
 
-  .filter-btn {
-    font-size: 15px;
-    text-transform: uppercase;
-    color: white;
-    text-decoration: none;
-    line-height: 50px;
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    text-align: center;
-    outline: none;
-    padding: 0 20px;
-    cursor: pointer;
+.underline-slide {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 1rem;
+  position: relative;
+  padding-bottom: 2px;
+  text-decoration: none;
 
-    &:nth-child(1) {
-      width: 130px;
-    }
-
-    &:nth-child(2) {
-      width: 110px;
-    }
-
-    &:nth-child(3) {
-      width: 120px;
-    }
-
-    &:nth-child(4) {
-      width: 130px;
-    }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: $buttonColor;
+    width: 0;
+    display: block;
+    transition: width 0.5s ease-in-out;
   }
 
-  .animation {
-    position: absolute;
-    height: 10px;
-    bottom: 0;
-    z-index: 0;
-    background: #1abc9c;
-    border-radius: 8px;
-    transition: all 0.5s ease 0s;
+  &.active {
+    color: #fff;
+
+    &:after {
+      width: 100%;
+    }
   }
 }
 

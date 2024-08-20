@@ -12,4 +12,4 @@ export const multiSearchEndPoint = 'https://api.themoviedb.org/3/search/multi';
 
 //base image path
 
-export const baseImgEndPoint= "https://image.tmdb.org/t/p/w200";
+export const baseImgEndPoint= "https://image.tmdb.org/t/p/";
