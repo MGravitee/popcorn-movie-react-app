@@ -86,7 +86,7 @@ function Details() {
               <p className='det-date' >{movie.release_date}</p>
               <p className='det-votes' >{movie.vote_average.toFixed(1)}/10</p>
               <p className='det-runtime' >{}{reformatRuntime(movie.runtime)}</p>
-            <p className='det-rating'> {displayRating(movie)}</p>
+            <p className='det-rating' > Rated: {displayRating(movie)}</p>
             </section>
             <section className='detail-below'>
             <ul className='det-genres'>{displayGenres(movie)}</ul>
