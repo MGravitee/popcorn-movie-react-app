@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 import {
   APIKey,
   nowPlaying,
@@ -9,6 +9,7 @@ import {
   baseImgEndPoint,
   movieUrl,
 } from "../global/globalsVariables";
+import filterActive from "../utilities/filter-function";
 
 import { shortenSummary, reformatRuntime } from "../global/helperFunctions";
 
@@ -20,41 +21,58 @@ function Home() {
   const [category, setCategory] = useState("now_playing");
 
   const moviesFromApi = async () => {
-    
     try {
-      
-    const response = await fetch(`${movieUrl}${category}?api_key=${APIKey}`);
-    if (!response.ok) {
-      throw new Error("setMovie fetch failed")
+      const response = await fetch(`${movieUrl}${category}?api_key=${APIKey}`);
+      if (!response.ok) {
+        throw new Error("setMovie fetch failed");
+      }
+
+      const data = await response.json();
+      setMovie(data.results);
+      console.log(data.results);
+    } catch (error) {
+      console.error(error);
     }
+  };
 
-    const data = await response.json();
-    setMovie(data.results);
-    console.log(data.results);
-    
-  } catch (error) {
-    console.error(error)
-}
-};
-
-
-
-    useEffect(() => {
-
-      moviesFromApi();
-      }, [category]);
+  useEffect(() => {
+    moviesFromApi();
+  }, [category]);
 
   function handleClick(id) {
     setCategory(id);
+    filterActive();
   }
 
   return (
     <>
       <HeroBanner movieList={movies} />
-      <button onClick={() => handleClick("now_playing")}>Now Paying</button>
-      <button onClick={() => handleClick("popular")}>Popular</button>
-      <button onClick={() => handleClick("top_rated")}>Top Rated</button>
-      <button onClick={() => handleClick("upcoming")}>Upcoming</button>
+      <div className="filter-btns">
+        <a
+          href="#"
+          className="underline-slide active"
+          onClick={() => handleClick("now_playing")}>
+          Now Playing
+        </a>
+        <a
+          href="#"
+          className="underline-slide"
+          onClick={() => handleClick("popular")}>
+          Popular
+        </a>
+        <a
+          href="#"
+          className="underline-slide"
+          onClick={() => handleClick("top_rated")}>
+          Top Rated
+        </a>
+        <a
+          href="#"
+          className="underline-slide"
+          onClick={() => handleClick("upcoming")}>
+          Upcoming
+        </a>
+      </div>
 
       <ul className="movie-cards">
         {movies.length > 0 &&
@@ -63,12 +81,13 @@ function Home() {
               <li className="movie-card" key={movie.id}>
                 <img
                   src={`${baseImgEndPoint}w342/${movie.poster_path}`}
-                  alt={movie.title}/>
+                  alt={movie.title}
+                />
                 <div className="hover-elem">
                   <Favourite movieData={movie} />
                   <div className="movie-date">{movie.release_date}</div>
                   <div className="movie-poster">
-                  <div className="movie-title">{movie.title}</div>
+                    <div className="movie-title">{movie.title}</div>
                   </div>
                   <div className="movie-overview">{shortenSummary(movie.overview, 25)}</div>
                   <button className="info-btn">
