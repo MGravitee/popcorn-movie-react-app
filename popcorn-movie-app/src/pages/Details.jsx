@@ -11,6 +11,9 @@ import {
   movieUrl,
 } from "../global/globalsVariables";
 
+
+import { reformatRuntime } from "../global/helperFunctions";
+
 import Favourite from "../components/Favourite";
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -82,9 +85,9 @@ function Details() {
               <Favourite className='det-fave' movieData={movie} />
               <p className='det-date' >{movie.release_date}</p>
               <p className='det-votes' >{movie.vote_average.toFixed(1)}/10</p>
-              <p className='det-runtime' >{movie.runtime} minutes</p>
+              <p className='det-runtime' >{}{reformatRuntime(movie.runtime)}</p>
             </section>
-            <p className='det-overview' >{movie.overview}</p>
+            <p className='det-summary' >{movie.overview}</p>
           </>
       )}
         {video ? (

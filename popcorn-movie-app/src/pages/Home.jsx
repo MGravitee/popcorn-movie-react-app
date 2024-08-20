@@ -10,6 +10,8 @@ import {
   movieUrl,
 } from "../global/globalsVariables";
 
+import { shortenSummary, reformatRuntime } from "../global/helperFunctions";
+
 import Favourite from "../components/Favourite";
 import HeroBanner from "../components/HeroBanner";
 
@@ -68,7 +70,7 @@ function Home() {
                   <div className="movie-poster">
                   <div className="movie-title">{movie.title}</div>
                   </div>
-                  <div className="movie-overview">{movie.overview}</div>
+                  <div className="movie-overview">{shortenSummary(movie.overview, 25)}</div>
                   <button className="info-btn">
                     <Link to={`/detail/${movie.id}`}>More Info</Link>
                   </button>
