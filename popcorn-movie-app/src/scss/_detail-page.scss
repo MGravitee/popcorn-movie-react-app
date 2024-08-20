@@ -39,8 +39,23 @@
 }
 
 .det-date {
-    position: absolute;
-    top: 25vh;
-    right: 10%;
+ text-align: right;
 }
 
+.det-date {
+    text-align: right;
+   }
+
+.det-runtime {
+    text-align: right;
+   }
+
+.det-summary {
+    max-width: 18.125rem
+}
+
+.favourite-btn {
+    position: absolute;
+    top: 12vh;
+    right: 10%;
+}
