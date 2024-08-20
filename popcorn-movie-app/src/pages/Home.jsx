@@ -9,9 +9,8 @@ import {
   baseImgEndPoint,
   movieUrl,
 } from "../global/globalsVariables";
-import filterActive from "../utilities/filter-function";
 
-import { shortenSummary, reformatRuntime } from "../global/helperFunctions";
+import {shortenSummary, reformatRuntime} from "../global/helperFunctions";
 
 import Favourite from "../components/Favourite";
 import HeroBanner from "../components/HeroBanner";
@@ -19,6 +18,7 @@ import HeroBanner from "../components/HeroBanner";
 function Home() {
   const [movies, setMovie] = useState([]);
   const [category, setCategory] = useState("now_playing");
+  const [activeFilter, setActiveFilter] = useState("now_playing");
 
   const moviesFromApi = async () => {
     try {
@@ -41,37 +41,42 @@ function Home() {
 
   function handleClick(id) {
     setCategory(id);
-    filterActive();
+    setActiveFilter(id);
   }
 
   return (
     <>
       <HeroBanner movieList={movies} />
+      {/* {movies.length > 0 && ( */}
       <div className="filter-btns">
-        <a
-          href="#"
-          className="underline-slide active"
+        <button
+          className={`underline-slide ${
+            activeFilter === "now_playing" ? "active" : ""
+          }`}
           onClick={() => handleClick("now_playing")}>
           Now Playing
-        </a>
-        <a
-          href="#"
-          className="underline-slide"
+        </button>
+        <button
+          className={`underline-slide ${
+            activeFilter === "popular" ? "active" : ""
+          }`}
           onClick={() => handleClick("popular")}>
           Popular
-        </a>
-        <a
-          href="#"
-          className="underline-slide"
+        </button>
+        <button
+          className={`underline-slide ${
+            activeFilter === "top_rated" ? "active" : ""
+          }`}
           onClick={() => handleClick("top_rated")}>
           Top Rated
-        </a>
-        <a
-          href="#"
-          className="underline-slide"
+        </button>
+        <button
+          className={`underline-slide ${
+            activeFilter === "upcoming" ? "active" : ""
+          }`}
           onClick={() => handleClick("upcoming")}>
           Upcoming
-        </a>
+        </button>
       </div>
 
       <ul className="movie-cards">
@@ -89,7 +94,9 @@ function Home() {
                   <div className="movie-poster">
                     <div className="movie-title">{movie.title}</div>
                   </div>
-                  <div className="movie-overview">{shortenSummary(movie.overview, 25)}</div>
+                  <div className="movie-overview">
+                    {shortenSummary(movie.overview, 25)}
+                  </div>
                   <button className="info-btn">
                     <Link to={`/detail/${movie.id}`}>More Info</Link>
                   </button>
