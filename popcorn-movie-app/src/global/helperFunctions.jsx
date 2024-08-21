@@ -56,7 +56,7 @@ const displayRating = (movieData) => {
 
         rating = country.release_dates[0].certification
       } else {
-        rating = "N/A";
+        return 
       }
         
     }   

@@ -9,7 +9,7 @@
 
 .det-backdrop {
     // max-width: 120rem;
-    filter: brightness(0.5);
+    filter: brightness(0.4);
     object-fit: cover;
 }
 
@@ -31,8 +31,8 @@
 }
 
 .det-poster {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: cover;
     grid-area: poster;
 
@@ -63,6 +63,7 @@
 
 .favourite-btn {
     grid-area: fave;
+    transform: scale(1.2);
    
 }
 
@@ -95,6 +96,32 @@
     padding-left: 1rem;
 }
 
+
+@media (min-width: $mobile-large) {
+    .detail-grid {
+        position: absolute;
+        top: 10vh;
+        display: grid;
+        gap: 2rem;
+        // grid-template-columns: 10px auto auto auto 10px;
+        // grid-template-areas:
+        // ".      title   title   title   .   .   "
+        // ".      .       .       .       .   .   "
+        // ".      poster  votes   fave    .   .   "
+        // ".      poster  date    .       .   .   "
+        // ".      poster  runtime .       .   .   "
+        // ".      poster  rating  .       .   .   "
+        // ".      .       .       .       .   .   ";
+        grid-auto-flow: column;
+    }
+
+    .detail-below {
+        margin-top: 14rem;
+    }
+    
+    
+
+  }
 
 
 
