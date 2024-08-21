@@ -1,9 +1,14 @@
 @use "vars" as *;
 @use "mixins" as *;
 
+
+.det-item {
+    @include outline-wrap;
+}
+
+
 .youtube-player {
-    // width: 960px;
-    // height: 540px;
+    margin: 3rem;
     border: 0;
 }
 
@@ -18,7 +23,7 @@
     top: 8vh;
     display: grid;
     gap: 0.5rem;
-    grid-template-columns: 10px auto auto auto 10px;
+    grid-template-columns: 10px 140px auto auto 10px;
     grid-template-areas:
     ".      title   title   title   .   "
     ".      .       .       .       .   "
@@ -39,7 +44,7 @@
 }
 
 .det-title {
-    //if I'm smaller than 2.5vw, I will be 1rem, if I'm bigger than that, I will be 3.25rem
+    //if I'm smaller than 5vw, I will be 1rem, if I'm bigger than that, I will be 3.25rem
     font-size: clamp(1.5rem, 5vw, 3.25rem);
     grid-area: title;
 }
@@ -93,7 +98,8 @@
 
   .det-summary {
     max-width: 18.125rem;
-    padding-left: 1rem;
+    margin: 0 auto;
+    padding-top: 1rem;
 }
 
 
@@ -103,25 +109,100 @@
         top: 10vh;
         display: grid;
         gap: 2rem;
-        // grid-template-columns: 10px auto auto auto 10px;
-        // grid-template-areas:
-        // ".      title   title   title   .   .   "
-        // ".      .       .       .       .   .   "
-        // ".      poster  votes   fave    .   .   "
-        // ".      poster  date    .       .   .   "
-        // ".      poster  runtime .       .   .   "
-        // ".      poster  rating  .       .   .   "
-        // ".      .       .       .       .   .   ";
+        grid-template-columns: 10px auto auto auto 10px;
+        grid-template-areas:
+        ".      title   title   title   .   .   "
+        ".      .       .       .       .   .   "
+        ".      poster  votes   fave    .   .   "
+        ".      poster  date    .       .   .   "
+        ".      poster  runtime .       .   .   "
+        ".      poster  rating  .       .   .   "
+        ".      .       .       .       .   .   ";
         grid-auto-flow: column;
     }
 
     .detail-below {
         margin-top: 14rem;
     }
+
+    .det-summary {
+        max-width: 26rem;
+        // margin: 0 auto;
+        // place-self: center;
+    }
     
-    
+    .favourite-btn {
+        transform: scale(1.2);
+       
+    }
+
+    .det-genres {
+        justify-content: space-between;
+    }
 
   }
 
+  @media (min-width: $tablet-small) {
+    .detail-grid {
+        position: absolute;
+        top: 10vh;
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: 10px auto auto auto 10px;
+        grid-template-areas:
+        ".      title   title   title   .       .   "
+        ".      .       .       .       .       .   "
+        ".      poster  votes   fave    .       .   "
+        ".      poster  date    .       .       .   "
+        ".      poster  runtime rating  .       .   "
+        ".      poster  .       .       .       .   "
+        ".      .       .       .       .       .   ";
+        // grid-auto-flow: column;
+    }
 
+    .detail-below {
+        margin-top: 12rem;
+    }
+    
+    .favourite-btn {
+        transform: scale(1.5);
+       
+    }
+    .det-summary {
+        max-width: 35rem;
+    }
+
+  }
+
+  @media (min-width: $tablet) {
+    .detail-grid {
+        position: absolute;
+        top: 10vh;
+        display: grid;
+        gap: 1rem;
+        grid-template-areas:
+        ".      title   title   title   fave    .   "
+        ".      .       .       .       .       .   "
+        ".      poster  votes   date    .       .   "
+        ".      poster  runtime rating  .       .   "
+        ".      poster  .       .       .       .   "
+        ".      poster  .       .       .       .   "
+        ".      .       .       .       .       .   ";
+    
+    }
+
+    .favourite-btn {
+        transform: scale(1.8);
+       
+    }
+
+    .detail-below {
+        margin-top: 7rem;
+    }
+
+    .det-summary {
+        max-width: 44rem;
+    }
+
+  }
 

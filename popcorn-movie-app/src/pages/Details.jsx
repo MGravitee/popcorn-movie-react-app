@@ -83,11 +83,11 @@ function Details() {
             <section className='detail-grid'>
               <h1 className='det-title' >{movie.title}</h1>
               <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/>
-              <Favourite className='det-fave' movieData={movie} />
-              <p className='det-date' >{movie.release_date}</p>
-              <p className='det-votes' >{movie.vote_average.toFixed(1)}/10</p>
-              <p className='det-runtime' >{}{reformatRuntime(movie.runtime)}</p>
-              <p className='det-rating' > Rated: {displayRating(movie)}</p>
+              <Favourite className='det-fave det-item' movieData={movie} />
+              <p className='det-date det-item' >{movie.release_date}</p>
+              <p className='det-votes det-item' >{movie.vote_average.toFixed(1)}/10</p>
+              <p className='det-runtime det-item' >{}{reformatRuntime(movie.runtime)}</p>
+              <p className='det-rating det-item' > Rated: {displayRating(movie)}</p>
             </section>
             <section className='detail-below'>
               <ul className='det-genres'>{displayGenres(movie)}</ul>
