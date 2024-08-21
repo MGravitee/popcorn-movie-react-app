@@ -3,13 +3,15 @@
 
 
 .det-item {
-    @include outline-wrap;
+    text-shadow: 1px 1px 1px black;
 }
 
 
 .youtube-player {
     margin: 3rem;
     border: 0;
+    aspect-ratio: 16/9;
+    width: 90%;
 }
 
 .det-backdrop {
@@ -20,6 +22,7 @@
 
 .detail-grid {
     position: absolute;
+    width: 100%;
     top: 8vh;
     display: grid;
     gap: 0.5rem;
@@ -36,8 +39,8 @@
 }
 
 .det-poster {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     grid-area: poster;
 
@@ -69,6 +72,7 @@
 .favourite-btn {
     grid-area: fave;
     transform: scale(1.2);
+    @include place-center-mixin;
    
 }
 
@@ -105,11 +109,9 @@
 
 @media (min-width: $mobile-large) {
     .detail-grid {
-        position: absolute;
         top: 10vh;
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: 10px auto auto auto 10px;
+        gap: 1rem;
+        grid-template-columns: auto auto auto auto auto auto;
         grid-template-areas:
         ".      title   title   title   .   .   "
         ".      .       .       .       .   .   "
@@ -118,26 +120,32 @@
         ".      poster  runtime .       .   .   "
         ".      poster  rating  .       .   .   "
         ".      .       .       .       .   .   ";
-        grid-auto-flow: column;
+        // grid-auto-flow: column;
     }
 
+    .det-poster {
+        width: 210px;
+        height: auto;
+        object-fit: cover;
+        
+    
+    }
     .detail-below {
         margin-top: 14rem;
     }
 
     .det-summary {
         max-width: 26rem;
-        // margin: 0 auto;
-        // place-self: center;
+        
     }
     
     .favourite-btn {
-        transform: scale(1.2);
+        transform: scale(1.4);
        
     }
 
     .det-genres {
-        justify-content: space-between;
+        // justify-content: space-between;
     }
 
   }
@@ -145,9 +153,6 @@
   @media (min-width: $tablet-small) {
     .detail-grid {
         position: absolute;
-        top: 10vh;
-        display: grid;
-        gap: 3rem;
         grid-template-columns: 10px auto auto auto 10px;
         grid-template-areas:
         ".      title   title   title   .       .   "
@@ -174,7 +179,7 @@
 
   }
 
-  @media (min-width: $tablet) {
+  @media (min-width: $tablet) { 
     .detail-grid {
         position: absolute;
         top: 10vh;
@@ -197,12 +202,21 @@
     }
 
     .detail-below {
-        margin-top: 7rem;
+        margin-top: 2rem;
     }
 
     .det-summary {
         max-width: 44rem;
     }
+
+    .det-poster {
+        width: 166px;
+        height: auto;
+        
+        
+    
+    }
+
 
   }
 
