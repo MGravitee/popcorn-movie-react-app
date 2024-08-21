@@ -49,7 +49,7 @@
 @media (min-width: 37.5em) {
   //adding lots of breakpoints to increment grid size
   .movie-cards {
-    padding: 2rem;
+    // padding: 2rem;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
@@ -62,6 +62,7 @@
   .movie-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     max-width: 86rem;
+    padding: 1rem;
 
     .hover-elem {
       position: absolute;

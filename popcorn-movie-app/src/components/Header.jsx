@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import {NavLink} from "react-router-dom";
+import {useState} from "react";
 
 function Header() {
   const [navState, setNavState] = useState("invisible");
@@ -25,15 +25,31 @@ function Header() {
   return (
     <header>
       <div className="header-contents">
-        <NavLink to="/">
-          <img src="/popcorn-logo.svg" alt="Popcorn logo" />
-        </NavLink>
-        <NavLink className={"logo-title-parent"} to="/">
-          <h3>POPCORN</h3>
-        </NavLink>
-        <NavLink className="large-nav inward-elem" to="/about">About</NavLink>
-        <NavLink className="large-nav" to="/favourites">Favourites</NavLink>
-        <div className="hamburger-button small-nav " onClick={updateBurgerState}>
+        <div className="nav-logo">
+          <NavLink to="/">
+            <img src="/popcorn-logo.svg" alt="Popcorn logo" />
+          </NavLink>
+          <NavLink className={"logo-title-parent"} to="/">
+            <h3>POPCORN</h3>
+          </NavLink>
+        </div>
+        <div className="nav-links">
+          <NavLink
+            className="large-nav inward-elem"
+            to="/about"
+            activeClassName="active">
+            About
+          </NavLink>
+          <NavLink
+            className="large-nav"
+            to="/favourites"
+            activeClassName="active">
+            Favourites
+          </NavLink>
+        </div>
+        <div
+          className="hamburger-button small-nav "
+          onClick={updateBurgerState}>
           <div></div>
           <div></div>
           <div></div>

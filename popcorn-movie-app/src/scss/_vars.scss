@@ -14,22 +14,21 @@ $headingFont: "Roboto", sans-serif;
 //font sizes
 $bodyFontSize: clamp(1rem, 2vw, 1.25rem);
 
-
-
 // colours
 
 $bodyColor: #222222;
 $textColor: #ffffff;
-$buttonColor: #FFCC33;
-
+$buttonColor: #ffcc33;
+$bannerHoverOverlay: #00000094;
 
 // Breakpoints
 // MAKE THEM EMS
-$mobile:        20em;              // 320px
-$mobile-large:  27.5em;            // 440px
-$tablet-small:  37.5em;            // 600px
-$tablet:        48em;              // 768px
-$desktop:       64em;              // 1024px
+$mobile: 20em; // 320px
+$mobile-large: 27.5em; // 440px
+$tablet-small: 37.5em; // 600px
+$tablet: 48em; // 768px
+$desktop: 64em; // 1024px
 
 // Max Width
 $max-width: 120rem; // 1920px
+$max-content-width: 86rem; //this is used on different sections to ensure consistent width on desktop
