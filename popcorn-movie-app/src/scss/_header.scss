@@ -1,10 +1,13 @@
 @use "vars" as *;
 
 header {
-  max-width: 86rem;
+  max-width: $desktop;
   .header-contents {
     display: flex;
     justify-content: space-between;
+  }
+  .nav-logo {
+    display: flex;
   }
   h3 {
     font-weight: 400;
@@ -60,11 +63,37 @@ header {
   //set to em?
   //dropdown menu might be a bit buggy with opening and closing, make sure to revisit
   @media (min-width: $tablet) {
+    .nav-logo,
+    .nav-links {
+      display: flex;
+      align-items: center;
+      margin: 1rem;
+
+      .large-nav {
+        font-size: 1.667rem;
+        margin: unset;
+        padding: 0 1rem;
+
+        &.active {
+          color: $buttonColor;
+        }
+      }
+
+      img,
+      h3 {
+        margin: unset;
+        padding: 0 0.25rem;
+      }
+    }
+    .nav-links {
+      align-items: center;
+    }
+
     .large-nav {
       display: block;
-      margin-top: 0.75rem;
-      margin-right: 1rem;
-      font-size: 1.5rem;
+      // margin-top: 0.75rem;
+      // margin-right: 1rem;
+      // font-size: 1.5rem;
     }
     .small-nav {
       display: none;
@@ -73,21 +102,29 @@ header {
       display: none;
     }
   }
-  @media (min-width: 90em) {
-    width: 90rem;
-    margin: auto;
+  @media (min-width: $desktop) {
+    .header-contents {
+      max-width: $max-content-width;
+      margin: auto;
 
-    h3 {
-      font-size: 3rem;
-    }
-    img {
-      height: 3rem;
-    }
-    .large-nav {
-      font-size: 3rem;
-    }
-    .inward-elem {
-      margin-right: 5rem;
+      .logo-nav {
+      }
+
+      .large-nav,
+      h3 {
+        font-size: 2.5rem;
+      }
+
+      h3,
+      img {
+        margin: unset;
+      }
+      img {
+        height: 3rem;
+      }
+      .inward-elem {
+        // margin-right: 5rem;
+      }
     }
   }
 }
