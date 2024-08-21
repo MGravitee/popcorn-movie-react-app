@@ -1,4 +1,4 @@
-
+@use "vars" as *;
 
 @mixin place-center-mixin () {
     display: flex;
@@ -7,3 +7,10 @@
   
   }
   
+@mixin outline-wrap() {
+      border: 2px solid $textColor;
+      border-radius: 31.25rem;
+      //mixin inside a mixin, so meta
+      @include place-center-mixin;
+
+}
