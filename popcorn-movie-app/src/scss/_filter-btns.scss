@@ -8,7 +8,7 @@
 
   .underline-slide {
     all: unset;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #fff;
     margin: 1rem;
     position: relative;
@@ -37,6 +37,21 @@
       &:after {
         width: 100%;
       }
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .filter-btns {
+    .underline-slide {
+      font-size: 1.2rem;
+    }
+  }
+}
+@media (min-width: $desktop) {
+  .filter-btns {
+    .underline-slide {
+      font-size: 1.5rem;
     }
   }
 }
