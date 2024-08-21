@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { baseImgEndPoint } from "../global/globalsVariables";
 import { useState, useEffect } from "react";
+import Carousel from '../components/Carousel';
 
 //the backdrop image is way to small, gotta grab the bigger one
 function HeroBanner({ movieList }) {
@@ -61,6 +62,8 @@ function HeroBanner({ movieList }) {
 
   return (
     <div className="hero-div">
+      <Carousel movieList={movieList}/>
+      {/* observe insane behavior if you uncomment this  
       {movieList.length > 0 && (
         <NavLink to={`/detail/${movieList[0].id}`} className={firstImg}>
           <img
@@ -93,7 +96,6 @@ function HeroBanner({ movieList }) {
         <h2 className="movie-title">{movieList[backdrop].original_title}</h2>
       )}
       <div className="slider-flex">
-        {/*should these be buttons?*/}
         <div onClick={() => selectFirst()} className={firstCircle}></div>
         <div onClick={() => selectSecond()} className={secondCircle}></div>
         <div onClick={() => selectThird()} className={thirdCircle}></div>
@@ -104,6 +106,7 @@ function HeroBanner({ movieList }) {
       <button onClick={() => selectSide(1)} className="arrow-right">
         &gt;
       </button>
+        */}
     </div>
   );
 }
