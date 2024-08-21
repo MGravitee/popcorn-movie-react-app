@@ -1,61 +1,208 @@
 @use "vars" as *;
 @use "mixins" as *;
 
+
+.det-item {
+    @include outline-wrap;
+}
+
+
 .youtube-player {
-    // width: 960px;
-    // height: 540px;
+    margin: 3rem;
     border: 0;
-}
-
-.detail-grid {
-    position: relative;
-}
-
-.det-poster {
-    width: 140px;
-    height: 210px;
-    position: absolute;
-    top: 8vh;
-    left: 5vw;
 }
 
 .det-backdrop {
     // max-width: 120rem;
-    filter: brightness(0.5);
+    filter: brightness(0.4);
     object-fit: cover;
 }
 
-.det-title {
+.detail-grid {
     position: absolute;
-    font-size: clamp(1rem, 2.5vw, 3.25rem);
     top: 8vh;
-    right: 5%;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 10px 140px auto auto 10px;
+    grid-template-areas:
+    ".      title   title   title   .   "
+    ".      .       .       .       .   "
+    ".      poster  votes   fave    .   "
+    ".      poster  date    .       .   "
+    ".      poster  runtime .       .   "
+    ".      poster  rating  .       .   "
+    ".      .       .       .       .   ";
+
+}
+
+.det-poster {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    grid-area: poster;
+
+}
+
+.det-title {
+    //if I'm smaller than 5vw, I will be 1rem, if I'm bigger than that, I will be 3.25rem
+    font-size: clamp(1.5rem, 5vw, 3.25rem);
+    grid-area: title;
 }
 
 .det-votes {
-    position: absolute;
-    top: 10vh;
-    right: 25%;
+    grid-area: votes;
 }
 
 .det-date {
- text-align: right;
+    grid-area: date;
 }
-
-.det-date {
-    text-align: right;
-   }
 
 .det-runtime {
-    text-align: right;
+    grid-area: runtime;
    }
 
-.det-summary {
-    max-width: 18.125rem
+
+.det-rating {
+    grid-area: rating;
 }
 
 .favourite-btn {
-    position: absolute;
-    top: 12vh;
-    right: 10%;
+    grid-area: fave;
+    transform: scale(1.2);
+   
 }
+
+//after info grid
+
+.detail-below {
+    margin-top: 12rem;
+}
+
+.det-genres {
+    margin: 0;
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    li {
+      display: grid;
+      place-items: center;
+      list-style-type: none;
+      border: 2px solid $buttonColor;
+      border-radius: 31.25rem;
+      padding: 0.2rem 1rem;
+      margin: 0.5rem 0.5rem;
+    }
+  }
+
+  .det-summary {
+    max-width: 18.125rem;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
+
+@media (min-width: $mobile-large) {
+    .detail-grid {
+        position: absolute;
+        top: 10vh;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 10px auto auto auto 10px;
+        grid-template-areas:
+        ".      title   title   title   .   .   "
+        ".      .       .       .       .   .   "
+        ".      poster  votes   fave    .   .   "
+        ".      poster  date    .       .   .   "
+        ".      poster  runtime .       .   .   "
+        ".      poster  rating  .       .   .   "
+        ".      .       .       .       .   .   ";
+        grid-auto-flow: column;
+    }
+
+    .detail-below {
+        margin-top: 14rem;
+    }
+
+    .det-summary {
+        max-width: 26rem;
+        // margin: 0 auto;
+        // place-self: center;
+    }
+    
+    .favourite-btn {
+        transform: scale(1.2);
+       
+    }
+
+    .det-genres {
+        justify-content: space-between;
+    }
+
+  }
+
+  @media (min-width: $tablet-small) {
+    .detail-grid {
+        position: absolute;
+        top: 10vh;
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: 10px auto auto auto 10px;
+        grid-template-areas:
+        ".      title   title   title   .       .   "
+        ".      .       .       .       .       .   "
+        ".      poster  votes   fave    .       .   "
+        ".      poster  date    .       .       .   "
+        ".      poster  runtime rating  .       .   "
+        ".      poster  .       .       .       .   "
+        ".      .       .       .       .       .   ";
+        // grid-auto-flow: column;
+    }
+
+    .detail-below {
+        margin-top: 12rem;
+    }
+    
+    .favourite-btn {
+        transform: scale(1.5);
+       
+    }
+    .det-summary {
+        max-width: 35rem;
+    }
+
+  }
+
+  @media (min-width: $tablet) {
+    .detail-grid {
+        position: absolute;
+        top: 10vh;
+        display: grid;
+        gap: 1rem;
+        grid-template-areas:
+        ".      title   title   title   fave    .   "
+        ".      .       .       .       .       .   "
+        ".      poster  votes   date    .       .   "
+        ".      poster  runtime rating  .       .   "
+        ".      poster  .       .       .       .   "
+        ".      poster  .       .       .       .   "
+        ".      .       .       .       .       .   ";
+    
+    }
+
+    .favourite-btn {
+        transform: scale(1.8);
+       
+    }
+
+    .detail-below {
+        margin-top: 7rem;
+    }
+
+    .det-summary {
+        max-width: 44rem;
+    }
+
+  }
+

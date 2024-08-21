@@ -12,7 +12,7 @@ import {
 } from "../global/globalsVariables";
 
 
-import { reformatRuntime } from "../global/helperFunctions";
+import { reformatRuntime, displayGenres, displayRating } from "../global/helperFunctions";
 
 import Favourite from "../components/Favourite";
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -49,7 +49,7 @@ function Details() {
 
       try {
 
-        const response = await fetch( `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKey}`);
+        const response = await fetch( `https://api.themoviedb.org/3/movie/${id}?api_key=${APIKey}&language=en-CA&append_to_response=release_dates`);
           if (!response.ok) {
           throw new Error("setMovie fetch failed")
         }
@@ -77,17 +77,22 @@ function Details() {
       {!movie && <div className="place-center"><LoadingSpinner/></div> }
       
         {movie && (
-          <>
-            <section className='detail-grid'>
+            <><section>
               <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>
-              <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/>
-              <h1 className='det-title' >{movie.title}</h1>
-              <Favourite className='det-fave' movieData={movie} />
-              <p className='det-date' >{movie.release_date}</p>
-              <p className='det-votes' >{movie.vote_average.toFixed(1)}/10</p>
-              <p className='det-runtime' >{}{reformatRuntime(movie.runtime)}</p>
             </section>
-            <p className='det-summary' >{movie.overview}</p>
+            <section className='detail-grid'>
+              <h1 className='det-title' >{movie.title}</h1>
+              <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/>
+              <Favourite className='det-fave det-item' movieData={movie} />
+              <p className='det-date det-item' >{movie.release_date}</p>
+              <p className='det-votes det-item' >{movie.vote_average.toFixed(1)}/10</p>
+              <p className='det-runtime det-item' >{}{reformatRuntime(movie.runtime)}</p>
+              <p className='det-rating det-item' > Rated: {displayRating(movie)}</p>
+            </section>
+            <section className='detail-below'>
+              <ul className='det-genres'>{displayGenres(movie)}</ul>
+              <p className='det-summary' >{movie.overview}</p>
+            </section>
           </>
       )}
         {video ? (
