@@ -90,8 +90,8 @@ function Details() {
               <p className='det-rating det-item' > Rated: {displayRating(movie)}</p>
             </section>
             <section className='detail-below'>
-              <ul className='det-genres'>{displayGenres(movie)}</ul>
-              <p className='det-summary' >{movie.overview}</p>
+              <ul className='det-genres det-item'>{displayGenres(movie)}</ul>
+              <p className='det-summary det-item' >{movie.overview}</p>
             </section>
           </>
       )}

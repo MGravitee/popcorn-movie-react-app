@@ -4,6 +4,7 @@
 
 .det-item {
     text-shadow: 1px 1px 1px black;
+    font-size: clamp(1rem, 5vw, 1.5rem);
 }
 
 
@@ -47,8 +48,6 @@
 }
 
 .det-title {
-    //if I'm smaller than 5vw, I will be 1rem, if I'm bigger than that, I will be 3.25rem
-    font-size: clamp(1.5rem, 5vw, 3.25rem);
     grid-area: title;
 }
 
@@ -69,7 +68,7 @@
     grid-area: rating;
 }
 
-.favourite-btn {
+.fave-det {
     grid-area: fave;
     transform: scale(1.2);
     @include place-center-mixin;
@@ -139,7 +138,7 @@
         
     }
     
-    .favourite-btn {
+    .fave-det {
         transform: scale(1.4);
        
     }
@@ -169,7 +168,7 @@
         margin-top: 12rem;
     }
     
-    .favourite-btn {
+    .fave-det {
         transform: scale(1.5);
        
     }
@@ -196,7 +195,7 @@
     
     }
 
-    .favourite-btn {
+    .fave-det {
         transform: scale(1.8);
        
     }

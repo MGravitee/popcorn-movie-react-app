@@ -12,14 +12,15 @@ $bodyFont: "Roboto Condensed", sans-serif;
 $headingFont: "Roboto", sans-serif;
 
 //font sizes
-$bodyFontSize: clamp(1rem, 2vw, 1.25rem);
+$bodyFontSize: clamp(1rem, 5vw, 1.15rem);
+$headingFontSize: clamp(1.5rem, 5vw, 3.25rem);
+
 
 // colours
 
 $bodyColor: #222222;
 $textColor: #ffffff;
 $buttonColor: #ffcc33;
-$bannerHoverOverlay: #00000094;
 
 // Breakpoints
 // MAKE THEM EMS
