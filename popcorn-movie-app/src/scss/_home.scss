@@ -1,41 +1,5 @@
 @use "vars" as *;
 
-.filter-btns {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.underline-slide {
-  all: unset;
-  font-size: 1.5rem;
-  color: #fff;
-  margin: 1rem;
-  position: relative;
-  padding-bottom: 2px;
-  text-decoration: none;
-
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 2px;
-    background-color: $buttonColor;
-    width: 0;
-    display: block;
-    transition: width 0.5s ease-in-out;
-  }
-
-  &.active {
-    color: #fff;
-
-    &:after {
-      width: 100%;
-    }
-  }
-}
-
 .movie-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
