@@ -2,19 +2,14 @@
 
 .hero-div {
   width: 100%;
-  .carousel{
+  .carousel {
     overflow: hidden;
 
-
-    .use-spring-carousel-item{
+    .use-spring-carousel-item {
       width: 4rem;
       justify-content: center;
       align-items: center;
       margin-right: 0rem;
-      background-color: pink;
-    }
-    .item-1{
-      background-color: aqua;
     }
   }
 }
