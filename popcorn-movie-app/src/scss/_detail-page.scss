@@ -7,55 +7,69 @@
     border: 0;
 }
 
-.detail-grid {
-    position: relative;
-}
-
-.det-poster {
-    width: 140px;
-    height: 210px;
-    position: absolute;
-    top: 8vh;
-    left: 5vw;
-}
-
 .det-backdrop {
     // max-width: 120rem;
     filter: brightness(0.5);
     object-fit: cover;
 }
 
-.det-title {
+.detail-grid {
     position: absolute;
-    font-size: clamp(1rem, 2.5vw, 3.25rem);
     top: 8vh;
-    right: 5%;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 10px auto auto auto 10px;
+    grid-template-areas:
+    ".      title   title   title   .   "
+    ".      .       .       .       .   "
+    ".      poster  votes   fave    .   "
+    ".      poster  date    .       .   "
+    ".      poster  runtime .       .   "
+    ".      poster  rating  .       .   "
+    ".      .       .       .       .   ";
+
+}
+
+.det-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-area: poster;
+
+}
+
+.det-title {
+    //if I'm smaller than 2.5vw, I will be 1rem, if I'm bigger than that, I will be 3.25rem
+    font-size: clamp(1.5rem, 5vw, 3.25rem);
+    grid-area: title;
 }
 
 .det-votes {
-    position: absolute;
-    top: 10vh;
-    right: 25%;
+    grid-area: votes;
 }
 
 .det-date {
- text-align: right;
+    grid-area: date;
 }
-
-.det-date {
-    text-align: right;
-   }
 
 .det-runtime {
-    text-align: right;
+    grid-area: runtime;
    }
 
-.det-summary {
-    max-width: 18.125rem
-}
 
 .det-rating {
-    text-align: center;
+    grid-area: rating;
+}
+
+.favourite-btn {
+    grid-area: fave;
+   
+}
+
+//after info grid
+
+.detail-below {
+    margin-top: 12rem;
 }
 
 .det-genres {
@@ -76,11 +90,11 @@
     }
   }
 
-
-
-.favourite-btn {
-    position: absolute;
-    top: 12vh;
-    right: 10%;
+  .det-summary {
+    max-width: 18.125rem;
+    padding-left: 1rem;
 }
+
+
+
 
