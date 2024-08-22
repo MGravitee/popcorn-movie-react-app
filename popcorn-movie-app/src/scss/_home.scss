@@ -32,13 +32,17 @@
     display: none;
   }
   .movie-date {
+    font-size: 0.9rem;
     margin: 0.25rem;
   }
   .movie-title {
-    margin: 0.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0.5rem;
     height: 2.25rem;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-transform: uppercase;
   }
   .info-btn {
     display: block;
@@ -64,51 +68,42 @@
     max-width: 86rem;
     padding: 1rem;
 
-    .hover-elem {
-      position: absolute;
-      top: 0rem;
-      bottom: 0rem;
-      left: 0rem;
-      right: 0rem;
-      background-color: rgba(0, 0, 0, 0.658); //make this a var
-      opacity: 0;
-      transition: 0.5s;
+    .info-btn{
+      background-color: rgba(255, 0, 0, 0);
+      display: none;
     }
-    .hover-elem:hover {
-      opacity: 1;
-      transition: 0.5s;
+    .movie-date{
+      display: none;
     }
-    .movie-date {
-      position: absolute;
-      top: 0rem;
-      left: 0rem;
+
+    .movie-card:hover{
+      img{
+        filter: brightness(0.2);
+      }
+
+      .movie-overview {
+        display: block;
+        position: absolute;
+      }
+      .info-btn{
+        position: absolute;
+        top: 75%;
+        display: block;
+      }
+      .movie-overview{
+        display: block;
+        top: 5rem;
+        height: 8rem;
+        overflow: hidden;
+      }
+      .movie-date{
+        position: absolute;
+        display: block;
+        top: 0.5rem;
+        left: 0.5rem;
+      }
     }
-    .movie-title {
-      position: absolute;
-      top: 2rem;
-      font-size: 1.25rem;
-      height: 3rem;
-      left: 0rem;
-      font-style: italic;
-      font-style: italic;
-    }
-    .movie-overview {
-      display: block;
-      position: absolute;
-      height: 8rem;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      height: 8rem;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      top: 6rem;
-      left: 0.25rem;
-    }
-    .info-btn {
-      position: absolute;
-      bottom: 0.5rem;
-      left: 0rem;
-    }
+      
   }
 }
 //text length change
