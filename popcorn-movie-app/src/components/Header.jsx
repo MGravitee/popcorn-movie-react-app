@@ -34,16 +34,10 @@ function Header() {
           </NavLink>
         </div>
         <div className="nav-links">
-          <NavLink
-            className="large-nav inward-elem"
-            to="/about"
-            activeClassName="active">
+          <NavLink className="large-nav inward-elem" to="/about">
             About
           </NavLink>
-          <NavLink
-            className="large-nav"
-            to="/favourites"
-            activeClassName="active">
+          <NavLink className="large-nav" to="/favourites">
             Favourites
           </NavLink>
         </div>
