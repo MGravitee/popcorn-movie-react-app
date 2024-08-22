@@ -89,17 +89,12 @@ function Home() {
                   alt={movie.title}
                 />
                   <Favourite movieData={movie} />
-                  <div className="movie-date">{movie.release_date}</div>
-                  <div className="movie-poster">
-                    <div className="movie-title">{movie.title}</div>
-                  </div>
-                  <div className="movie-overview">
-                    {shortenSummary(movie.overview, 25)}
-                  </div>
-                  <button className="info-btn">
-                    <Link to={`/detail/${movie.id}`}>More Info</Link>
-                  </button>
-                </div>
+                  <p className="movie-overview">
+                    {shortenText(movie.overview, 25)}
+                  </p>
+                  <p className="movie-date">{movie.release_date}</p> {/*display the correct format */}
+                  <h3 className="movie-title">{shortenText(movie.title, 5)}</h3>
+                  <NavLink className='info-btn' to={`/detail/${movie.id}`}>More Info</NavLink>
               </li>
             );
           })}
