@@ -41,7 +41,7 @@ function Favourites() {
             </li>
           ))
         ) : (
-          <div>
+          <div className="no-favourites">
             <p>No favourites to display</p>
             <a href="/">Back to home</a>
           </div>
