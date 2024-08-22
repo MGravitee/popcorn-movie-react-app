@@ -1,7 +1,6 @@
 @use "vars" as *;
 
 header {
-  max-width: $desktop;
   .header-contents {
     display: flex;
     justify-content: space-between;
@@ -103,6 +102,9 @@ header {
     }
   }
   @media (min-width: $desktop) {
+    header {
+      max-width: unset;
+    }
     .header-contents {
       max-width: $max-content-width;
       margin: auto;
