@@ -2,7 +2,7 @@ function Error() {
     return (
         <>
 
-            <img className="caution-symbol" src="/public/caution-symbol.svg" alt="Caution symbol for error page"/> 
+            <img className="caution-symbol" src="/caution-symbol.svg" alt="Caution symbol for error page"/> 
 
             <h1>Uh oh.... something went wrong</h1>
 

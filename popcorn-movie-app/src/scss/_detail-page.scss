@@ -3,23 +3,26 @@
 
 
 .det-item {
-    @include outline-wrap;
+    text-shadow: 1px 1px 1px black;
+    font-size: clamp(1rem, 5vw, 1.5rem);
 }
 
 
 .youtube-player {
     margin: 3rem;
     border: 0;
+    aspect-ratio: 16/9;
+    width: 90%;
 }
 
 .det-backdrop {
-    // max-width: 120rem;
     filter: brightness(0.4);
     object-fit: cover;
 }
 
 .detail-grid {
     position: absolute;
+    width: 100%;
     top: 8vh;
     display: grid;
     gap: 0.5rem;
@@ -36,16 +39,14 @@
 }
 
 .det-poster {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     grid-area: poster;
 
 }
 
 .det-title {
-    //if I'm smaller than 5vw, I will be 1rem, if I'm bigger than that, I will be 3.25rem
-    font-size: clamp(1.5rem, 5vw, 3.25rem);
     grid-area: title;
 }
 
@@ -66,9 +67,10 @@
     grid-area: rating;
 }
 
-.favourite-btn {
+.fave-det {
     grid-area: fave;
     transform: scale(1.2);
+    @include place-center-mixin;
    
 }
 
@@ -97,7 +99,7 @@
   }
 
   .det-summary {
-    max-width: 18.125rem;
+    max-width: 90%;
     margin: 0 auto;
     padding-top: 1rem;
 }
@@ -105,11 +107,9 @@
 
 @media (min-width: $mobile-large) {
     .detail-grid {
-        position: absolute;
         top: 10vh;
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: 10px auto auto auto 10px;
+        gap: 1rem;
+        grid-template-columns: auto auto auto auto auto auto;
         grid-template-areas:
         ".      title   title   title   .   .   "
         ".      .       .       .       .   .   "
@@ -118,26 +118,24 @@
         ".      poster  runtime .       .   .   "
         ".      poster  rating  .       .   .   "
         ".      .       .       .       .   .   ";
-        grid-auto-flow: column;
+        
     }
 
+    .det-poster {
+        width: 210px;
+        height: auto;
+        object-fit: cover;
+        
+    
+    }
     .detail-below {
         margin-top: 14rem;
     }
 
-    .det-summary {
-        max-width: 26rem;
-        // margin: 0 auto;
-        // place-self: center;
-    }
     
-    .favourite-btn {
-        transform: scale(1.2);
+    .fave-det {
+        transform: scale(1.4);
        
-    }
-
-    .det-genres {
-        justify-content: space-between;
     }
 
   }
@@ -145,9 +143,6 @@
   @media (min-width: $tablet-small) {
     .detail-grid {
         position: absolute;
-        top: 10vh;
-        display: grid;
-        gap: 3rem;
         grid-template-columns: 10px auto auto auto 10px;
         grid-template-areas:
         ".      title   title   title   .       .   "
@@ -164,7 +159,7 @@
         margin-top: 12rem;
     }
     
-    .favourite-btn {
+    .fave-det {
         transform: scale(1.5);
        
     }
@@ -174,7 +169,7 @@
 
   }
 
-  @media (min-width: $tablet) {
+  @media (min-width: $tablet) { 
     .detail-grid {
         position: absolute;
         top: 10vh;
@@ -191,18 +186,27 @@
     
     }
 
-    .favourite-btn {
+    .fave-det {
         transform: scale(1.8);
        
     }
 
     .detail-below {
-        margin-top: 7rem;
+        margin-top: 2rem;
     }
 
     .det-summary {
         max-width: 44rem;
     }
+
+    .det-poster {
+        width: 166px;
+        height: auto;
+        
+        
+    
+    }
+
 
   }
 

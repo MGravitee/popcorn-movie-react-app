@@ -9,7 +9,7 @@ main {
 
 
         .prgrph {
-            max-width: 20rem;
+            max-width: 90%;
         }
 
         .popcorn-logo {
@@ -36,7 +36,7 @@ main {
          }
          @media (min-width: $desktop ) {
              .prgrph {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                  max-width: 56rem;
              }
          

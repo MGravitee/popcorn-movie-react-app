@@ -10,7 +10,7 @@ import {
   movieUrl,
 } from "../global/globalsVariables";
 
-import {shortenSummary, reformatRuntime} from "../global/helperFunctions";
+import {shortenText} from "../utilities/helperFunctions";
 
 import Favourite from "../components/Favourite";
 import HeroBanner from "../components/HeroBanner";
@@ -90,10 +90,10 @@ function Home() {
                 />
                   <Favourite movieData={movie} />
                   <p className="movie-overview">
-                    {shortenSummary(movie.overview, 25)}
+                    {shortenText(movie.overview, 25)}
                   </p>
                   <p className="movie-date">{movie.release_date}</p> {/*display the correct format */}
-                  <h3 className="movie-title">{movie.title}</h3>
+                  <h3 className="movie-title">{shortenText(movie.title, 5)}</h3>
                   <NavLink className='info-btn' to={`/detail/${movie.id}`}>More Info</NavLink>
               </li>
             );

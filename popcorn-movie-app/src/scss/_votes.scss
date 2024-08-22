@@ -1,0 +1,26 @@
+@use "vars" as *;
+@use "mixins" as *;
+
+
+.default-votes {
+    border-radius: 50%;
+    @include place-center-mixin;
+    width: 45px;
+    height: 45px;
+   
+  }
+  
+  .low-votes {
+    outline: 3px solid #ff0000;
+  }
+  
+  .medium-votes {
+    outline: 3px solid $buttonColor;
+  }
+  .good-votes {
+    outline: 3px solid #44ad29;
+  }
+  
+  .no-votes {
+    outline: 2px solid $textColor;
+  }
