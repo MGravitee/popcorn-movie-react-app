@@ -10,7 +10,7 @@ import {
   movieUrl,
 } from "../global/globalsVariables";
 
-import {shortenSummary, reformatRuntime} from "../global/helperFunctions";
+import {shortenText} from "../utilities/helperFunctions";
 
 import Favourite from "../components/Favourite";
 import HeroBanner from "../components/HeroBanner";
@@ -92,10 +92,10 @@ function Home() {
                   <Favourite movieData={movie} />
                   <div className="movie-date">{movie.release_date}</div>
                   <div className="movie-poster">
-                    <div className="movie-title">{movie.title}</div>
+                    <div className="movie-title">{shortenText(movie.title, 5)}</div>
                   </div>
                   <div className="movie-overview">
-                    {shortenSummary(movie.overview, 25)}
+                    {shortenText(movie.overview, 25)}
                   </div>
                   <button className="info-btn">
                     <Link to={`/detail/${movie.id}`}>More Info</Link>

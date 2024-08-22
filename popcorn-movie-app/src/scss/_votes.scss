@@ -1,0 +1,26 @@
+@use "vars" as *;
+@use "mixins" as *;
+
+
+.default-rating {
+    border-radius: 50%;
+    @include place-center-mixin;
+    width: 45px;
+    height: 45px;
+   
+  }
+  
+  .low-rating {
+    outline: 3px solid #ff0000;
+  }
+  
+  .medium-rating {
+    outline: 3px solid $buttonColor;
+  }
+  .good-rating {
+    outline: 3px solid #44ad29;
+  }
+  
+  .no-rating {
+    outline: 2px solid $textColor;
+  }

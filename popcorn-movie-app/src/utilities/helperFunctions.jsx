@@ -4,18 +4,18 @@
 // as an entry into an array was the easiest way to make this happen 
 //after doing research
 
-const shortenSummary = (text, maxWords) => {
-    let shortSummary = "";
+const shortenText = (text, maxWords) => {
+    let shortenedText = "";
     // put words from the summary into an array
     const textArray = text.split(" ");
-    shortSummary = text;
+    shortenedText = text;
     if (textArray.length > maxWords) {
             // slice the array, if it is larger than maxWords
             // and only return the shortened amount
       const slicedArray = textArray.slice(0, maxWords - 1);
-      shortSummary = slicedArray.join(" ") + "...";
+      shortenedText = slicedArray.join(" ") + "...";
     }
-    return shortSummary;
+    return shortenedText;
   };
 
 
@@ -40,7 +40,6 @@ const shortenSummary = (text, maxWords) => {
 //as it's own array within the movie object, so it's time for my good friend
 //forEach to unpack it all, joy.
 
-
 const displayGenres = (movieData) => {
   let genreTypes = [];
   movieData.genres.forEach((genre, index) => {
@@ -64,16 +63,19 @@ const displayRating = (movieData) => {
     return rating;
   }
 
-
+  function formatPercentage(votes) {
+    return Math.ceil(votes * 10) + '%';
+  }
 
 
 
 
   export {
-    shortenSummary,
+    shortenText,
     reformatRuntime,
     displayGenres,
-    displayRating
+    displayRating,
+    formatPercentage
 
 
   };

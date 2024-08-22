@@ -16,7 +16,6 @@
 }
 
 .det-backdrop {
-    // max-width: 120rem;
     filter: brightness(0.4);
     object-fit: cover;
 }
@@ -100,7 +99,7 @@
   }
 
   .det-summary {
-    max-width: 18.125rem;
+    max-width: 90%;
     margin: 0 auto;
     padding-top: 1rem;
 }
@@ -119,7 +118,7 @@
         ".      poster  runtime .       .   .   "
         ".      poster  rating  .       .   .   "
         ".      .       .       .       .   .   ";
-        // grid-auto-flow: column;
+        
     }
 
     .det-poster {
@@ -133,18 +132,10 @@
         margin-top: 14rem;
     }
 
-    .det-summary {
-        max-width: 26rem;
-        
-    }
     
     .fave-det {
         transform: scale(1.4);
        
-    }
-
-    .det-genres {
-        // justify-content: space-between;
     }
 
   }
