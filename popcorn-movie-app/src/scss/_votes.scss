@@ -2,7 +2,7 @@
 @use "mixins" as *;
 
 
-.default-rating {
+.default-votes {
     border-radius: 50%;
     @include place-center-mixin;
     width: 45px;
@@ -10,17 +10,17 @@
    
   }
   
-  .low-rating {
+  .low-votes {
     outline: 3px solid #ff0000;
   }
   
-  .medium-rating {
+  .medium-votes {
     outline: 3px solid $buttonColor;
   }
-  .good-rating {
+  .good-votes {
     outline: 3px solid #44ad29;
   }
   
-  .no-rating {
+  .no-votes {
     outline: 2px solid $textColor;
   }

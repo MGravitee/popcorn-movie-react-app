@@ -93,13 +93,13 @@ function Details() {
               <div
                   className={
                     movie.vote_average <= 3
-                      ? "default-rating low-rating det-votes"
+                      ? "default-votes low-votes det-votes"
                       : movie.vote_average <= 7
-                      ? "default-rating medium-rating det-votes" //These classes can be found in the _components.scss page;
+                      ? "default-votes medium-votes det-votes" //These classes can be found in the _components.scss page;
                       : movie.vote_average <= 10
-                      ? "default-rating good-rating det-votes"
+                      ? "default-votes good-votes det-votes"
                       : movie.vote_average !== 0
-                      ? "default-rating no-rating det-votes"
+                      ? "default-votes no-votes det-votes"
                       : null
                   }
                 >

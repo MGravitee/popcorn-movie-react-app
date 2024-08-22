@@ -23,7 +23,7 @@ const shortenText = (text, maxWords) => {
 //as that's a little clunky
 
   const reformatRuntime = (movieRuntime) => {
-    // data will always arrives as a 2 or 3 digit number, (minutes total)
+    // data will always arrives as a 2 or 3 digit number (hopefully), (minutes total)
     // if it is over 60 minutes, then it should return
     let hours = Math.floor(movieRuntime / 60);
     let minutes = Math.floor(movieRuntime % 60);
