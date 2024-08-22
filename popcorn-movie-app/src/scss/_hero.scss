@@ -3,13 +3,56 @@
 .hero-div {
   width: 100%;
   .carousel {
-    overflow: hidden;
+    overflow-x: hidden;
+    max-width: 90rem;
+    margin: 0 auto;
+
+    .splash-link {
+      position: relative;
+      //is this the best way to fill?
+      height: 100%;
+      width: 100%;
+
+      h2 {
+        position: absolute;
+        bottom: 0.5rem;
+        left: 1rem;
+        font-size: 3rem;
+        font-weight: 300;
+        text-shadow: $bodyColor 1px 1px 2px; //very small shadow to aid visibility on light backgrounds
+      }
+    }
 
     .use-spring-carousel-item {
-      width: 4rem;
+      //width: 4rem;
       justify-content: center;
       align-items: center;
       margin-right: 0rem;
+    }
+  }
+  .carousel-button {
+    display: none;
+  }
+
+  @media (min-width: $desktop) {
+    .carousel {
+      height: 50vh;
+    }
+    .item-1,
+    .item-2 {
+      transition: 0.5s;
+    }
+    .item-2 {
+      position: absolute;
+      transform: translate(0%, 50%);
+      filter: brightness(0.4);
+    }
+    .item-1 {
+      max-width: unset;
+      position: absolute;
+      width: 150%;
+      z-index: 4;
+      transform: translate(-25%, 0%);
     }
   }
 }

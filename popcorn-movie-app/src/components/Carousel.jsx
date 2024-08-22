@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSpringCarousel } from "react-spring-carousel";
 import { baseImgEndPoint } from "../global/globalsVariables";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 
 //big thanks to this tutorial for getting this to work
@@ -19,6 +19,7 @@ function Carousel({ movieList }) {
           ? `${baseImgEndPoint}original/${movieList[0].backdrop_path}`
           : `placeholder`,
       link: movieList.length > 0 ? `/detail/${movieList[0].id}` : "#",
+      title: movieList.length > 0 ? movieList[0].title : "",
     },
     {
       id: "item-2",
@@ -27,6 +28,7 @@ function Carousel({ movieList }) {
           ? `${baseImgEndPoint}original/${movieList[1].backdrop_path}`
           : `placeholder`,
       link: movieList.length > 0 ? `/detail/${movieList[1].id}` : "#",
+      title: movieList.length > 0 ? movieList[1].title : "",
     },
     {
       id: "item-3",
@@ -35,8 +37,15 @@ function Carousel({ movieList }) {
           ? `${baseImgEndPoint}original/${movieList[2].backdrop_path}`
           : `placeholder`,
       link: movieList.length > 0 ? `/detail/${movieList[2].id}` : "#",
+      title: movieList.length > 0 ? movieList[2].title : "",
     },
   ];
+
+  //timing?
+  useEffect(() => {
+    console.log("test");
+    //movieList.length > 0 ? setInterval(slideToNextItem, 5000) : "";
+  }, [movieList]);
 
   const [currentSlide, setCurrentSlide] = useState(sliderItems[0].id);
   //gonna need breakpoints to get fancy
@@ -48,18 +57,19 @@ function Carousel({ movieList }) {
   } = useSpringCarousel({
     itemsPerSlide: isDesktopOrLaptop ? 3 : 1,
     withLoop: true,
-    gutter: 0,
+    gutter: 20,
     initialStartingPosition: "center",
     items: sliderItems.map((item) => {
       return {
         ...item,
         renderItem: (
-          <NavLink to={item.link}>
+          <NavLink className="splash-link" to={item.link}>
             <img
               className={currentSlide === item.id ? "item-1" : "item-2"}
               src={item.src}
               alt="item.id"
             />
+            <h2>{item.title}</h2>
           </NavLink>
         ),
       };
@@ -74,8 +84,12 @@ function Carousel({ movieList }) {
   return (
     <div className="carousel">
       {carouselFragment}
-      <button onClick={slideToPrevItem}>Prev item</button>
-      <button onClick={slideToNextItem}>Next item</button>
+      <button className="carousel-button" onClick={slideToPrevItem}>
+        &lt;
+      </button>
+      <button className="carousel-button" onClick={slideToNextItem}>
+        &gt;
+      </button>
     </div>
   );
 }
