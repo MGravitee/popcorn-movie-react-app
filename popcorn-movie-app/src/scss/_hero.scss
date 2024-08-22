@@ -15,6 +15,7 @@
   }
   .hidden {
     opacity: 0;
+    display: none;
     position: absolute;
     transition: 1s;
     z-index: -1;
