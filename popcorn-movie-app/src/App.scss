@@ -2,7 +2,6 @@
 @use "./scss/header";
 @use "./scss/hero";
 @use "./scss/footer";
-@use "./scss/main";
 @use "./scss/vars";
 @use "./scss/global";
 @use "./scss/loading-spinner";
@@ -12,3 +11,4 @@
 @use "./scss/favourites-page";
 @use "./scss/filter-btns";
 @use "./scss/votes";
+@use "./scss/error-page";

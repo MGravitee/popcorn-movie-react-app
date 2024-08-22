@@ -10,6 +10,14 @@
     font-size: $bodyFontSize;
 }
 
+main {
+    //this is in conjunction with the 100vh, to ensure footer
+    //always grows to bottom of the page
+    flex: 1;
+    position: relative;
+}
+  
+
 h1,
 h2,
 h3,
@@ -26,6 +34,8 @@ a:hover {
     color: $textColor;
 }
 
+//Base Buttons Stylings
+
 button,
 .info-btn {
     //not sure if we want to put this here but it works
@@ -34,4 +44,9 @@ button,
     background-color: $bodyColor;
     color: $buttonColor;
     cursor: pointer;
+}
+
+.favourite-btn {
+    all: unset;
+    width: 30px;
 }
