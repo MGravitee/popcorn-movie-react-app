@@ -1,13 +1,13 @@
 @use "vars" as *;
 
 #root {
-  background-color: $bodyColor;
-  color: $textColor;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: $bodyFont;
-  font-size: $bodyFontSize;
+    background-color: $bodyColor;
+    color: $textColor;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: $bodyFont;
+    font-size: $bodyFontSize;
 }
 
 h1,
@@ -16,21 +16,22 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $headingFont;
-  margin: 0;
+    font-family: $headingFont;
+    margin: 0;
 }
 
 a,
 a:hover {
-  text-decoration: none;
-  color: $textColor;
+    text-decoration: none;
+    color: $textColor;
 }
 
 button,
-.info-btn { //not sure if we want to put this here but it works
-  border: 2px solid $buttonColor;
-  border-radius: 10px;
-  background-color: $bodyColor;
-  color: $buttonColor;
-  cursor: pointer;
+.info-btn {
+    //not sure if we want to put this here but it works
+    border: 2px solid $buttonColor;
+    border-radius: 10px;
+    background-color: $bodyColor;
+    color: $buttonColor;
+    cursor: pointer;
 }
