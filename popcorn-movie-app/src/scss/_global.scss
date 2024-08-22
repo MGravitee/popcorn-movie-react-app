@@ -1,7 +1,9 @@
 @use "vars" as *;
 
-#root {
+body {
   background-color: $bodyColor;
+}
+#root {
   color: $textColor;
   display: flex;
   flex-direction: column;
@@ -27,7 +29,8 @@ a:hover {
 }
 
 button,
-.info-btn { //not sure if we want to put this here but it works
+.info-btn {
+  //not sure if we want to put this here but it works
   border: 2px solid $buttonColor;
   border-radius: 10px;
   background-color: $bodyColor;
