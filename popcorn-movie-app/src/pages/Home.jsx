@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {
   APIKey,
   nowPlaying,
@@ -88,19 +88,13 @@ function Home() {
                   src={`${baseImgEndPoint}w342/${movie.poster_path}`}
                   alt={movie.title}
                 />
-                <div className="hover-elem">
                   <Favourite movieData={movie} />
-                  <div className="movie-date">{movie.release_date}</div>
-                  <div className="movie-poster">
-                    <div className="movie-title">{movie.title}</div>
-                  </div>
-                  <div className="movie-overview">
+                  <p className="movie-overview">
                     {shortenSummary(movie.overview, 25)}
-                  </div>
-                  <button className="info-btn">
-                    <Link to={`/detail/${movie.id}`}>More Info</Link>
-                  </button>
-                </div>
+                  </p>
+                  <p className="movie-date">{movie.release_date}</p> {/*display the correct format */}
+                  <h3 className="movie-title">{movie.title}</h3>
+                  <NavLink className='info-btn' to={`/detail/${movie.id}`}>More Info</NavLink>
               </li>
             );
           })}
