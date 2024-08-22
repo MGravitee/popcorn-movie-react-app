@@ -40,8 +40,6 @@
     font-weight: 400;
     margin: 0.5rem;
     height: 2.25rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
     text-transform: uppercase;
   }
   .info-btn {
@@ -68,42 +66,35 @@
     max-width: 86rem;
     padding: 1rem;
 
-    .info-btn{
+    .info-btn {
       background-color: rgba(255, 0, 0, 0);
       display: none;
     }
-    .movie-date{
+    .movie-date {
       display: none;
     }
 
-    .movie-card:hover{
-      img{
+    .movie-card:hover {
+      img {
         filter: brightness(0.2);
       }
-
-      .movie-overview {
-        display: block;
-        position: absolute;
-      }
-      .info-btn{
+      .info-btn {
         position: absolute;
         top: 75%;
         display: block;
       }
-      .movie-overview{
+      .movie-overview {
         display: block;
         top: 5rem;
         height: 8rem;
-        overflow: hidden;
       }
-      .movie-date{
+      .movie-date {
         position: absolute;
         display: block;
         top: 0.5rem;
         left: 0.5rem;
       }
     }
-      
   }
 }
 //text length change
