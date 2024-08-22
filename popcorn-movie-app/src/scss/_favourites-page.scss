@@ -1,5 +1,11 @@
-div {
+@use "vars" as *;
+
+.no-favourites {
   grid-row: 1;
   grid-column: span 5;
   text-align: center;
+
+  a:hover {
+    color: $buttonColor;
+  }
 }
