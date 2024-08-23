@@ -1,11 +1,24 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function Header() {
   const [navState, setNavState] = useState("invisible drop-down");
   const [burgerState, setBurgerState] = useState("hamburger-button small-nav");
   const [burgerClickState, setBurgerClickState] = useState(false);
 
+  //handles closing dropdown on page change
+  const location = useLocation();
+  useEffect(() => {
+    closeMenu();
+  }, [location]);
+
+  //handles closing dropdown when page is resized
+  useEffect(() => {
+    window.addEventListener("resize", closeMenu);
+  }, []);
+
+  //handles opening/closing dropdown on click
   function updateBurgerState() {
     if (!burgerClickState) {
       openMenu();
@@ -23,6 +36,7 @@ function Header() {
   function closeMenu() {
     setNavState("invisible drop-down");
     setBurgerState("hamburger-button small-nav");
+    setBurgerClickState(false);
   }
   //my need more ul for this?
   return (
@@ -44,10 +58,7 @@ function Header() {
             Favourites
           </NavLink>
         </div>
-        <div
-          className={burgerState}
-          onClick={updateBurgerState}
-        >
+        <div className={burgerState} onClick={updateBurgerState}>
           <div className="line-1"></div>
           <div className="line-2"></div>
           <div className="line-3"></div>
