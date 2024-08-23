@@ -78,7 +78,7 @@ function Home() {
           Upcoming
         </button>
       </div>
-      <h1 class="screen-reader-text">Popcorn Movies</h1>
+      <h1 className="screen-reader-text">Popcorn Movies</h1>
       <ul className="movie-cards">
         {movies.length > 0 &&
           movies.map((movie) => {
