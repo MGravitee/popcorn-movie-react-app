@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import {
   APIKey,
@@ -28,6 +28,7 @@ function Details() {
     const [video, setVideo] = useState(null);
     const { id } = useParams()
 
+
     const getVideos = async () => {
 
       try {
@@ -41,10 +42,13 @@ function Details() {
           //actually returning a trailer that can be embedded via youtube 
           const youtubeTrailer = vidData.results.find ( video => {
             return video.site === "YouTube" && video.type === "Trailer";
+
+            
           } )
-        setVideo(youtubeTrailer);
-        console.log(youtubeTrailer);
-        
+          
+          setVideo(youtubeTrailer);
+          console.log(youtubeTrailer);
+          
       } catch (error) {
         console.error(error)
       }
@@ -69,11 +73,13 @@ function Details() {
     }
     };
 
+
     useEffect( () => {
       
       moviesFromApi();
       getVideos();
   }, []);
+
 
 
   return (
@@ -84,7 +90,7 @@ function Details() {
         {movie && (
             <>
               <section>
-                <h1 class="screen-reader-text">{`Popcorn Movies | ${movie.title}`}</h1>
+                <h1 className="screen-reader-text">{`Popcorn Movies | ${movie.title}`}</h1>
                 <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>
               </section>
               <section className='detail-grid'>
@@ -125,6 +131,7 @@ function Details() {
               <section className='detail-below'>
                 <ul className='det-genres det-item'>{displayGenres(movie)}</ul>
                 <p className='det-summary det-item' >{movie.overview}</p>
+                <Link to={`https://www.youtube.com/embed/${video.key}`} target="_blank" rel="noopener noreferrer">Watch Trailer</Link>
             </section>
           </>
       )}

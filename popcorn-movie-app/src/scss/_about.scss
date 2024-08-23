@@ -22,8 +22,7 @@ main {
 
         .tmdb-logo {
             @include place-center-mixin;
-            width: 124px;
-            height: 90px;
+            width: 93px;
             margin: 2rem;
          }
 
@@ -37,7 +36,7 @@ main {
          @media (min-width: $desktop ) {
              .prgrph {
                 font-size: 1.25rem;
-                 max-width: 56rem;
+                 max-width: 90%;
              }
          
          }

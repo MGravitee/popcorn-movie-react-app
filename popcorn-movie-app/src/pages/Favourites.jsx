@@ -18,7 +18,7 @@ function Favourites() {
   const {favourites} = useContext(GlobalContext);
   return (
     <div>
-      <h1 class="screen-reader-text">Popcorn Movies | Favourites</h1>
+      <h1 className="screen-reader-text">Popcorn Movies | Favourites</h1>
       <ul className="movie-cards">
         {favourites.length > 0 ? (
           favourites.map((movie) => (

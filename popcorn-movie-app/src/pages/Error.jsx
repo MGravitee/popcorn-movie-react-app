@@ -4,10 +4,10 @@ import {NavLink} from "react-router-dom";
 function Error() {
     return (
         <>
-            <h1 class="screen-reader-text">Popcorn Movies | Error Page</h1>
+            <h1 className="screen-reader-text">Popcorn Movies | Error Page</h1>
             <img className="caution-symbol" src="/caution-symbol.svg" alt="Caution symbol for error page"/> 
 
-            <h2 className="prgrph">Uh oh.... something went wrong</h2>
+            <h2 className="err-heading">Uh oh.... something went wrong</h2>
 
             <p className="prgrph">
                 Not sure what happened but we couldn't find the page you're
