@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function Header() {
   const [navState, setNavState] = useState("invisible drop-down");
+  const [burgerState, setBurgerState] = useState("hamburger-button small-nav");
   const [burgerClickState, setBurgerClickState] = useState(false);
 
   function updateBurgerState() {
@@ -17,9 +18,11 @@ function Header() {
 
   function openMenu() {
     setNavState("visible drop-down");
+    setBurgerState("hamburger-button small-nav open");
   }
   function closeMenu() {
     setNavState("invisible drop-down");
+    setBurgerState("hamburger-button small-nav");
   }
   //my need more ul for this?
   return (
@@ -42,12 +45,12 @@ function Header() {
           </NavLink>
         </div>
         <div
-          className="hamburger-button small-nav "
+          className={burgerState}
           onClick={updateBurgerState}
         >
-          <div></div>
-          <div></div>
-          <div></div>
+          <div className="line-1"></div>
+          <div className="line-2"></div>
+          <div className="line-3"></div>
         </div>
       </div>
       <ul className={navState}>
