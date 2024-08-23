@@ -16,6 +16,14 @@ header {
   .logo-title-parent {
     flex: 1;
   }
+  .drop-down {
+    all: unset;
+    position: absolute;
+    left: 0rem;
+    right: 0rem;
+    z-index: 999;
+    background-color: $bodyColor;
+  }
   .visible {
     display: block;
   }
@@ -83,9 +91,6 @@ header {
         margin: unset;
         padding: 0 0.25rem;
       }
-    }
-    .nav-links {
-      align-items: center;
     }
 
     .large-nav {

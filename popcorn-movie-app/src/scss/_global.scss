@@ -1,13 +1,13 @@
 @use "vars" as *;
 
 #root {
-    background-color: $bodyColor;
-    color: $textColor;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: $bodyFont;
-    font-size: $bodyFontSize;
+  background-color: $bodyColor;
+  color: $textColor;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: $bodyFont;
+  font-size: $bodyFontSize;
 }
 
 main {

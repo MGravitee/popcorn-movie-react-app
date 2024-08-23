@@ -1,8 +1,8 @@
-import {NavLink} from "react-router-dom";
-import {useState} from "react";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 function Header() {
-  const [navState, setNavState] = useState("invisible");
+  const [navState, setNavState] = useState("invisible drop-down");
   const [burgerClickState, setBurgerClickState] = useState(false);
 
   function updateBurgerState() {
@@ -16,10 +16,10 @@ function Header() {
   }
 
   function openMenu() {
-    setNavState("visible");
+    setNavState("visible drop-down");
   }
   function closeMenu() {
-    setNavState("invisible");
+    setNavState("invisible drop-down");
   }
   //my need more ul for this?
   return (
@@ -43,7 +43,8 @@ function Header() {
         </div>
         <div
           className="hamburger-button small-nav "
-          onClick={updateBurgerState}>
+          onClick={updateBurgerState}
+        >
           <div></div>
           <div></div>
           <div></div>
