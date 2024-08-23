@@ -23,9 +23,18 @@
     position: absolute;
     top: 0rem;
     right: 0rem;
+    transition: 0.4s ease-in-out transform;
+    z-index: 999;
+    
 
     svg {
       color: $textColor;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(2);
+      
     }
   }
   .movie-overview {

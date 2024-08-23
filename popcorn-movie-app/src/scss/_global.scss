@@ -1,9 +1,7 @@
 @use "vars" as *;
 
-body {
-  background-color: $bodyColor;
-}
 #root {
+  background-color: $bodyColor;
   color: $textColor;
   display: flex;
   flex-direction: column;
@@ -12,28 +10,43 @@ body {
   font-size: $bodyFontSize;
 }
 
+main {
+    //this is in conjunction with the 100vh, to ensure footer
+    //always grows to bottom of the page
+    flex: 1;
+    position: relative;
+}
+  
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $headingFont;
-  margin: 0;
+    font-family: $headingFont;
+    margin: 0;
 }
 
 a,
 a:hover {
-  text-decoration: none;
-  color: $textColor;
+    text-decoration: none;
+    color: $textColor;
 }
+
+//Base Buttons Stylings
 
 button,
 .info-btn {
-  //not sure if we want to put this here but it works
-  border: 2px solid $buttonColor;
-  border-radius: 10px;
-  background-color: $bodyColor;
-  color: $buttonColor;
-  cursor: pointer;
+    //not sure if we want to put this here but it works
+    border: 2px solid $buttonColor;
+    border-radius: 10px;
+    background-color: $bodyColor;
+    color: $buttonColor;
+    cursor: pointer;
+}
+
+.favourite-btn {
+    all: unset;
+    width: 30px;
 }

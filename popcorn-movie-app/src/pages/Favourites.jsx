@@ -1,6 +1,6 @@
 import {useContext} from "react";
 import {GlobalContext} from "../context/GlobalState";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import Favourite from "../components/Favourite";
 import {
   APIKey,
@@ -18,6 +18,7 @@ function Favourites() {
   const {favourites} = useContext(GlobalContext);
   return (
     <div>
+      <h1 class="screen-reader-text">Popcorn Movies | Favourites</h1>
       <ul className="movie-cards">
         {favourites.length > 0 ? (
           favourites.map((movie) => (
@@ -43,7 +44,7 @@ function Favourites() {
         ) : (
           <div className="no-favourites">
             <p>No favourites to display</p>
-            <a href="/">Back to home</a>
+            <NavLink to="/">Back to Home</NavLink>
           </div>
         )}
       </ul>

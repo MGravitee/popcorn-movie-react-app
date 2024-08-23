@@ -36,43 +36,50 @@
     ".      poster  rating  .       .   "
     ".      .       .       .       .   ";
 
+            .det-poster {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                grid-area: poster;
+            
+            }
+            
+            .det-title {
+                grid-area: title;
+            }
+            
+            .det-votes {
+                grid-area: votes;
+            }
+            
+            .det-date {
+                grid-area: date;
+            }
+            
+            .det-runtime {
+                grid-area: runtime;
+            }
+            
+            
+            .det-rating {
+                grid-area: rating;
+            }
+            
+            .fave-det {
+                grid-area: fave;
+                @include place-center-mixin;
+                transition: 0.4s ease-in-out transform;
+            
+            
+            
+                // &:hover {
+                //     cursor: pointer;
+                //     transform: scale(2.2);
+                    
+                // }
+            }
 }
 
-.det-poster {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    grid-area: poster;
-
-}
-
-.det-title {
-    grid-area: title;
-}
-
-.det-votes {
-    grid-area: votes;
-}
-
-.det-date {
-    grid-area: date;
-}
-
-.det-runtime {
-    grid-area: runtime;
-   }
-
-
-.det-rating {
-    grid-area: rating;
-}
-
-.fave-det {
-    grid-area: fave;
-    transform: scale(1.2);
-    @include place-center-mixin;
-   
-}
 
 //after info grid
 
@@ -109,7 +116,7 @@
     .detail-grid {
         top: 10vh;
         gap: 1rem;
-        grid-template-columns: auto auto auto auto auto auto;
+        grid-template-columns: auto 210px auto auto auto auto;
         grid-template-areas:
         ".      title   title   title   .   .   "
         ".      .       .       .       .   .   "
@@ -132,10 +139,8 @@
         margin-top: 14rem;
     }
 
-    
-    .fave-det {
-        transform: scale(1.4);
-       
+    .det-fave {
+
     }
 
   }

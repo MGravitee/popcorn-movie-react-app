@@ -82,47 +82,49 @@ function Details() {
       {!movie && <div className="place-center"><LoadingSpinner/></div> }
       
         {movie && (
-            <><section>
-              <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>
-            </section>
-            <section className='detail-grid'>
-              <h1 className='det-title' >{movie.title}</h1>
-              <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/>
-              <Favourite className='det-fave det-item' movieData={movie} />
-              <p className='det-date det-item' >{movie.release_date}</p>
-              <div
-                  className={
-                    movie.vote_average <= 3
-                      ? "default-votes low-votes det-votes"
-                      : movie.vote_average <= 7
-                      ? "default-votes medium-votes det-votes" //These classes can be found in the _components.scss page;
-                      : movie.vote_average <= 10
-                      ? "default-votes good-votes det-votes"
-                      : movie.vote_average !== 0
-                      ? "default-votes no-votes det-votes"
-                      : null
-                  }
-                >
-                  {movie.vote_average !== 0 &&
-                  movie.vote_average < 10 ? (
-                    <p className="det-item">
-                      {formatPercentage(movie.vote_average)}
-                    </p>
-                  ) : movie.vote_average >= 10 ? (
-                    <p className="det-item">
-                      {formatPercentage(movie.vote_average)}
-                    </p>
-                  ) : (
-                    <p className="det-item">NR</p>
-                  )}
-                </div>
-              {/* <p className='det-votes det-item' >{formatPercentage(movie.vote_average)}</p> */}
-              <p className='det-runtime det-item' >{reformatRuntime(movie.runtime)}</p>
-              <p className='det-rating det-item' > Rated: {displayRating(movie)}</p>
-            </section>
-            <section className='detail-below'>
-              <ul className='det-genres det-item'>{displayGenres(movie)}</ul>
-              <p className='det-summary det-item' >{movie.overview}</p>
+            <>
+              <section>
+                <h1 class="screen-reader-text">{`Popcorn Movies | ${movie.title}`}</h1>
+                <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>
+              </section>
+              <section className='detail-grid'>
+                <h2 className='det-title' >{movie.title}</h2>
+                <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/>
+                <Favourite className='det-fave det-item' movieData={movie} />
+                <p className='det-date det-item' >{movie.release_date}</p>
+                <div
+                    className={
+                      movie.vote_average <= 3
+                        ? "default-votes low-votes det-votes"
+                        : movie.vote_average <= 7
+                        ? "default-votes medium-votes det-votes" //These classes can be found in the _components.scss page;
+                        : movie.vote_average <= 10
+                        ? "default-votes good-votes det-votes"
+                        : movie.vote_average !== 0
+                        ? "default-votes no-votes det-votes"
+                        : null
+                    }
+                  >
+                    {movie.vote_average !== 0 &&
+                    movie.vote_average < 10 ? (
+                      <p className="det-item">
+                        {formatPercentage(movie.vote_average)}
+                      </p>
+                    ) : movie.vote_average >= 10 ? (
+                      <p className="det-item">
+                        {formatPercentage(movie.vote_average)}
+                      </p>
+                    ) : (
+                      <p className="det-item">NR</p>
+                    )}
+                  </div>
+                {/* <p className='det-votes det-item' >{formatPercentage(movie.vote_average)}</p> */}
+                <p className='det-runtime det-item' >{reformatRuntime(movie.runtime)}</p>
+                <p className='det-rating det-item' > Rated: {displayRating(movie)}</p>
+              </section>
+              <section className='detail-below'>
+                <ul className='det-genres det-item'>{displayGenres(movie)}</ul>
+                <p className='det-summary det-item' >{movie.overview}</p>
             </section>
           </>
       )}
