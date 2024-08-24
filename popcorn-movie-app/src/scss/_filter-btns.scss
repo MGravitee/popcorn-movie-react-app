@@ -4,8 +4,8 @@
   display: flex;
   justify-content: center;
   position: relative;
-  margin-top: 2rem;
-  
+  margin-top: 1rem;
+
   .underline-slide {
     all: unset;
     font-size: 1rem;
@@ -15,11 +15,10 @@
     padding-bottom: 2px;
     text-decoration: none;
     transition: 0.4s ease-in-out transform;
-    
+
     &:hover {
       cursor: pointer;
       transform: scale(1.1);
-      
     }
 
     &:after {
@@ -53,6 +52,7 @@
 }
 @media (min-width: $desktop) {
   .filter-btns {
+    padding: 2rem;
     .underline-slide {
       font-size: 1.5rem;
     }
