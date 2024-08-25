@@ -59,7 +59,6 @@
             
             .fave-det {
                 grid-area: fave;
-                transform: scale(1.2);
                 @include place-center-mixin;
                 // transition: 0.4s ease-in-out transform;
             
@@ -144,8 +143,8 @@
         grid-template-areas:
         ".      title   title   title   title   .       .       "
         ".      .       .       .       .       .       .       "
-        ".      poster  votes   votes   fave    fave    .       "
-        ".      poster  runtime runtime rating  rating  .       "
+        ".      poster  votes   fave    .       .       .       "
+        ".      poster  runtime rating  .       .       .       "
         ".      poster  date    date    date    .       .       "
         ".      poster  link    link    link    .       .       "
         ".      .       .       .       .       .       .       "
@@ -167,42 +166,42 @@
     .detail-grid {
         gap: 2rem;
         grid-template-areas:
-        ".      title   title   title   .       .       .   "
-        ".      title   title   title   .       .       .   "
-        ".      poster  votes   fave    .       .       .   "
-        ".      poster  runtime rating  .       link    link"
-        ".      poster  date    date    date    .       .   "
-        ".      poster  .       .       .       .       .   ";
+        ".      title   title   title   title   title   title   .   "
+        ".      poster  votes   fave    .       .       .       .   "
+        ".      poster  runtime rating  .       link    link    .   "
+        ".      poster  date    date    date    .       .       .   "
+        ".      poster  .       .       .       .       .       .   ";
      
     
     }
 
-    .fave-det {
-        transform: scale(1.8);
-       
     } 
     .detail-below {
         margin-top: 5rem;
     }
-  }
+  
+
   @media (min-width: $desktop) {     // 1024px
+
+    .trailer-link {
+        display: none;
+    }
+    
+    .youtube-embed {
+        display: block;
+    }
     .detail-grid {
         gap: 2rem;
         grid-template-areas:
-        ".      title   title   title   fave   fave     .   "
-        ".      title   title   title   .       .       .   "
-        ".      poster  date   date     votes   votes   .   "
-        ".      poster  runtime runtime rating  rating  .   "
-        ".      poster  .       .       .       .       .   "
-        ".      poster  .       link link link .   "
-        ".      .       .       .       .       .       .   ";
+        ".      title   title   title   title   title   title   .   "
+        ".      poster  votes   fave    .       .       .       .   "
+        ".      poster  runtime rating  .       .       .       .   "
+        ".      poster  date    date    date    .       .       .   "
+        ".      poster  .       .       .       .       .       .   ";
+     
     
     }
 
-    .fave-det {
-        transform: scale(1.8);
-       
-    } 
     .detail-below {
         margin-top: 5rem;
     }

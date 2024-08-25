@@ -5,20 +5,16 @@
 
 //youtube embed
 
-.youtube-player {
+.youtube-embed {
   display: none;
   margin: 3rem;
   border: 0;
   aspect-ratio: 16/9;
-  width: 90%;
+  grid-area: trailer;
 }
 
-
-
-
-
 //watch trailer button 
-.watch-trailer {
+.trailer-link {
     text-decoration: none;
     text-transform: uppercase;
     font-size: $bodyFontSize;
@@ -38,7 +34,6 @@
       background-color: rgba(114, 114, 114, 0.966);
       cursor: pointer;
     }
-  
     grid-area: link;
   }
   

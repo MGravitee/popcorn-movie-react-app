@@ -132,7 +132,7 @@ function Details() {
                 <p className='det-runtime det-item' >{reformatRuntime(movie.runtime)}</p>
                 <p className='det-rating det-item' > Rated: {displayRating(movie)}</p>
                 {video ? (
-                  <Link className=' det-item watch-trailer' to={`https://www.youtube.com/embed/${video.key}`} target="_blank" rel="noopener noreferrer">Watch Trailer →</Link>
+                  <Link className=' det-item trailer-link' to={`https://www.youtube.com/embed/${video.key}`} target="_blank" rel="noopener noreferrer">Watch Trailer →</Link>
                 ) : null }
               </section>
               <section className='detail-below'>
@@ -143,7 +143,7 @@ function Details() {
       )}
         {video ? (
               <iframe
-                className="youtube-player"
+                className="youtube-embed"
                 src={`https://www.youtube.com/embed/${video.key}`}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
