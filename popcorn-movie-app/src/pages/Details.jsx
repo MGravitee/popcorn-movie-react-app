@@ -92,14 +92,14 @@ function Details() {
               <section>
                 <h1 className="screen-reader-text">{`Popcorn Movies | ${movie.title}`}</h1>
                 {movie.backdrop_path ? (
-                <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>) 
-                : (<p>No Image Womp Womp</p>)}
+                <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={`${movie.title} backdrop`}/>) 
+                : (<img className='det-backdrop' src="/no-images-large.webp" alt="No image that displays when chosen movie has no backdrop" />)}
               </section>
               <section className='detail-grid'>
                 <h2 className='det-title' >{movie.title}</h2>
                 {movie.poster_path ? (
-                <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/> )
-                : (<p>No Image Womp Womp</p>)}
+                <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={`${movie.title} poster`}/> )
+                : (<img className='det-poster' src="/no-images-small.webp" alt="No image that displays when chosen movie has no poster" />)}
                 <Favourite className='det-fave det-item' movieData={movie} />
                 <p className='det-date det-item' >{movie.release_date}</p>
                 <div

@@ -27,10 +27,13 @@ const shortenText = (text, maxWords) => {
     // if it is over 60 minutes, then it should return
     let hours = Math.floor(movieRuntime / 60);
     let minutes = Math.floor(movieRuntime % 60);
-  
     if (hours) {
       return `${hours}h ${minutes}m`;
     } else {
+      //if movie has no runtime yet, display NA
+        if ( minutes == 0 || null ) {
+          return null
+        }
       return `${minutes}m`;
     }
   };
