@@ -52,7 +52,7 @@ button,
     width: clamp(30px, 100%, 45px);
     cursor: pointer;
 
-        @media (min-width: $mobile-large) {
+        @media (min-width: $desktop) {
 
             transition: 0.4s ease-in-out transform;
             &:hover {
