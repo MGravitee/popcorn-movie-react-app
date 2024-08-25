@@ -91,11 +91,15 @@ function Details() {
             <>
               <section>
                 <h1 className="screen-reader-text">{`Popcorn Movies | ${movie.title}`}</h1>
-                <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>
+                {movie.backdrop_path ? (
+                <img className='det-backdrop'  src={`${baseImgEndPoint}original/${movie.backdrop_path}`} alt={movie.title}/>) 
+                : (<p>No Image Womp Womp</p>)}
               </section>
               <section className='detail-grid'>
                 <h2 className='det-title' >{movie.title}</h2>
-                <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/>
+                {movie.poster_path ? (
+                <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={movie.title}/> )
+                : (<p>No Image Womp Womp</p>)}
                 <Favourite className='det-fave det-item' movieData={movie} />
                 <p className='det-date det-item' >{movie.release_date}</p>
                 <div
@@ -124,14 +128,15 @@ function Details() {
                       <p className="det-item">NR</p>
                     )}
                   </div>
-                {/* <p className='det-votes det-item' >{formatPercentage(movie.vote_average)}</p> */}
                 <p className='det-runtime det-item' >{reformatRuntime(movie.runtime)}</p>
                 <p className='det-rating det-item' > Rated: {displayRating(movie)}</p>
               </section>
               <section className='detail-below'>
                 <ul className='det-genres det-item'>{displayGenres(movie)}</ul>
                 <p className='det-summary det-item' >{movie.overview}</p>
-                <Link to={`https://www.youtube.com/embed/${video.key}`} target="_blank" rel="noopener noreferrer">Watch Trailer</Link>
+                {video ? (
+                  <Link to={`https://www.youtube.com/embed/${video.key}`} target="_blank" rel="noopener noreferrer">Watch Trailer</Link>
+                ) : null }
             </section>
           </>
       )}
