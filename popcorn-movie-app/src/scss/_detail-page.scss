@@ -20,13 +20,15 @@
     gap: 0.5rem;
     grid-template-columns: 10px 180px auto auto 10px;
     grid-template-areas:
-    ".      title   title   title   .   "
-    ".      .       .       .       .   "
-    ".      poster  votes   fave    .   "
-    ".      poster  runtime runtime .   "
-    ".      poster  rating  rating  .   "
-    ".      poster  date    date    .   "
-    ".      link    link    .       .   ";
+    ".      title       title   title   .   "
+    ".      .           .       .       .   "
+    ".      poster      votes   fave    .   "
+    ".      poster      runtime runtime .   "
+    ".      poster      rating  rating  .   "
+    ".      poster      date    date    .   "
+    ".      link        link    .       .   "
+    ".      genres      genres  genres  .   "
+    ".      summary     summary summary  .   ";
 
         .det-poster {
             width: 100%;
@@ -102,13 +104,15 @@
         gap: 1rem;
         grid-template-columns: 10px 210px auto auto auto;
         grid-template-areas:
-        ".      title   title   title   .            "
-        ".      .       .       .       .            "
-        ".      poster  votes   fave    fave         "
-        ".      poster  runtime runtime runtime      "
-        ".      poster  rating  rating  rating       "
-        ".      poster  date    date     date         "
-        ".      link    link    .       .            ";
+        ".      title       title   title   .       "
+        ".      .           .       .       .       "
+        ".      poster      votes   fave    fave    "
+        ".      poster      runtime runtime runtime "
+        ".      poster      rating  rating  rating  "
+        ".      poster      date    date    date    "
+        ".      link        link    .       .       "
+        ".      genres      genres  genres  .       "
+        ".      summary     summary summary .       ";
         
     }
 
@@ -118,10 +122,6 @@
     }
     .detail-below {
         margin-top: 18rem;
-    }
-
-    .det-fave {
-        transform: scale(1.4);
     }
 
   }
@@ -136,20 +136,17 @@
         ".      poster  runtime rating  .       .       .       "
         ".      poster  date    date    date    .       .       "
         ".      poster  link    link    link    .       .       "
-        ".      .       .       .       .       .       .       "
-        ".      .       .       .       .       .       .       ";
+        ".      genres  genres  genres  genres  genres  .       "
+        ".      summary summary summary summary summary .       ";
     }
 
     .detail-below {
         margin-top: 10rem;
     }
-    
-    .fave-det {
-        transform: scale(1.5);
-       
-    }
-
+      
   }
+
+
 
   @media (min-width: $tablet) {     //768px
     .detail-grid {
@@ -159,7 +156,8 @@
         ".      poster  votes   fave    .       .       .       .   "
         ".      poster  runtime rating  .       link    link    .   "
         ".      poster  date    date    date    .       .       .   "
-        ".      poster  .       .       .       .       .       .   ";
+        ".      poster  genres  genres  genres  genres  genres  .   "
+        ".      summary summary summary summary summary summary .   ";
      
     
     }
@@ -170,12 +168,9 @@
     }
   
 
-  @media (min-width: $desktop) {     // 1024px
+  @media (min-width: 1024px) {     // 1024px
 
-    .trailer-link {
-        display: none;
-    }
-    
+ 
     .youtube-embed {
         display: block;
     }
@@ -184,10 +179,10 @@
         grid-template-areas:
         ".      title   title   title   title   title   title   .   "
         ".      poster  votes   fave    .       .       .       .   "
-        ".      poster  runtime rating  .       .       .       .   "
+        ".      poster  runtime rating  .       link    link    .   "
         ".      poster  date    date    date    .       .       .   "
-        ".      poster  .       .       .       .       .       .   ";
-     
+        ".      poster  genres  genres  genres  genres  genres  .   "
+        ".      summary summary summary summary summary summary .   ";
     
     }
 
