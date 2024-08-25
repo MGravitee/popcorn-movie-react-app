@@ -84,17 +84,23 @@ function Home() {
           movies.map((movie) => {
             return (
               <li className="movie-card" key={movie.id}>
-                <img
-                  src={`${baseImgEndPoint}w342/${movie.poster_path}`}
-                  alt={movie.title}
-                />
-                  <Favourite movieData={movie} />
-                  <p className="movie-overview">
-                    {shortenText(movie.overview, 25)}
-                  </p>
-                  <p className="movie-date">{movie.release_date}</p> {/*display the correct format */}
-                  <h3 className="movie-title">{shortenText(movie.title, 5)}</h3>
-                  <NavLink className='info-btn' to={`/detail/${movie.id}`}>More Info</NavLink>
+                <NavLink to={`/detail/${movie.id}`}>
+                  {" "}
+                  <img
+                    src={`${baseImgEndPoint}w342/${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                </NavLink>
+                <Favourite movieData={movie} />
+                <p className="movie-overview">
+                  {shortenText(movie.overview, 25)}
+                </p>
+                <p className="movie-date">{movie.release_date}</p>{" "}
+                {/*display the correct format */}
+                <h3 className="movie-title">{shortenText(movie.title, 5)}</h3>
+                <NavLink className="info-btn" to={`/detail/${movie.id}`}>
+                  More Info
+                </NavLink>
               </li>
             );
           })}
