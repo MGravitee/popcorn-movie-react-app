@@ -1,0 +1,44 @@
+@use "vars" as *;
+@use "mixins" as *;
+
+//decided to make this another partial because the detail page was getting crowded
+
+//youtube embed
+
+.youtube-player {
+  display: none;
+  margin: 3rem;
+  border: 0;
+  aspect-ratio: 16/9;
+  width: 90%;
+}
+
+
+
+
+
+//watch trailer button 
+.watch-trailer {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $bodyFontSize;
+    display: flex;
+    width: fit-content;
+    // justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid $buttonColor;
+    border-radius: 2%;
+    padding: 0.2rem 1rem;
+    margin: 0.5rem 0.5rem;
+    transition: all 0.15s ease-in-out;
+    &:hover,
+    &:focus-visible {
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 7px;
+      background-color: rgba(114, 114, 114, 0.966);
+      cursor: pointer;
+    }
+  
+    grid-area: link;
+  }
+  

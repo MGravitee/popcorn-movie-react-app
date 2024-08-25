@@ -48,5 +48,6 @@ button,
 
 .favourite-btn {
     all: unset;
-    width: 30px;
+    //trying this here so I don't have to transform it at every single mediaQ
+    width: clamp(30px, 100%, 45px);
 }

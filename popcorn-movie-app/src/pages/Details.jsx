@@ -16,7 +16,8 @@ import {
   reformatRuntime, 
   displayGenres, 
   displayRating,
-  formatPercentage 
+  formatPercentage, 
+  formatDate
 } from "../utilities/helperFunctions";
 
 import Favourite from "../components/Favourite";
@@ -101,7 +102,7 @@ function Details() {
                 <img className='det-poster' src={`${baseImgEndPoint}w342/${movie.poster_path}`} alt={`${movie.title} poster`}/> )
                 : (<img className='det-poster' src="/no-images-small.webp" alt="No image that displays when chosen movie has no poster" />)}
                 <Favourite className='det-fave det-item' movieData={movie} />
-                <p className='det-date det-item' >{movie.release_date}</p>
+                <p className='det-date det-item' >{formatDate(movie.release_date)}</p>
                 <div
                     className={
                       movie.vote_average <= 3
@@ -130,13 +131,13 @@ function Details() {
                   </div>
                 <p className='det-runtime det-item' >{reformatRuntime(movie.runtime)}</p>
                 <p className='det-rating det-item' > Rated: {displayRating(movie)}</p>
+                {video ? (
+                  <Link className=' det-item watch-trailer' to={`https://www.youtube.com/embed/${video.key}`} target="_blank" rel="noopener noreferrer">Watch Trailer →</Link>
+                ) : null }
               </section>
               <section className='detail-below'>
                 <ul className='det-genres det-item'>{displayGenres(movie)}</ul>
                 <p className='det-summary det-item' >{movie.overview}</p>
-                {video ? (
-                  <Link to={`https://www.youtube.com/embed/${video.key}`} target="_blank" rel="noopener noreferrer">Watch Trailer</Link>
-                ) : null }
             </section>
           </>
       )}

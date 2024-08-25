@@ -32,7 +32,7 @@ const shortenText = (text, maxWords) => {
     } else {
       //if movie has no runtime yet, display NA
         if ( minutes == 0 || null ) {
-          return "Runtime N/A"
+          return "Runtime: N/A"
         }
       return `${minutes}m`;
     }
@@ -61,8 +61,6 @@ const displayRating = (movieData) => {
           } else {
             return rating
           }
-      } else {
-        return 
       }
         
     }   
@@ -75,6 +73,25 @@ const displayRating = (movieData) => {
   }
 
 
+  // similar to then way we turned eached movie summary into an array but with added steps
+  //for converting the date further down the line
+  const formatDate = (movieDate) => {
+    const movieDateArray = movieDate.split("-");
+    const [year, month, day] = movieDateArray;
+    let date = new Date(`${month} ${day} ${year}`);
+    let options = {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
+    return date.toLocaleDateString("en-us", options);
+  };
+
+  
+
+
+
 
 
   export {
@@ -82,7 +99,6 @@ const displayRating = (movieData) => {
     reformatRuntime,
     displayGenres,
     displayRating,
-    formatPercentage
-
-
+    formatPercentage,
+    formatDate
   };
