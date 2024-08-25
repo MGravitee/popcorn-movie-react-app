@@ -32,7 +32,7 @@ const shortenText = (text, maxWords) => {
     } else {
       //if movie has no runtime yet, display NA
         if ( minutes == 0 || null ) {
-          return null
+          return "Runtime N/A"
         }
       return `${minutes}m`;
     }
@@ -55,8 +55,12 @@ const displayRating = (movieData) => {
   let rating = "";
   movieData.release_dates.results.forEach((country) => {
       if (country.iso_3166_1 === "US") {
-
         rating = country.release_dates[0].certification
+          if ( rating == "" || rating == null || rating == undefined ) {
+            rating = "N/A"
+          } else {
+            return rating
+          }
       } else {
         return 
       }
