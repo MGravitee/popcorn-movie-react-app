@@ -43,11 +43,11 @@ function Header() {
     <header>
       <div className="header-contents">
         <div className="nav-logo">
-          <NavLink to="/">
+          <NavLink to="/" title="Link to the Popcorn home page" aria-label="Link to the Popcorn home page">
             <img src="/popcorn-logo.svg" alt="Popcorn logo" />
           </NavLink>
           <NavLink className={"logo-title-parent"} to="/">
-            <h3>POPCORN</h3>
+            <h3 className="logo-text">Popcorn</h3>
           </NavLink>
         </div>
         <div className="nav-links">

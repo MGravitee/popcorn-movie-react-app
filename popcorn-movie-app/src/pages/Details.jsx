@@ -3,12 +3,7 @@ import { useParams, Link } from "react-router-dom";
 
 import {
     APIKey,
-    nowPlaying,
-    popular,
-    topRated,
-    upComing,
     baseImgEndPoint,
-    movieUrl,
 } from "../global/globalsVariables";
 
 import {
