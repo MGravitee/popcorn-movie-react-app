@@ -11,7 +11,7 @@ function About() {
 
         <p className="prgrph">This product uses the TMDb API but is not endorsed or certified by TMDb. </p>
     
-        <Link className="tmdb-link" to="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">
+        <Link className="tmdb-link" to="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer" title="Link to the TMDB Home Page" aria-label="Link to the TMDB Home Page">
           <img className="tmdb-logo" src="/tmdb-logo.svg" alt="TMDB Logo" />
         </Link>
     </>

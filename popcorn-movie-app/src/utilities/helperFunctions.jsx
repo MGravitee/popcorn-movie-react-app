@@ -88,11 +88,6 @@ const displayRating = (movieData) => {
     return date.toLocaleDateString("en-us", options);
   };
 
-  
-
-
-
-
 
   export {
     shortenText,

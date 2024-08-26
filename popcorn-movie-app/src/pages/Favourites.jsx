@@ -2,15 +2,7 @@ import {useContext} from "react";
 import {GlobalContext} from "../context/GlobalState";
 import {NavLink, Link} from "react-router-dom";
 import Favourite from "../components/Favourite";
-import {
-  APIKey,
-  nowPlaying,
-  popular,
-  topRated,
-  upComing,
-  baseImgEndPoint,
-  movieUrl,
-} from "../global/globalsVariables";
+import { baseImgEndPoint } from "../global/globalsVariables";
 
 import {shortenText} from "../utilities/helperFunctions";
 

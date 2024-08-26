@@ -71,7 +71,7 @@ function Carousel({ movieList }) {
       return {
         ...item,
         renderItem: (
-          <NavLink className="splash-link" to={item.link}>
+          <NavLink className="splash-link" to={item.link} title="link to this movie's detail page" aria-label="link to this movie's detail page">
             <h2
               className={
                 currentSlide === item.id ? "title-active" : "title-sleep"

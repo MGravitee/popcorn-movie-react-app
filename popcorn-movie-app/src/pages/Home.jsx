@@ -1,11 +1,7 @@
 import {useEffect, useState} from "react";
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {
   APIKey,
-  nowPlaying,
-  popular,
-  topRated,
-  upComing,
   baseImgEndPoint,
   movieUrl,
 } from "../global/globalsVariables";
@@ -14,7 +10,6 @@ import {shortenText} from "../utilities/helperFunctions";
 
 import Favourite from "../components/Favourite";
 import HeroBanner from "../components/HeroBanner";
-import LoadingSpinner from "../components/LoadingSpinner";
 
 function Home() {
   const [movies, setMovie] = useState([]);
@@ -48,7 +43,6 @@ function Home() {
   return (
     <>
           <HeroBanner movieList={movies} />
-          {/* {movies.length > 0 && ( */}
           <div className="filter-btns">
             <button
               className={`underline-slide ${
