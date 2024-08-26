@@ -47,11 +47,6 @@ function Home() {
 
   return (
     <>
-       {!movies && (
-            <div className="place-center">
-                <LoadingSpinner />
-            </div>
-        )}
           <HeroBanner movieList={movies} />
           {/* {movies.length > 0 && ( */}
           <div className="filter-btns">
@@ -90,7 +85,7 @@ function Home() {
               movies.map((movie) => {
                 return (
                   <li className="movie-card" key={movie.id}>
-                    <NavLink to={`/detail/${movie.id}`}>
+                    <NavLink title="Link to selected Movie" aria-label="Link to selected Movie" to={`/detail/${movie.id}`}>
                       {" "}
                       <img
                         src={`${baseImgEndPoint}w342/${movie.poster_path}`}

@@ -179,6 +179,9 @@
 @media (min-width: $max-width) { 
     .det-backdrop {
         position: relative;
+        //for some reason even at 1920, the image is rendering at 1930px and is making
+        //a side scroll bar, for whatever reason setting a maxheight 10px short is fixing
+        //the issue
         max-width: $max-width;
         max-height: 1070px;
     }

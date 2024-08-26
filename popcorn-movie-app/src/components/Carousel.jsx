@@ -17,7 +17,10 @@ function Carousel({ movieList }) {
       src:
         movieList.length > 0
           ? `${baseImgEndPoint}w1280/${movieList[0].backdrop_path}`
-          : `placeholder`,
+          : <img
+          src="/no-images-large.webp"
+          alt="No image that displays when chosen movie has no backdrop"
+      />,
       link: movieList.length > 0 ? `/detail/${movieList[0].id}` : "#",
       title: movieList.length > 0 ? movieList[0].title : "",
     },
@@ -26,7 +29,10 @@ function Carousel({ movieList }) {
       src:
         movieList.length > 0
           ? `${baseImgEndPoint}w1280/${movieList[1].backdrop_path}`
-          : `placeholder`,
+          : <img
+          src="/no-images-large.webp"
+          alt="No image that displays when chosen movie has no backdrop"
+      />,
       link: movieList.length > 0 ? `/detail/${movieList[1].id}` : "#",
       title: movieList.length > 0 ? movieList[1].title : "",
     },
@@ -35,7 +41,10 @@ function Carousel({ movieList }) {
       src:
         movieList.length > 0
           ? `${baseImgEndPoint}w1280/${movieList[2].backdrop_path}`
-          : `placeholder`,
+          : <img
+          src="/no-images-large.webp"
+          alt="No image that displays when chosen movie has no backdrop"
+      />,
       link: movieList.length > 0 ? `/detail/${movieList[2].id}` : "#",
       title: movieList.length > 0 ? movieList[2].title : "",
     },
