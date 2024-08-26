@@ -41,7 +41,7 @@ function Carousel({ movieList }) {
     },
   ];
 
-  //timing?
+  //scrolls the carousel automatically every 5 seconds
   useEffect(() => {
     console.log("test");
     movieList.length > 0 ? setInterval(slideToNextItem, 5000) : "";
