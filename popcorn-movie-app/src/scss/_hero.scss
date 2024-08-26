@@ -2,80 +2,119 @@
 
 .hero-div {
   position: relative;
-
-  .hero-image {
-    width: 100%;
-    height: auto;
-    transition: 1s;
-  }
-  a {
-    height: fit-content;
-    left: 0px;
-    right: 0px;
-  }
-  .hidden {
-    opacity: 0;
-    display: none;
+  width: 100%;
+  .carousel-button{
     position: absolute;
-    transition: 1s;
-    z-index: -1;
-  }
-  .arrow-left,
-  .arrow-right {
-    background-color: transparent;
-    color: $textColor;
+    margin: 0 auto;
     border: none;
-    position: absolute;
-    top: 50%;
+    color: $textColor;
+    background-color: transparent;
+    border-radius: 0;
     font-size: 5rem;
-    font-weight: 100;
-    transform: translate(0%, -50%);
-    height: 100%;
+    font-weight: 200;
+    top: 50%;
+    transform: translate(0,-50%);
+    z-index: 99;
   }
-  .arrow-left {
-    left: 0%;
-    padding-right: 4rem;
+  .left{
+    left: 1rem;
   }
-  .arrow-right {
-    right: 0%;
-    padding-left: 4rem;
+  .right{
+    right: 1rem;
   }
-  .slider-flex {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    margin: auto;
+  .carousel{
+    position: relative;
     width: 100%;
-    bottom: 0.5rem;
+    max-width: 90rem;
+    margin: 0 auto;
+    overflow: hidden;
+    .use-spring-carousel-item{
+      position: relative;
+      justify-content: center;
+      align-items: center;
+
+    }
+    h2{
+      position: absolute;
+      bottom: 0rem;
+      color: $textColor;
+      font-size: 3rem;
+      font-weight: 300;
+      text-shadow: 1px 1px 1px black;
+    }
   }
-  .slider-circle {
-    height: 0.5rem;
-    width: 0.5rem;
-    background-color: $textColor;
-    border-radius: 50%;
-    margin: 0.25rem;
-  }
-  .active {
-    border: 0.125rem solid $buttonColor;
-  }
-  .slider-circle:hover {
-    border: 0.125rem solid $buttonColor;
-  }
-  .movie-title {
-    position: absolute;
-    bottom: 2rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    left: 0.5rem;
-  }
-  .active {
-    background-color: $buttonColor;
-  }
-  @media (min-width: 768px) {
-    .movie-title {
-      font-size: 2.5rem;
-      bottom: 6rem;
-      left: 2rem;
+    
+  //begin desktop sizing
+  @media (min-width: 64em) {
+
+    .carousel{
+      height: 28.5rem;
+
+      .carousel-button{
+        border: none;
+        color: $textColor;
+        border-radius: 0;
+        height: 189px;
+        font-size: 5rem;
+        font-weight: 200;
+      }
+      .left{
+        top: 50%;
+        transform: translate(0%, -50%);
+        left: 4.5rem;
+      }
+      .right{
+        top: 50%;
+        transform: translate(0%, -50%);
+        right: 4.5rem;
+      }
+      img{
+        //width: 20rem;
+        transition: 0.5s;
+      }
+      a{
+        display: flex;
+        flex-direction: column;
+        height: 20rem;
+        position: relative;
+        justify-content: center;
+        height: 100%;
+        h2{
+          position: absolute;
+          bottom: 0rem;
+          left: -25rem;
+          width: 40rem;
+          z-index: 100;
+          transition: 0.5s;
+        }
+      }
+      .item-2{
+        max-width: unset;
+        position: absolute;
+        opacity: 0.7;
+        width: 21rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .item-1{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: unset;
+        position: absolute;
+        width: 50rem;
+        z-index: 99;
+      }
+      .title-active{
+        opacity: 1;
+      }
+      .title-sleep{
+        opacity: 0;
+        bottom: 7rem;
+        left: -12rem;
+        font-size: 2rem;
+      }
     }
   }
 }
