@@ -63,40 +63,33 @@
             grid-area: fave;
             @include place-center-mixin;
         }
+
+        .det-genres {
+            margin: 0;
+            margin-left: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            li {
+              display: grid;
+              place-items: center;
+              list-style-type: none;
+              border: 2px solid $buttonColor;
+              border-radius: 31.25rem;
+              padding: 0.2rem 1rem;
+              margin: 0.5rem 0.5rem;
+            }
+            grid-area: genres;
+          }
+        
+          .det-summary {
+            max-width: 90%;
+            margin: 0 auto;
+            grid-area: summary;
+        }
 }
 
-
-//after info grid
-
-.detail-below {
-    margin-top: 12rem;
-}
-
-.det-genres {
-    margin: 0;
-    margin-left: 0.5rem;
-    margin-bottom: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    li {
-      display: grid;
-      place-items: center;
-      list-style-type: none;
-      border: 2px solid $buttonColor;
-      border-radius: 31.25rem;
-      padding: 0.2rem 1rem;
-      margin: 0.5rem 0.5rem;
-    }
-    grid-area: genres;
-  }
-
-  .det-summary {
-    max-width: 90%;
-    margin: 0 auto;
-    padding-top: 1rem;
-    grid-area: summary;
-}
 
 @media (min-width: $mobile-large) {     //440px
     .detail-grid {
@@ -115,15 +108,10 @@
         ".      summary     summary summary .       ";
         
     }
-
     .det-poster {
         width: 210px;
     
     }
-    .detail-below {
-        margin-top: 18rem;
-    }
-
   }
 
   @media (min-width: $tablet-small) {   //600px
@@ -138,19 +126,12 @@
         ".      poster  link    link    link    .       .       "
         ".      genres  genres  genres  genres  genres  .       "
         ".      summary summary summary summary summary .       ";
-    }
-
-    .detail-below {
-        margin-top: 10rem;
-    }
-      
+    }  
   }
-
-
 
   @media (min-width: $tablet) {     //768px
     .detail-grid {
-        gap: 2rem;
+        gap: 1.5rem;
         grid-template-areas:
         ".      title   title   title   title   title   title   .   "
         ".      poster  votes   fave    .       .       .       .   "
@@ -159,21 +140,14 @@
         ".      poster  genres  genres  genres  genres  genres  .   "
         ".      summary summary summary summary summary summary .   ";
      
-    
     }
+}
 
-    } 
-    .detail-below {
-        margin-top: 5rem;
-    }
-  
+  @media (min-width: $desktop) {     // 1024px
 
-  @media (min-width: 1024px) {     // 1024px
-
- 
-    .youtube-embed {
-        display: block;
-    }
+    // .youtube-embed {
+    //     display: block;
+    // }
     .detail-grid {
         gap: 2rem;
         grid-template-areas:
@@ -183,13 +157,28 @@
         ".      poster  date    date    date    .       .       .   "
         ".      poster  genres  genres  genres  genres  genres  .   "
         ".      summary summary summary summary summary summary .   ";
-    
     }
 
-    .detail-below {
-        margin-top: 5rem;
-    }
   }
+  @media (min-width: $desktop-large) {     // 1024px
+
+    // .youtube-embed {
+    //     display: block;
+    // }
+    .detail-grid {
+        gap: 2rem;
+        grid-template-areas:
+        ".      title   title   title   title   title   title   .       .   "
+        ".      poster  votes   fave    .       .       .       .       .   "
+        ".      poster  runtime rating  .       link    .       .       .   "
+        ".      poster  date    date    .       .       .       .       .   "
+        ".      poster  genres  genres  genres  genres  genres  .       .   "
+        ".      .       .       .       .       .       .       .       .   "
+        ".      .       summary summary summary  .       .       .       .   ";
+    }
+
+  }
+
 
 
 

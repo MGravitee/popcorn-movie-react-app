@@ -161,7 +161,7 @@ function Details() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Watch Trailer →
+                                Play Trailer →
                             </Link>
                         ) : null}
                         <ul className="det-genres det-item">
@@ -169,17 +169,17 @@ function Details() {
                         </ul>
                         <p className="det-summary det-item">{movie.overview}</p>
                     </section>
+                    {video ? (
+                        <iframe
+                            className="youtube-embed"
+                            src={`https://www.youtube.com/embed/${video.key}`}
+                            title="YouTube video player"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    ) : null}
                 </>
             )}
-            {video ? (
-                <iframe
-                    className="youtube-embed"
-                    src={`https://www.youtube.com/embed/${video.key}`}
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                ></iframe>
-            ) : null}
         </>
     );
 }
