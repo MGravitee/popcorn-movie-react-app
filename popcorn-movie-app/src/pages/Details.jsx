@@ -100,7 +100,7 @@ function Details() {
                         )}
                     </section>
                     <section className="detail-grid">
-                        <h2 className="det-title">{movie.title}</h2>
+                        <h2 className="det-title" id="det-title">{movie.title}</h2>
                         {movie.poster_path ? (
                             <img
                                 className="det-poster"

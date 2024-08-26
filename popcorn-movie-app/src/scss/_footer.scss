@@ -2,7 +2,7 @@
 @use "mixins" as *;
 
 footer {
-
+    z-index: 9999;
     p {
         @include place-center-mixin;
     }

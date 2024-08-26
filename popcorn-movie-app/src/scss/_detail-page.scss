@@ -7,7 +7,7 @@
 
 .det-backdrop {
     filter: brightness(0.4);
-    object-fit: cover;
+    // object-fit: cover;
     position: absolute;
     top: 0;
     right: 0;
@@ -144,7 +144,6 @@
         max-width: 60rem;
     }
 
-
     .detail-grid {
         gap: 2rem;
         grid-template-areas:
@@ -159,24 +158,29 @@
 
   }
   @media (min-width: $desktop-large) {     // 1440px
-    
+  
+    #det-title {
+        font-size: 3rem;
+    }
     .detail-grid {
         width: $max-content-width;
         grid-template-areas:
         ".      title   title   title   title   title   title   .          .        "
-        ".      poster  votes   fave    .       trailer trailer trailer    trailer  "
-        ".      poster  runtime rating  .       trailer trailer trailer    trailer  "
-        ".      poster  date    date    .       trailer trailer trailer    trailer  "
-        ".      poster  genres  genres  genres  .       .       .          .        "
+        ".      poster  votes   fave    .       .       .       trailer    trailer  "
+        ".      poster  runtime rating  .       .       .       trailer    trailer  "
+        ".      poster  date    date    .       .       .       trailer    trailer  "
+        ".      poster  genres  genres  genres  genres  .       .          .        "
         ".      .       .       .       .       .       .       .          .        "
-        ".      .       summary summary summary .       .       .          .        ";
+        ".      .       summary summary summary summary summary summary          .        ";
     }
     
 }
 
 @media (min-width: $max-width) { 
     .det-backdrop {
+        position: relative;
         max-width: $max-width;
+        max-height: 1070px;
     }
 }
 
