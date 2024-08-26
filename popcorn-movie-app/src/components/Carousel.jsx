@@ -44,7 +44,7 @@ function Carousel({ movieList }) {
   //timing?
   useEffect(() => {
     console.log("test");
-    //movieList.length > 0 ? setInterval(slideToNextItem, 5000) : "";
+    movieList.length > 0 ? setInterval(slideToNextItem, 5000) : "";
   }, [movieList]);
 
   const [currentSlide, setCurrentSlide] = useState(sliderItems[0].id);
