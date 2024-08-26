@@ -1,6 +1,6 @@
 import {useContext} from "react";
 import {GlobalContext} from "../context/GlobalState";
-import {NavLink} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 import Favourite from "../components/Favourite";
 import {
   APIKey,
