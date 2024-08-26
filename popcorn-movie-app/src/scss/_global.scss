@@ -48,5 +48,16 @@ button,
 
 .favourite-btn {
     all: unset;
-    width: 30px;
+    //trying this here so I don't have to transform it at every single mediaQ
+    width: clamp(30px, 100%, 45px);
+    cursor: pointer;
+
+        @media (min-width: $desktop) {
+
+            transition: 0.4s ease-in-out transform;
+            &:hover {
+                transform: scale(1.5);
+                }
+            }
+
 }

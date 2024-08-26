@@ -1,23 +1,17 @@
 @use "vars" as *;
 @use "mixins" as *;
 
-
 .det-item {
-    text-shadow: 1px 1px 1px black;
-    font-size: clamp(1rem, 5vw, 1.5rem);
-}
-
-
-.youtube-player {
-    margin: 3rem;
-    border: 0;
-    aspect-ratio: 16/9;
-    width: 90%;
+    text-shadow: 1px 1px 1px #000000;
 }
 
 .det-backdrop {
     filter: brightness(0.4);
-    object-fit: cover;
+    // object-fit: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 .detail-grid {
@@ -26,193 +20,172 @@
     top: 8vh;
     display: grid;
     gap: 0.5rem;
-    grid-template-columns: 10px 140px auto auto 10px;
+    grid-template-columns: 10px 180px auto auto 10px;
     grid-template-areas:
-    ".      title   title   title   .   "
-    ".      .       .       .       .   "
-    ".      poster  votes   fave    .   "
-    ".      poster  date    .       .   "
-    ".      poster  runtime .       .   "
-    ".      poster  rating  .       .   "
-    ".      .       .       .       .   ";
+    ".      title       title   title   .   "
+    ".      .           .       .       .   "
+    ".      poster      votes   fave    .   "
+    ".      poster      runtime runtime .   "
+    ".      poster      rating  rating  .   "
+    ".      poster      date    date    .   "
+    ".      link        link    .       .   "
+    ".      genres      genres  genres  .   "
+    ".      summary     summary summary  .   ";
 
-            .det-poster {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                grid-area: poster;
-            
+        .det-poster {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            grid-area: poster;
+        }
+        
+        .det-title {
+            grid-area: title;
+            font-size: $detailHeadingSize;
+        }
+        
+        .det-votes {
+            grid-area: votes;
+        }
+        
+        .det-date {
+            grid-area: date;
+        }
+        
+        .det-runtime {
+            grid-area: runtime;
+        }
+        
+        .det-rating {
+            grid-area: rating;
+        }
+        
+        .fave-det {
+            grid-area: fave;
+            @include place-center-mixin;
+        }
+
+        .det-genres {
+            margin: 0;
+            margin-left: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            grid-area: genres;
+            li {
+              display: grid;
+              place-items: center;
+              list-style-type: none;
+              border: 2px solid $buttonColor;
+              border-radius: 31.25rem;
+              padding: 0.2rem 1rem;
+              margin: 0.5rem 0.5rem;
             }
-            
-            .det-title {
-                grid-area: title;
-            }
-            
-            .det-votes {
-                grid-area: votes;
-            }
-            
-            .det-date {
-                grid-area: date;
-            }
-            
-            .det-runtime {
-                grid-area: runtime;
-            }
-            
-            
-            .det-rating {
-                grid-area: rating;
-            }
-            
-            .fave-det {
-                grid-area: fave;
-                @include place-center-mixin;
-                transition: 0.4s ease-in-out transform;
-            
-            
-            
-            
-                // &:hover {
-                //     cursor: pointer;
-                //     transform: scale(2.2);
-                    
-                // }
-            }
+          }
+        
+          .det-summary {
+            margin: 0 auto;
+            grid-area: summary;
+        }
 }
-
-
-//after info grid
-
-.detail-below {
-    margin-top: 12rem;
-}
-
-.det-genres {
-    margin: 0;
-    margin-left: 0.5rem;
-    margin-bottom: 0.5rem;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    li {
-      display: grid;
-      place-items: center;
-      list-style-type: none;
-      border: 2px solid $buttonColor;
-      border-radius: 31.25rem;
-      padding: 0.2rem 1rem;
-      margin: 0.5rem 0.5rem;
-    }
-  }
-
-  .det-summary {
-    max-width: 90%;
-    margin: 0 auto;
-    padding-top: 1rem;
-}
-
-
-@media (min-width: $mobile-large) {
+@media (min-width: $mobile-large) {     //440px
     .detail-grid {
         top: 10vh;
         gap: 1rem;
-        grid-template-columns: auto 210px auto auto auto auto;
+        grid-template-columns: 10px 210px auto auto auto;
         grid-template-areas:
-        ".      title   title   title   .   .   "
-        ".      .       .       .       .   .   "
-        ".      poster  votes   fave    .   .   "
-        ".      poster  date    .       .   .   "
-        ".      poster  runtime .       .   .   "
-        ".      poster  rating  .       .   .   "
-        ".      .       .       .       .   .   ";
+        ".      title       title   title   .       "
+        ".      .           .       .       .       "
+        ".      poster      votes   fave    fave    "
+        ".      poster      runtime runtime runtime "
+        ".      poster      rating  rating  rating  "
+        ".      poster      date    date    date    "
+        ".      link        link    .       .       "
+        ".      genres      genres  genres  .       "
+        ".      summary     summary summary .       ";
         
     }
-
     .det-poster {
         width: 210px;
-        height: auto;
-        object-fit: cover;
-        
-    
     }
-    .detail-below {
-        margin-top: 14rem;
-    }
-
-    .det-fave {
-
-    }
-
   }
 
-  @media (min-width: $tablet-small) {
+  @media (min-width: $tablet-small) {   //600px
     .detail-grid {
-        position: absolute;
-        grid-template-columns: 10px auto auto auto 10px;
+        gap: 1.5rem;
         grid-template-areas:
-        ".      title   title   title   .       .   "
-        ".      .       .       .       .       .   "
-        ".      poster  votes   fave    .       .   "
-        ".      poster  date    .       .       .   "
-        ".      poster  runtime rating  .       .   "
-        ".      poster  .       .       .       .   "
-        ".      .       .       .       .       .   ";
-        // grid-auto-flow: column;
-    }
-
-    .detail-below {
-        margin-top: 12rem;
-    }
-    
-    .fave-det {
-        transform: scale(1.5);
-       
-    }
-    .det-summary {
-        max-width: 35rem;
-    }
-
+        ".      title   title   title   title   .       .       "
+        ".      .       .       .       .       .       .       "
+        ".      poster  votes   fave    .       .       .       "
+        ".      poster  runtime rating  .       .       .       "
+        ".      poster  date    date    date    .       .       "
+        ".      poster  link    link    link    .       .       "
+        ".      genres  genres  genres  genres  genres  .       "
+        ".      summary summary summary summary summary .       ";
+    }  
   }
 
-  @media (min-width: $tablet) { 
+  @media (min-width: $tablet) {     //768px
     .detail-grid {
-        position: absolute;
-        top: 10vh;
-        display: grid;
-        gap: 1rem;
         grid-template-areas:
-        ".      title   title   title   fave    .   "
-        ".      .       .       .       .       .   "
-        ".      poster  votes   date    .       .   "
-        ".      poster  runtime rating  .       .   "
-        ".      poster  .       .       .       .   "
-        ".      poster  .       .       .       .   "
-        ".      .       .       .       .       .   ";
-    
+        ".      title   title   title   title   title   title   .   "
+        ".      poster  votes   fave    .       .       .       .   "
+        ".      poster  runtime rating  .       link    link    .   "
+        ".      poster  date    date    date    .       .       .   "
+        ".      poster  genres  genres  genres  genres  genres  .   "
+        ".      summary summary summary summary summary summary .   ";
     }
+}
 
-    .fave-det {
-        transform: scale(1.8);
-       
-    }
-
-    .detail-below {
-        margin-top: 2rem;
-    }
+  @media (min-width: $desktop) {     // 1024px
 
     .det-summary {
-        max-width: 44rem;
+        max-width: 60rem;
     }
 
-    .det-poster {
-        width: 166px;
-        height: auto;
-        
-        
-    
+    .detail-grid {
+        gap: 2rem;
+        grid-template-areas:
+        ".      title   title   title   title   title   title   .       .   "
+        ".      poster  votes   fave    .       .       trailer trailer .   "
+        ".      poster  runtime rating  .       .       trailer trailer .   "
+        ".      poster  date    date    date    .       trailer trailer .   "
+        ".      poster  genres  genres  genres  genres  .       .       .   "
+        ".      summary summary summary summary summary summary .       .   ";
     }
 
 
   }
+  @media (min-width: $desktop-large) {     // 1440px
+  
+    #det-title {
+        font-size: 3rem;
+    }
+    .detail-grid {
+        width: $max-content-width;
+        grid-template-areas:
+        ".      title   title   title   title   title   title   .          .        "
+        ".      poster  votes   fave    .       .       .       trailer    trailer  "
+        ".      poster  runtime rating  .       .       .       trailer    trailer  "
+        ".      poster  date    date    .       .       .       trailer    trailer  "
+        ".      poster  genres  genres  genres  genres  .       .          .        "
+        ".      .       .       .       .       .       .       .          .        "
+        ".      .       summary summary summary summary summary summary          .        ";
+    }
+    
+}
+
+@media (min-width: $max-width) { 
+    .det-backdrop {
+        position: relative;
+        //for some reason even at 1920, the image is rendering at 1930px and is making
+        //a side scroll bar, for whatever reason setting a maxheight 10px short is fixing
+        //the issue
+        max-width: $max-width;
+        max-height: 1070px;
+    }
+}
+
+
 

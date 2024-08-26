@@ -27,10 +27,13 @@ const shortenText = (text, maxWords) => {
     // if it is over 60 minutes, then it should return
     let hours = Math.floor(movieRuntime / 60);
     let minutes = Math.floor(movieRuntime % 60);
-  
     if (hours) {
       return `${hours}h ${minutes}m`;
     } else {
+      //if movie has no runtime yet, display NA
+        if ( minutes == 0 || null ) {
+          return "Runtime: N/A"
+        }
       return `${minutes}m`;
     }
   };
@@ -52,10 +55,12 @@ const displayRating = (movieData) => {
   let rating = "";
   movieData.release_dates.results.forEach((country) => {
       if (country.iso_3166_1 === "US") {
-
         rating = country.release_dates[0].certification
-      } else {
-        return 
+          if ( rating == "" || rating == null || rating == undefined ) {
+            rating = "N/A"
+          } else {
+            return rating
+          }
       }
         
     }   
@@ -68,6 +73,25 @@ const displayRating = (movieData) => {
   }
 
 
+  // similar to then way we turned eached movie summary into an array but with added steps
+  //for converting the date further down the line
+  const formatDate = (movieDate) => {
+    const movieDateArray = movieDate.split("-");
+    const [year, month, day] = movieDateArray;
+    let date = new Date(`${month} ${day} ${year}`);
+    let options = {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
+    return date.toLocaleDateString("en-us", options);
+  };
+
+  
+
+
+
 
 
   export {
@@ -75,7 +99,6 @@ const displayRating = (movieData) => {
     reformatRuntime,
     displayGenres,
     displayRating,
-    formatPercentage
-
-
+    formatPercentage,
+    formatDate
   };

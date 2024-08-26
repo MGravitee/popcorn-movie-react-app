@@ -16,7 +16,7 @@ function Favourite({movieData}) {
   }
 
   return (
-    <button onClick={handleFavourite} className="favourite-btn fave-det">
+    <button onClick={handleFavourite} className="favourite-btn fave-det" title="favourite button" aria-label="favourite button">
       {isFavourite ? (
         <svg
           clipRule="evenodd"

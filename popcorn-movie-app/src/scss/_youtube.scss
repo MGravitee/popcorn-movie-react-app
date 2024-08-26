@@ -1,0 +1,50 @@
+@use "vars" as *;
+@use "mixins" as *;
+
+//decided to make this another partial because the detail page was getting crowded
+
+//youtube embed
+
+.youtube-embed {
+  display: none;
+  border: 0;
+  grid-area: trailer;
+}
+
+//watch trailer button 
+.trailer-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $bodyFontSize;
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    border: 2px solid $buttonColor;
+    border-radius: 2%;
+    padding: 0.2rem 1rem;
+    margin: 0.5rem 0.5rem;
+    transition: all 0.15s ease-in-out;
+    grid-area: link;
+    &:hover,
+    &:focus-visible {
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 7px;
+      background-color: rgba(114, 114, 114, 0.966);
+      cursor: pointer;
+    }
+  }
+  
+  @media (min-width: $desktop) {  
+
+    .trailer-link {
+      display: none;
+    }
+
+    .youtube-embed {
+      aspect-ratio: 16/9;
+      z-index: 999;
+      display: block;
+      width: 480px;
+    }
+
+  }
