@@ -11,13 +11,10 @@ function About() {
 
         <p className="prgrph">This product uses the TMDb API but is not endorsed or certified by TMDb. </p>
     
-          <Link className="tmdb-link" to="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">
-            <img className="tmdb-logo" src="/tmdb-logo.svg" alt="TMDB Logo" />
-          </Link>
-    
+        <Link className="tmdb-link" to="https://www.themoviedb.org/" target="_blank" rel="noopener noreferrer">
+          <img className="tmdb-logo" src="/tmdb-logo.svg" alt="TMDB Logo" />
+        </Link>
     </>
-    
-
   )
 }
 export default About
