@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import logo from '/src/assets/popcorn-logo.svg'
 
 function Header() {
   const [navState, setNavState] = useState("invisible drop-down");
@@ -44,7 +45,7 @@ function Header() {
       <div className="header-contents">
         <div className="nav-logo">
           <NavLink to="/" title="Link to the Popcorn home page" aria-label="Link to the Popcorn home page">
-            <img src="/src/assets/popcorn-logo.svg" alt="Popcorn logo" />
+            <img src={logo} alt="Popcorn logo" />
           </NavLink>
           <NavLink className={"logo-title-parent"} to="/">
             <h3 className="logo-text">Popcorn</h3>

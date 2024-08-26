@@ -17,6 +17,10 @@ import {
 import Favourite from "../components/Favourite";
 import LoadingSpinner from "../components/LoadingSpinner";
 
+import noImagesLrg from "/src/assets/no-images-large.webp";
+import noImagesSml from "/src/assets/no-images-small.webp";
+
+
 function Details() {
     const [movie, setMovie] = useState(null);
     const [video, setVideo] = useState(null);
@@ -89,7 +93,7 @@ function Details() {
                         ) : (
                             <img
                                 className="det-backdrop"
-                                src="/src/assets/no-images-large.webp"
+                                src={noImagesLrg}
                                 alt="No image that displays when chosen movie has no backdrop"
                             />
                         )}
@@ -105,7 +109,7 @@ function Details() {
                         ) : (
                             <img
                                 className="det-poster"
-                                src="/src/assets/no-images-small.webp"
+                                src={noImagesSml}
                                 alt="No image that displays when chosen movie has no poster"
                             />
                         )}

@@ -4,6 +4,8 @@ import { useSpringCarousel } from "react-spring-carousel";
 import { baseImgEndPoint } from "../global/globalsVariables";
 import { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
+import noImagesLrg from "/src/assets/no-images-large.webp";
+
 
 //big thanks to this tutorial for getting this to work
 //https://dev.to/phandangkhoa96/a-carousel-with-zooming-active-slide-using-react-spring-carousel-4k69
@@ -19,7 +21,7 @@ function Carousel({ movieList }) {
           `${baseImgEndPoint}w1280/${movieList[0].backdrop_path}`
         ) : (
           <img
-            src="/src/assets/no-images-large.webp"
+            src={noImagesLrg}
             alt="No image that displays when chosen movie has no backdrop"
           />
         ),
@@ -33,7 +35,7 @@ function Carousel({ movieList }) {
           `${baseImgEndPoint}w1280/${movieList[1].backdrop_path}`
         ) : (
           <img
-            src="/src/assets/no-images-large.webp"
+            src={noImagesLrg}
             alt="No image that displays when chosen movie has no backdrop"
           />
         ),
@@ -47,7 +49,7 @@ function Carousel({ movieList }) {
           `${baseImgEndPoint}w1280/${movieList[2].backdrop_path}`
         ) : (
           <img
-            src="/src/assets/no-images-large.webp"
+            src={noImagesLrg}
             alt="No image that displays when chosen movie has no backdrop"
           />
         ),
