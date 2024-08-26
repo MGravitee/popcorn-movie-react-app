@@ -13,7 +13,7 @@ function Error() {
                 Not sure what happened but we couldn't find the page you're
                 looking for.
             </p>
-            <NavLink to="/">Back to Home</NavLink>
+            <NavLink className="back-to-home" to="/">Back to Home</NavLink>
         </>
     );
 }

@@ -44,7 +44,7 @@ function Favourites() {
         ) : (
           <div className="no-favourites">
             <p>No favourites to display</p>
-            <NavLink to="/">Back to Home</NavLink>
+            <NavLink className="back-to-home" to="/">Back to Home</NavLink>
           </div>
         )}
       </ul>
