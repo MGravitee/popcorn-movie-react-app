@@ -16,7 +16,7 @@ function Carousel({ movieList }) {
       id: "item-1",
       src:
         movieList.length > 0
-          ? `${baseImgEndPoint}original/${movieList[0].backdrop_path}`
+          ? `${baseImgEndPoint}w1280/${movieList[0].backdrop_path}`
           : `placeholder`,
       link: movieList.length > 0 ? `/detail/${movieList[0].id}` : "#",
       title: movieList.length > 0 ? movieList[0].title : "",
@@ -25,7 +25,7 @@ function Carousel({ movieList }) {
       id: "item-2",
       src:
         movieList.length > 0
-          ? `${baseImgEndPoint}original/${movieList[1].backdrop_path}`
+          ? `${baseImgEndPoint}w1280/${movieList[1].backdrop_path}`
           : `placeholder`,
       link: movieList.length > 0 ? `/detail/${movieList[1].id}` : "#",
       title: movieList.length > 0 ? movieList[1].title : "",
@@ -34,7 +34,7 @@ function Carousel({ movieList }) {
       id: "item-3",
       src:
         movieList.length > 0
-          ? `${baseImgEndPoint}original/${movieList[2].backdrop_path}`
+          ? `${baseImgEndPoint}w1280/${movieList[2].backdrop_path}`
           : `placeholder`,
       link: movieList.length > 0 ? `/detail/${movieList[2].id}` : "#",
       title: movieList.length > 0 ? movieList[2].title : "",

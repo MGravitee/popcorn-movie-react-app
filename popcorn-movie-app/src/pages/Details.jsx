@@ -168,7 +168,6 @@ function Details() {
                             {displayGenres(movie)}
                         </ul>
                         <p className="det-summary det-item">{movie.overview}</p>
-                    </section>
                     {video ? (
                         <iframe
                             className="youtube-embed"
@@ -178,6 +177,7 @@ function Details() {
                             allowFullScreen
                         ></iframe>
                     ) : null}
+                    </section>
                 </>
             )}
         </>

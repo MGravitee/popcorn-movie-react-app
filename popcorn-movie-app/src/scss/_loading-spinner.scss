@@ -1,8 +1,10 @@
 @use "vars" as *;
 @use "mixins" as *;
 
-//all of the divs and stuff needed to make the CSS animations work for the loader
+// loading spinner that loads incase the API is slow/down
 
+// all of the divs and pseudo selectors needed to make the CSS
+// animations work for a CSS only loading spinner
 
 .lds-roller,
 .lds-roller div,
@@ -94,6 +96,7 @@
   }
 }
 
+ // mixin to center the loading spinner
 .place-center {
 @include place-center-mixin;
 

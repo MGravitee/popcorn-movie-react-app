@@ -14,6 +14,7 @@ import {shortenText} from "../utilities/helperFunctions";
 
 import Favourite from "../components/Favourite";
 import HeroBanner from "../components/HeroBanner";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function Home() {
   const [movies, setMovie] = useState([]);
@@ -46,65 +47,70 @@ function Home() {
 
   return (
     <>
-      <HeroBanner movieList={movies} />
-      {/* {movies.length > 0 && ( */}
-      <div className="filter-btns">
-        <button
-          className={`underline-slide ${
-            activeFilter === "now_playing" ? "active" : ""
-          }`}
-          onClick={() => handleClick("now_playing")}>
-          Now Playing
-        </button>
-        <button
-          className={`underline-slide ${
-            activeFilter === "popular" ? "active" : ""
-          }`}
-          onClick={() => handleClick("popular")}>
-          Popular
-        </button>
-        <button
-          className={`underline-slide ${
-            activeFilter === "top_rated" ? "active" : ""
-          }`}
-          onClick={() => handleClick("top_rated")}>
-          Top Rated
-        </button>
-        <button
-          className={`underline-slide ${
-            activeFilter === "upcoming" ? "active" : ""
-          }`}
-          onClick={() => handleClick("upcoming")}>
-          Upcoming
-        </button>
-      </div>
-      <h1 className="screen-reader-text">Popcorn Movies</h1>
-      <ul className="movie-cards">
-        {movies.length > 0 &&
-          movies.map((movie) => {
-            return (
-              <li className="movie-card" key={movie.id}>
-                <NavLink to={`/detail/${movie.id}`}>
-                  {" "}
-                  <img
-                    src={`${baseImgEndPoint}w342/${movie.poster_path}`}
-                    alt={movie.title}
-                  />
-                </NavLink>
-                <Favourite movieData={movie} />
-                <p className="movie-overview">
-                  {shortenText(movie.overview, 25)}
-                </p>
-                <p className="movie-date">{movie.release_date}</p>{" "}
-                {/*display the correct format */}
-                <h3 className="movie-title">{shortenText(movie.title, 5)}</h3>
-                <NavLink className="info-btn" to={`/detail/${movie.id}`}>
-                  More Info
-                </NavLink>
-              </li>
-            );
-          })}
-      </ul>
+       {!movies && (
+            <div className="place-center">
+                <LoadingSpinner />
+            </div>
+        )}
+          <HeroBanner movieList={movies} />
+          {/* {movies.length > 0 && ( */}
+          <div className="filter-btns">
+            <button
+              className={`underline-slide ${
+                activeFilter === "now_playing" ? "active" : ""
+              }`}
+              onClick={() => handleClick("now_playing")}>
+              Now Playing
+            </button>
+            <button
+              className={`underline-slide ${
+                activeFilter === "popular" ? "active" : ""
+              }`}
+              onClick={() => handleClick("popular")}>
+              Popular
+            </button>
+            <button
+              className={`underline-slide ${
+                activeFilter === "top_rated" ? "active" : ""
+              }`}
+              onClick={() => handleClick("top_rated")}>
+              Top Rated
+            </button>
+            <button
+              className={`underline-slide ${
+                activeFilter === "upcoming" ? "active" : ""
+              }`}
+              onClick={() => handleClick("upcoming")}>
+              Upcoming
+            </button>
+          </div>
+          <h1 className="screen-reader-text">Popcorn Movies</h1>
+          <ul className="movie-cards">
+            {movies.length > 0 &&
+              movies.map((movie) => {
+                return (
+                  <li className="movie-card" key={movie.id}>
+                    <NavLink to={`/detail/${movie.id}`}>
+                      {" "}
+                      <img
+                        src={`${baseImgEndPoint}w342/${movie.poster_path}`}
+                        alt={movie.title}
+                      />
+                    </NavLink>
+                    <Favourite movieData={movie} />
+                    <p className="movie-overview">
+                      {shortenText(movie.overview, 25)}
+                    </p>
+                    <p className="movie-date">{movie.release_date}</p>{" "}
+                    {/*display the correct format */}
+                    <h3 className="movie-title">{shortenText(movie.title, 5)}</h3>
+                    <NavLink className="info-btn" to={`/detail/${movie.id}`}>
+                      More Info
+                    </NavLink>
+                  </li>
+                );
+              })}
+          </ul>
     </>
   );
 }

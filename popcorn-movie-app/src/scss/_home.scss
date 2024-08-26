@@ -23,7 +23,6 @@
     position: absolute;
     top: 0rem;
     right: 0rem;
-    transition: 0.4s ease-in-out transform;
     z-index: 999;
     
 
@@ -112,6 +111,7 @@
 @media (min-width: 90em) {
   .movie-cards {
     .movie-overview {
+      width: 90%;
       height: 13.75rem;
     }
   }
