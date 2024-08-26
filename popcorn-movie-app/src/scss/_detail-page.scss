@@ -3,12 +3,16 @@
 
 .det-item {
     text-shadow: 1px 1px 1px black;
-    font-size: clamp(1rem, 5vw, 1.5rem);
+    // font-size: clamp(1rem, 5vw, 1.5rem);
 }
 
 .det-backdrop {
     filter: brightness(0.4);
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 
 .detail-grid {
@@ -34,7 +38,6 @@
             height: 100%;
             object-fit: cover;
             grid-area: poster;
-        
         }
         
         .det-title {
@@ -83,7 +86,6 @@
           }
         
           .det-summary {
-            max-width: 90%;
             margin: 0 auto;
             grid-area: summary;
         }
@@ -154,41 +156,27 @@
     }
 
   }
-  @media (min-width: $desktop-large) {     // 1024px
+  @media (min-width: $desktop-large) {     // 1440px
     
     .detail-grid {
         width: $max-content-width;
         grid-template-areas:
-        ".      title   title   title   title   title   title   .   "
-        ".      poster  votes   fave    .       .       .       .   "
-        ".      poster  runtime rating  .       link    link    .   "
-        ".      poster  date    date    date    .       .       .   "
-        ".      poster  genres  genres  genres  genres  genres  .   "
-        ".      summary summary summary summary summary summary .   ";
+        ".      title   title   title   title   title   title   .          "
+        ".      poster  votes   fave    .       .       .       .          "
+        ".      poster  runtime rating  .       link    .       .          "
+        ".      poster  date    date    .       .       .       .          "
+        ".      poster  genres  genres  genres  genres  genres  .          "
+        ".      .       .       .       .       .       .       .          "
+        ".      .       summary summary summary .       .       .          ";
     }
     
+}
+
+@media (min-width: $max-width) { 
     .det-backdrop {
         max-width: $max-width;
     }
-  }
-    // .youtube-embed {
-    //     display: block;
-    // }
-//     .detail-grid {
-//         max-width: $max-width;
-//         gap: 2rem;
-//         grid-template-areas:
-//         ".      title   title   title   title   title   title   .          "
-//         ".      poster  votes   fave    .       .       .       .          "
-//         ".      poster  runtime rating  .       link    .       .          "
-//         ".      poster  date    date    .       .       .       .          "
-//         ".      poster  genres  genres  genres  genres  genres  .          "
-//         ".      .       .       .       .       .       .       .          "
-//         ".      .       summary summary summary .       .       .          ";
-//     }
-
-//   }
-
+}
 
 
 
