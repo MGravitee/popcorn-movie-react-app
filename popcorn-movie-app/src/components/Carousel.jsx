@@ -15,45 +15,46 @@ function Carousel({ movieList }) {
     {
       id: "item-1",
       src:
-        movieList.length > 0
-          ? `${baseImgEndPoint}w1280/${movieList[0].backdrop_path}`
-          : <img
-          src="/no-images-large.webp"
-          alt="No image that displays when chosen movie has no backdrop"
-      />,
+        movieList.length > 0 ? (
+          `${baseImgEndPoint}w1280/${movieList[0].backdrop_path}`
+        ) : (
+          <img
+            src="/no-images-large.webp"
+            alt="No image that displays when chosen movie has no backdrop"
+          />
+        ),
       link: movieList.length > 0 ? `/detail/${movieList[0].id}` : "#",
       title: movieList.length > 0 ? movieList[0].title : "",
     },
     {
       id: "item-2",
       src:
-        movieList.length > 0
-          ? `${baseImgEndPoint}w1280/${movieList[1].backdrop_path}`
-          : <img
-          src="/no-images-large.webp"
-          alt="No image that displays when chosen movie has no backdrop"
-      />,
+        movieList.length > 0 ? (
+          `${baseImgEndPoint}w1280/${movieList[1].backdrop_path}`
+        ) : (
+          <img
+            src="/no-images-large.webp"
+            alt="No image that displays when chosen movie has no backdrop"
+          />
+        ),
       link: movieList.length > 0 ? `/detail/${movieList[1].id}` : "#",
       title: movieList.length > 0 ? movieList[1].title : "",
     },
     {
       id: "item-3",
       src:
-        movieList.length > 0
-          ? `${baseImgEndPoint}w1280/${movieList[2].backdrop_path}`
-          : <img
-          src="/no-images-large.webp"
-          alt="No image that displays when chosen movie has no backdrop"
-      />,
+        movieList.length > 0 ? (
+          `${baseImgEndPoint}w1280/${movieList[2].backdrop_path}`
+        ) : (
+          <img
+            src="/no-images-large.webp"
+            alt="No image that displays when chosen movie has no backdrop"
+          />
+        ),
       link: movieList.length > 0 ? `/detail/${movieList[2].id}` : "#",
       title: movieList.length > 0 ? movieList[2].title : "",
     },
   ];
-
-  //scrolls the carousel automatically every 5 seconds
-  useEffect(() => {
-    movieList.length > 0 ? setInterval(slideToNextItem, 5000) : "";
-  }, [movieList]);
 
   const [currentSlide, setCurrentSlide] = useState(sliderItems[0].id);
   //gonna need breakpoints to get fancy
@@ -71,7 +72,13 @@ function Carousel({ movieList }) {
         ...item,
         renderItem: (
           <NavLink className="splash-link" to={item.link}>
-            <h2 className={currentSlide === item.id ? "title-active" : "title-sleep"}>{item.title}</h2>
+            <h2
+              className={
+                currentSlide === item.id ? "title-active" : "title-sleep"
+              }
+            >
+              {item.title}
+            </h2>
             <img
               className={currentSlide === item.id ? "item-1" : "item-2"}
               src={item.src}
@@ -82,6 +89,17 @@ function Carousel({ movieList }) {
       };
     }),
   });
+
+  //loops every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log("test");
+      slideToNextItem();
+    }, 5000);
+    return () => {
+      window.clearInterval(timer);
+    };
+  }, [movieList]);
 
   useListenToCustomEvent((event) => {
     if (event.eventName === "onSlideStartChange") {
