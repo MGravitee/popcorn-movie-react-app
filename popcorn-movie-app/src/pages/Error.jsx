@@ -1,11 +1,11 @@
 import {NavLink} from "react-router-dom";
-
+import caution from "/src/assets/caution-symbol.svg"
 
 function Error() {
     return (
         <>
             <h1 className="screen-reader-text">Popcorn Movies | Error Page</h1>
-            <img className="caution-symbol" src="/caution-symbol.svg" alt="Caution symbol for error page"/> 
+            <img className="caution-symbol" src={caution} alt="Caution symbol for error page"/> 
 
             <h2 className="err-heading">Uh oh.... something went wrong</h2>
 
