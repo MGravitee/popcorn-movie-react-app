@@ -24,7 +24,6 @@
     top: 0rem;
     right: 0rem;
     z-index: 999;
-    
 
     svg {
       color: $textColor;
@@ -33,7 +32,6 @@
     &:hover {
       cursor: pointer;
       transform: scale(2);
-      
     }
   }
   .movie-overview {
@@ -52,8 +50,19 @@
   }
   .info-btn {
     display: block;
-    width: 100%;
     margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+    border: 2px solid $buttonColor;
+    border-radius: 99px;
+    color: $buttonColor;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $buttonColor;
+      color: $textColor;
+    }
   }
 }
 @media (min-width: 37.5em) {
