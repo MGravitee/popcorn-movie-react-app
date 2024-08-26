@@ -19,7 +19,7 @@ function Carousel({ movieList }) {
           `${baseImgEndPoint}w1280/${movieList[0].backdrop_path}`
         ) : (
           <img
-            src="/no-images-large.webp"
+            src="/src/assets/no-images-large.webp"
             alt="No image that displays when chosen movie has no backdrop"
           />
         ),
@@ -33,7 +33,7 @@ function Carousel({ movieList }) {
           `${baseImgEndPoint}w1280/${movieList[1].backdrop_path}`
         ) : (
           <img
-            src="/no-images-large.webp"
+            src="/src/assets/no-images-large.webp"
             alt="No image that displays when chosen movie has no backdrop"
           />
         ),
@@ -47,7 +47,7 @@ function Carousel({ movieList }) {
           `${baseImgEndPoint}w1280/${movieList[2].backdrop_path}`
         ) : (
           <img
-            src="/no-images-large.webp"
+            src="/src/assets/no-images-large.webp"
             alt="No image that displays when chosen movie has no backdrop"
           />
         ),

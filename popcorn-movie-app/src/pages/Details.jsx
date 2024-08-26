@@ -89,7 +89,7 @@ function Details() {
                         ) : (
                             <img
                                 className="det-backdrop"
-                                src="/no-images-large.webp"
+                                src="/src/assets/no-images-large.webp"
                                 alt="No image that displays when chosen movie has no backdrop"
                             />
                         )}
@@ -105,7 +105,7 @@ function Details() {
                         ) : (
                             <img
                                 className="det-poster"
-                                src="/no-images-small.webp"
+                                src="/src/assets/no-images-small.webp"
                                 alt="No image that displays when chosen movie has no poster"
                             />
                         )}
