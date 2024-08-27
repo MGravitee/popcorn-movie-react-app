@@ -15,6 +15,7 @@
     top: 50%;
     transform: translate(0,-50%);
     z-index: 99;
+    text-shadow: 3px 3px 3px #000000;
     cursor: pointer;
   }
   .left{
@@ -26,7 +27,7 @@
   .carousel{
     position: relative;
     width: 100%;
-    max-width: 90rem;
+    max-width: $max-content-width;
     margin: 0 auto;
     overflow: hidden;
     .use-spring-carousel-item{
@@ -40,14 +41,14 @@
       bottom: 0rem;
       color: $textColor;
       font-size: 3rem;
-      font-weight: 300;
-      text-shadow: 1px 1px 1px black;
+      font-weight: 500;
+      text-shadow: 3px 3px 3px #000000;
+      text-transform: uppercase;
     }
   }
     
   //begin desktop sizing
-  @media (min-width: 64em) {
-
+  @media (min-width: $desktop) {
     .carousel{
       height: 28.5rem;
 
@@ -56,8 +57,7 @@
         color: $textColor;
         border-radius: 0;
         height: 189px;
-        font-size: 5rem;
-        font-weight: 200;
+        font-weight: 300;
       }
       .left{
         top: 50%;
