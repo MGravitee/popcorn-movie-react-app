@@ -150,7 +150,6 @@ function Details() {
                             {reformatRuntime(movie.runtime)}
                         </p>
                         <p className="det-rating det-item">
-                            {" "}
                             Rated: {displayRating(movie)}
                         </p>
                         {video ? (
