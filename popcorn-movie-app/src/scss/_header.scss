@@ -1,6 +1,9 @@
 @use "vars" as *;
 
 header {
+  z-index: 99999;
+  background-color: $bodyColor;
+  position: sticky; top: 0;
   .header-contents {
     display: flex;
     justify-content: space-between;
