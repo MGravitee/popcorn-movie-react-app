@@ -7,7 +7,6 @@
 
 .det-backdrop {
     filter: brightness(0.4);
-    // object-fit: cover;
     position: absolute;
     top: 0;
     right: 0;
@@ -17,25 +16,21 @@
 .detail-grid {
     position: absolute;
     width: 100%;
-    top: 8vh;
+    top: 4vh;
     display: grid;
     gap: 0.5rem;
-    grid-template-columns: 10px 180px auto auto 10px;
+    grid-template-columns: 10px auto auto auto 10px;
     grid-template-areas:
-    ".      title       title   title   .   "
-    ".      .           .       .       .   "
-    ".      poster      votes   fave    .   "
-    ".      poster      runtime runtime .   "
-    ".      poster      rating  rating  .   "
-    ".      poster      date    date    .   "
-    ".      link        link    .       .   "
-    ".      genres      genres  genres  .   "
-    ".      summary     summary summary  .   ";
+    ".      title       title       title   .   "
+    ".      .           .           .       .   "
+    ".      votes       rating      fave    .   "
+    ".      runtime     date        date    .   "
+    ".      link        link        .       .   "
+    ".      genres      genres      genres  .   "
+    ".      summary     summary     summary .   ";
 
         .det-poster {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: none;
             grid-area: poster;
         }
         
@@ -78,7 +73,7 @@
               place-items: center;
               list-style-type: none;
               border: 2px solid $buttonColor;
-              border-radius: 31.25rem;
+              border-radius: $borderRad;
               padding: 0.2rem 1rem;
               margin: 0.5rem 0.5rem;
             }
@@ -89,11 +84,37 @@
             grid-area: summary;
         }
 }
+
+@media (min-width: $mobile-mid) { 
+
+    
+    .detail-grid {
+        grid-template-areas:
+        ".      title       title   title   .   "
+        ".      .           .       .       .   "
+        ".      poster      votes   fave    .   "
+        ".      poster      runtime runtime .   "
+        ".      poster      rating  rating  .   "
+        ".      poster      date    date    .   "
+        ".      link        link    .       .   "
+        ".      genres      genres  genres  .   "
+        ".      summary     summary summary .   ";
+
+        .det-poster {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            grid-area: poster;
+        }
+    }
+
+}
+
 @media (min-width: $mobile-large) {     //440px
     .detail-grid {
-        top: 10vh;
         gap: 1rem;
-        grid-template-columns: 10px 210px auto auto auto;
+        grid-template-columns: 10px auto auto auto 10px;
         grid-template-areas:
         ".      title       title   title   .       "
         ".      .           .       .       .       "
@@ -106,14 +127,12 @@
         ".      summary     summary summary .       ";
         
     }
-    .det-poster {
-        width: 210px;
-    }
   }
 
   @media (min-width: $tablet-small) {   //600px
     .detail-grid {
         gap: 1.5rem;
+        grid-template-columns: 10px 210px auto auto ;
         grid-template-areas:
         ".      title   title   title   title   .       .       "
         ".      .       .       .       .       .       .       "
@@ -123,6 +142,7 @@
         ".      poster  link    link    link    .       .       "
         ".      genres  genres  genres  genres  genres  .       "
         ".      summary summary summary summary summary .       ";
+
     }  
   }
 
@@ -135,6 +155,7 @@
         ".      poster  date    date    date    .       .       .   "
         ".      poster  genres  genres  genres  genres  genres  .   "
         ".      summary summary summary summary summary summary .   ";
+
     }
 }
 
@@ -143,7 +164,7 @@
     .det-summary {
         max-width: 60rem;
     }
-
+    
     .detail-grid {
         gap: 2rem;
         grid-template-areas:
@@ -152,7 +173,7 @@
         ".      poster  runtime rating  .       .       trailer trailer .   "
         ".      poster  date    date    date    .       trailer trailer .   "
         ".      poster  genres  genres  genres  genres  .       .       .   "
-        ".      summary summary summary summary summary summary .       .   ";
+        ".      .       summary summary summary summary summary .       .   ";
     }
 
 

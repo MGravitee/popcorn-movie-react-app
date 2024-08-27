@@ -4,6 +4,7 @@
 footer {
     z-index: 9999;
     p {
+        font-size: $footerFontSize;
         @include place-center-mixin;
     }
 }

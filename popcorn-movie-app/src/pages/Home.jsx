@@ -90,8 +90,7 @@ function Home() {
                     <p className="movie-overview">
                       {shortenText(movie.overview, 25)}
                     </p>
-                    <p className="movie-date">{movie.release_date}</p>{" "}
-                    {/*display the correct format */}
+                    <p className="movie-date">{movie.release_date}</p>
                     <h3 className="movie-title">{shortenText(movie.title, 5)}</h3>
                     <NavLink className="info-btn" to={`/detail/${movie.id}`}>
                       More Info
