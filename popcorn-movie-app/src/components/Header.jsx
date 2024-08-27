@@ -41,7 +41,7 @@ function Header() {
   }
   //my need more ul for this?
   return (
-    <header>
+    <header className="header-top">
       <div className="header-contents">
         <div className="nav-logo">
           <NavLink to="/" title="Link to the Popcorn home page" aria-label="Link to the Popcorn home page">

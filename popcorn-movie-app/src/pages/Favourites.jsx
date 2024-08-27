@@ -19,7 +19,7 @@ function Favourites() {
               {" "}
               <img
                 src={`${baseImgEndPoint}w342/${movie.poster_path}`}
-                alt={movie.title}
+                alt={`${movie.title} poster`}
               />
               </NavLink>
                 <Favourite movieData={movie} />
