@@ -161,11 +161,8 @@
 
   @media (min-width: $desktop) {     // 1024px
 
-    .det-summary {
-        max-width: 60rem;
-    }
-    
     .detail-grid {
+        top: 6vh;
         gap: 2rem;
         grid-template-areas:
         ".      title   title   title   title   title   title   .       .   "
@@ -174,6 +171,10 @@
         ".      poster  date    date    date    .       trailer trailer .   "
         ".      poster  genres  genres  genres  genres  .       .       .   "
         ".      .       summary summary summary summary summary .       .   ";
+
+        .det-summary {
+            max-width: 60rem;
+        }
     }
 
 
@@ -184,6 +185,7 @@
         font-size: 3rem;
     }
     .detail-grid {
+        top: 12vh;
         width: $max-content-width;
         grid-template-areas:
         ".      title   title   title   title   title   title   .          .        "
