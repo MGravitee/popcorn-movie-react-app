@@ -132,7 +132,7 @@
   @media (min-width: $tablet-small) {   //600px
     .detail-grid {
         gap: 1.5rem;
-        grid-template-columns: 10px 210px auto auto ;
+        grid-template-columns: 10px 210px auto auto auto auto auto;
         grid-template-areas:
         ".      title   title   title   title   .       .       "
         ".      .       .       .       .       .       .       "
@@ -164,12 +164,13 @@
     .detail-grid {
         top: 6vh;
         gap: 2rem;
+        // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
         grid-template-areas:
-        ".      title   title   title   title   title   title   .       .   "
-        ".      poster  votes   fave    .       .       trailer trailer .   "
-        ".      poster  runtime rating  .       .       trailer trailer .   "
-        ".      poster  date    date    date    .       trailer trailer .   "
-        ".      poster  genres  genres  genres  genres  .       .       .   "
+        "title      title   title   title   title   title   title   .       .   "
+        "poster poster  votes   fave    .       .       trailer trailer .   "
+        "poster poster  runtime rating  .       .       trailer trailer .   "
+        "poster poster  date    date    date    .       trailer trailer .   "
+        "poster poster  genres  genres  genres  genres  .       .       .   "
         ".      .       summary summary summary summary summary .       .   ";
 
         .det-summary {
@@ -188,11 +189,11 @@
         top: 12vh;
         width: $max-content-width;
         grid-template-areas:
-        ".      title   title   title   title   title   title   .          .        "
-        ".      poster  votes   fave    .       .       .       trailer    trailer  "
-        ".      poster  runtime rating  .       .       .       trailer    trailer  "
-        ".      poster  date    date    .       .       .       trailer    trailer  "
-        ".      poster  genres  genres  genres  genres  .       .          .        "
+        "title       title   title   title   title   title   title   .          .        "
+        "poster      poster  votes   fave    .       .       .       trailer    trailer  "
+        "poster      poster  runtime rating  .       .       .       trailer    trailer  "
+        "poster      poster  date    date    .       .       .       trailer    trailer  "
+        "poster      poster  genres  genres  genres  genres  .       .          .        "
         ".      .       .       .       .       .       .       .          .        "
         ".      .       summary summary summary summary summary summary          .        ";
     }
