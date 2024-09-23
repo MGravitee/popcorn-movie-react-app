@@ -87,7 +87,6 @@
 
 @media (min-width: $mobile-mid) { 
 
-    
     .detail-grid {
         grid-template-areas:
         ".      title       title   title   .   "
@@ -156,6 +155,9 @@
         ".      poster  genres  genres  genres  genres  genres  .   "
         ".      summary summary summary summary summary summary .   ";
 
+        .det-summary {
+            margin-top: 2rem;
+        }
     }
 }
 
@@ -163,21 +165,25 @@
 
     .detail-grid {
         top: 6vh;
-        gap: 2rem;
-        // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-        grid-template-areas:
-        "title      title   title   title   title   title   title   .       .   "
-        "poster poster  votes   fave    .       .       trailer trailer .   "
-        "poster poster  runtime rating  .       .       trailer trailer .   "
-        "poster poster  date    date    date    .       trailer trailer .   "
-        "poster poster  genres  genres  genres  genres  .       .       .   "
-        ".      .       summary summary summary summary summary .       .   ";
+        gap: 1rem;
+        // grid-template-columns: 10px 210px auto auto auto auto auto auto 10px ;
+        // grid-template-areas:
+        // ".      title   title   title   title   title   title   .           .   "
+        // ".      poster  votes   votes   fave    .       trailer trailer     .   "
+        // ".      poster  runtime runtime rating  .       trailer trailer     .   "
+        // ".      poster  date    date    date    .       trailer trailer     .   "
+        // ".      poster  genres  genres  genres  genres  .       .           .   "
+        // ".      .       summary summary summary summary summary .           .   ";
 
         .det-summary {
             max-width: 60rem;
         }
-    }
 
+        .fave-det {
+            display: block;
+        }
+
+    }
 
   }
   @media (min-width: $desktop-large) {     // 1440px
@@ -189,13 +195,13 @@
         top: 12vh;
         width: $max-content-width;
         grid-template-areas:
-        "title       title   title   title   title   title   title   .          .        "
-        "poster      poster  votes   fave    .       .       .       trailer    trailer  "
-        "poster      poster  runtime rating  .       .       .       trailer    trailer  "
-        "poster      poster  date    date    .       .       .       trailer    trailer  "
-        "poster      poster  genres  genres  genres  genres  .       .          .        "
-        ".      .       .       .       .       .       .       .          .        "
-        ".      .       summary summary summary summary summary summary          .        ";
+        "title       title      title       title       title       title       title   .          .        "
+        "poster      poster     votes       .           fave        .           .       trailer    trailer  "
+        "poster      poster     runtime     .           rating      .           .       trailer    trailer  "
+        "poster      poster     date        date        .           .           .       trailer    trailer  "
+        "poster      poster     genres      genres      genres      genres      .       .          .        "
+        ".          .           .           .           .           .           .       .          .        "
+        ".          summary     summary     summary     summary     summary     summary summary    summary        ";
     }
     
 }
@@ -204,7 +210,7 @@
     .det-backdrop {
         position: relative;
         //for some reason even at 1920, the image is rendering at 1930px and is making
-        //a side scroll bar, for whatever reason setting a maxheight 10px short is fixing
+        //a side scroll bar, for whatever reason setting a max height 10px short is fixing
         //the issue
         max-width: $max-width;
         max-height: 1070px;

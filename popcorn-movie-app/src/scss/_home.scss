@@ -14,6 +14,7 @@
     position: relative;
   }
   img {
+    border-radius: 1rem;
     width: 100%;
     aspect-ratio: 6 / 9; //some movies have odd poster sizes so we force an aspect ratio
     vertical-align: top;
@@ -65,25 +66,30 @@
     }
   }
 }
+
+//adding lots of breakpoints to increment grid size
+
+//tablet-small layout
 @media (min-width: $tablet-small) { 
-  //adding lots of breakpoints to increment grid size
   .movie-cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+//tablet layout 
 @media (min-width: $tablet) {
   .movie-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
+//desktop layout
 @media (min-width: $desktop) {
   .movie-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     max-width: $max-content-width; 
-    padding: 1rem;
 
     .info-btn {
-      background-color: #ff000000;
       display: none;
     }
     .movie-date {
@@ -103,8 +109,6 @@
         right: 0;
         display: block;
         width: 50%;
-
-
       }
       .movie-overview {
         position: absolute;
@@ -121,8 +125,7 @@
     }
   }
 }
-//text length change
-//maybe make this a variable
+
 @media (min-width: $max-content-width) { 
   .movie-cards {
     .movie-overview {

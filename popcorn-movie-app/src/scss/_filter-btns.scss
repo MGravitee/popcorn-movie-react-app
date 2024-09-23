@@ -9,9 +9,9 @@
 
   .underline-slide {
     all: unset;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #fff;
-    margin: 1rem;
+    margin: 0.5rem;
     position: relative;
     padding-bottom: 2px;
     text-decoration: none;
@@ -47,6 +47,7 @@
 @media (min-width: $tablet) {
   .filter-btns {
     .underline-slide {
+      margin: 1rem;
       font-size: 1.2rem;
     }
   }
@@ -56,6 +57,7 @@
     padding: 2rem;
     .underline-slide {
       font-size: 1.5rem;
+      margin: 2rem;
     }
   }
 }

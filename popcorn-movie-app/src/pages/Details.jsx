@@ -83,7 +83,6 @@ function Details() {
             {movie && (
                 <>
                     <section>
-                        <h1 className="screen-reader-text">{`Popcorn Movies | ${movie.title}`}</h1>
                         {movie.backdrop_path ? (
                             <img
                                 className="det-backdrop"
@@ -99,7 +98,7 @@ function Details() {
                         )}
                     </section>
                     <section className="detail-grid">
-                        <h2 className="det-title" id="det-title">{movie.title}</h2>
+                        <h1 className="det-title" id="det-title">{movie.title}</h1>
                         {movie.poster_path ? (
                             <img
                                 className="det-poster"
@@ -118,7 +117,7 @@ function Details() {
                             movieData={movie}
                         />
                         <p className="det-date det-item">
-                            {formatDate(movie.release_date)}
+                            Released: {formatDate(movie.release_date)}
                         </p>
                         <div
                             className={
@@ -147,7 +146,7 @@ function Details() {
                             )}
                         </div>
                         <p className="det-runtime det-item">
-                            {reformatRuntime(movie.runtime)}
+                            Runtime: {reformatRuntime(movie.runtime)}
                         </p>
                         <p className="det-rating det-item">
                             Rated: {displayRating(movie)}
