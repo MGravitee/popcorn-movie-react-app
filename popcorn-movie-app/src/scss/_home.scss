@@ -103,6 +103,7 @@
   .movie-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     max-width: 100rem; 
+    row-gap: 2rem;
 
     .movie-title {
       font-size: 1.5rem;
