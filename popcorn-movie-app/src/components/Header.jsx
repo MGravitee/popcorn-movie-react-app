@@ -66,10 +66,10 @@ function Header() {
         </div>
       </div>
       <ul className={navState}>
-        <li>
+        <li className="mobile-nav">
           <NavLink to="/about">About</NavLink>
         </li>
-        <li>
+        <li className="mobile-nav">
           <NavLink to="/favourites">Favourites</NavLink>
         </li>
       </ul>

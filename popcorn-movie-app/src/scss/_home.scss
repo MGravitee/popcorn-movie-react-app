@@ -1,4 +1,5 @@
 @use "vars" as *;
+@use "mixins" as *;
 
 .movie-cards {
   display: grid;
@@ -14,6 +15,7 @@
     position: relative;
   }
   img {
+    border-radius: 1rem;
     width: 100%;
     aspect-ratio: 6 / 9; //some movies have odd poster sizes so we force an aspect ratio
     vertical-align: top;
@@ -27,10 +29,13 @@
 
     svg {
       color: $textColor;
+      filter: drop-shadow(0 0 .2rem #000000);
+
     }
 
   }
   .movie-overview {
+    padding: 1rem;
     font-size: 1.05rem;
     display: none;
   }
@@ -61,26 +66,49 @@
       color: $textColor;
     }
   }
+.movie-rate {
+  position: absolute;
+    top: 10%;
+    left: 42%;
+    text-shadow: 1px 1px 1px #000000;
+    display: none;
+        .rate-text {
+          position: absolute;
+          top: -.5rem;
+          left: 15%;
+        }
 }
+
+
+}
+
+//adding lots of breakpoints to increment grid size
+
+//tablet-small layout
 @media (min-width: $tablet-small) { 
-  //adding lots of breakpoints to increment grid size
   .movie-cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+//tablet layout 
 @media (min-width: $tablet) {
   .movie-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
+//desktop layout
 @media (min-width: $desktop) {
   .movie-cards {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    max-width: $max-content-width; 
-    padding: 1rem;
+    max-width: 100rem; 
+
+    .movie-title {
+      font-size: 1.5rem;
+    }
 
     .info-btn {
-      background-color: #ff000000;
       display: none;
     }
     .movie-date {
@@ -94,12 +122,17 @@
       .info-btn {
         position: absolute;
         top: 75%;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
         display: block;
+        width: 50%;
       }
       .movie-overview {
         position: absolute;
         display: block;
-        top: 4rem;
+        top: 4.5rem;
         height: 8rem;
       }
       .movie-date {
@@ -108,11 +141,13 @@
         top: 0.5rem;
         left: 0.5rem;
       }
+      .movie-rate {
+          display: block;
+      }
     }
   }
 }
-//text length change
-//maybe make this a variable
+
 @media (min-width: $max-content-width) { 
   .movie-cards {
     .movie-overview {

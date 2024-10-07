@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { APIKey, baseImgEndPoint, movieUrl } from "../global/globalsVariables";
 
-import { shortenText } from "../utilities/helperFunctions";
+import { shortenText, formatPercentage } from "../utilities/helperFunctions";
 
 import Favourite from "../components/Favourite";
 import HeroBanner from "../components/HeroBanner";
@@ -102,6 +102,32 @@ function Home() {
                                 <h3 className="movie-title">
                                     {shortenText(movie.title, 5)}
                                 </h3>
+                                        <div
+                                    className={
+                                        movie.vote_average <= 3
+                                            ? "default-votes low-votes movie-rate"
+                                            : movie.vote_average <= 7
+                                            ? "default-votes medium-votes movie-rate" //These styles can be found in the _votes.scss;
+                                            : movie.vote_average <= 10
+                                            ? "default-votes good-votes movie-rate"
+                                            : movie.vote_average !== 0
+                                            ? "default-votes no-votes movie-rate"
+                                            : null
+                                    }
+                                >
+                                    {movie.vote_average !== 0 &&
+                                    movie.vote_average < 10 ? (
+                                        <p className="rate-text">
+                                            {formatPercentage(movie.vote_average)}
+                                        </p>
+                                    ) : movie.vote_average >= 10 ? (
+                                        <p className="rate-text">
+                                            {formatPercentage(movie.vote_average)}
+                                        </p>
+                                    ) : (
+                                        <p className="rate-text">NR</p>
+                                    )}
+                                </div>
                                 <NavLink
                                     className="info-btn"
                                     to={`/detail/${movie.id}`}

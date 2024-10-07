@@ -83,7 +83,6 @@ function Details() {
             {movie && (
                 <>
                     <section>
-                        <h1 className="screen-reader-text">{`Popcorn Movies | ${movie.title}`}</h1>
                         {movie.backdrop_path ? (
                             <img
                                 className="det-backdrop"
@@ -99,7 +98,7 @@ function Details() {
                         )}
                     </section>
                     <section className="detail-grid">
-                        <h2 className="det-title" id="det-title">{movie.title}</h2>
+                        <h1 className="det-title" id="det-title">{movie.title}</h1>
                         {movie.poster_path ? (
                             <img
                                 className="det-poster"
@@ -118,14 +117,14 @@ function Details() {
                             movieData={movie}
                         />
                         <p className="det-date det-item">
-                            {formatDate(movie.release_date)}
+                            Released: {formatDate(movie.release_date)}
                         </p>
                         <div
                             className={
                                 movie.vote_average <= 3
                                     ? "default-votes low-votes det-votes"
                                     : movie.vote_average <= 7
-                                    ? "default-votes medium-votes det-votes" //These classes can be found in the _components.scss page;
+                                    ? "default-votes medium-votes det-votes" //These styles can be found in the _votes.scss;
                                     : movie.vote_average <= 10
                                     ? "default-votes good-votes det-votes"
                                     : movie.vote_average !== 0
@@ -147,7 +146,7 @@ function Details() {
                             )}
                         </div>
                         <p className="det-runtime det-item">
-                            {reformatRuntime(movie.runtime)}
+                            Runtime: {reformatRuntime(movie.runtime)}
                         </p>
                         <p className="det-rating det-item">
                             Rated: {displayRating(movie)}

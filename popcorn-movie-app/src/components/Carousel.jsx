@@ -20,7 +20,7 @@ function Carousel({ movieList }) {
         movieList.length > 0 ? (
           `${baseImgEndPoint}w1280/${movieList[0].backdrop_path}`
         ) : (
-          <img
+          <img className="slider-img"
             src={noImagesLrg}
             alt="No image that displays when chosen movie has no backdrop"
           />
@@ -34,7 +34,7 @@ function Carousel({ movieList }) {
         movieList.length > 0 ? (
           `${baseImgEndPoint}w1280/${movieList[1].backdrop_path}`
         ) : (
-          <img
+          <img className="slider-img"
             src={noImagesLrg}
             alt="No image that displays when chosen movie has no backdrop"
           />
