@@ -92,14 +92,21 @@ header {
   li {
     display: block;
   }
-  //set to em?
-  //dropdown menu might be a bit buggy with opening and closing, make sure to revisit
+
   @media (min-width: $tablet) {
     .nav-logo,
     .nav-links {
       display: flex;
       align-items: center;
       margin: 1rem;
+      
+      a {
+        transition-duration: .5s;
+    
+          &:hover {
+            color: $buttonColor;
+          }
+        }
 
       .large-nav {
         font-size: 1.667rem;
@@ -120,9 +127,6 @@ header {
 
     .large-nav {
       display: block;
-      // margin-top: 0.75rem;
-      // margin-right: 1rem;
-      // font-size: 1.5rem;
     }
     .small-nav {
       display: none;
@@ -139,9 +143,6 @@ header {
       max-width: $max-width;
       margin: auto;
 
-      .logo-nav {
-      }
-
       .large-nav,
       h3 {
         font-size: 2.5rem;
@@ -153,9 +154,6 @@ header {
       }
       img {
         height: 3rem;
-      }
-      .inward-elem {
-        // margin-right: 5rem;
       }
     }
   }

@@ -124,7 +124,7 @@ function Details() {
                                 movie.vote_average <= 3
                                     ? "default-votes low-votes det-votes"
                                     : movie.vote_average <= 7
-                                    ? "default-votes medium-votes det-votes" //These classes can be found in the _components.scss page;
+                                    ? "default-votes medium-votes det-votes" //These styles can be found in the _votes.scss;
                                     : movie.vote_average <= 10
                                     ? "default-votes good-votes det-votes"
                                     : movie.vote_average !== 0
