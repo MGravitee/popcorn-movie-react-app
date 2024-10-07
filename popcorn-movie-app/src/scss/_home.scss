@@ -69,7 +69,7 @@
 .movie-rate {
   position: absolute;
     top: 10%;
-    left: 40%;
+    left: 42%;
     text-shadow: 1px 1px 1px #000000;
     display: none;
         .rate-text {
@@ -104,6 +104,10 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     max-width: 100rem; 
 
+    .movie-title {
+      font-size: 1.5rem;
+    }
+
     .info-btn {
       display: none;
     }
@@ -128,7 +132,7 @@
       .movie-overview {
         position: absolute;
         display: block;
-        top: 4rem;
+        top: 4.5rem;
         height: 8rem;
       }
       .movie-date {
